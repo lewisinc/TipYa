@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40171AD011AA0034415C /* WelcomeViewController.swift */; };
+		8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40191AD011CE0034415C /* SpectatorViewController.swift */; };
+		8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */; };
+		8E5E40201AD01AD00034415C /* PerformerIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */; };
+		8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40221AD01AE90034415C /* SpectatorIdentity.swift */; };
 		8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */; };
-		8EBBCC2D1ACFC99900DD76AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */; };
 		8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */; };
 		8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC311ACFC99900DD76AC /* Images.xcassets */; };
 		8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */; };
@@ -21,8 +25,8 @@
 		8EBBCC6F1ACFEB6000DD76AC /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC6E1ACFEB6000DD76AC /* Firebase.framework */; };
 		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
-		D0A864201ACFFB180040A225 /* Performer.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A8641F1ACFFB180040A225 /* Performer.xib */; };
-		D0A864221ACFFD070040A225 /* Spectator.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A864211ACFFD070040A225 /* Spectator.xib */; };
+		D01FD9FA1AD0343A00C999C6 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */; };
+		D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E5E40171AD011AA0034415C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8E5E40191AD011CE0034415C /* SpectatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorViewController.swift; sourceTree = "<group>"; };
+		8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectateOnPerformerViewController.swift; sourceTree = "<group>"; };
+		8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerIdentity.swift; sourceTree = "<group>"; };
+		8E5E40221AD01AE90034415C /* SpectatorIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorIdentity.swift; sourceTree = "<group>"; };
 		8EBBCC251ACFC99900DD76AC /* TipYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBBCC291ACFC99900DD76AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EBBCC2F1ACFC99900DD76AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8EBBCC311ACFC99900DD76AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8EBBCC341ACFC99900DD76AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -55,8 +63,8 @@
 		8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipYa-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
-		D0A8641F1ACFFB180040A225 /* Performer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Performer.xib; path = ../Performer.xib; sourceTree = "<group>"; };
-		D0A864211ACFFD070040A225 /* Spectator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Spectator.xib; sourceTree = "<group>"; };
+		D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
+		D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E5E40211AD01ADB0034415C /* UserIdentities */ = {
+			isa = PBXGroup;
+			children = (
+				8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */,
+				8E5E40221AD01AE90034415C /* SpectatorIdentity.swift */,
+			);
+			name = UserIdentities;
+			sourceTree = "<group>";
+		};
 		8EBBCC1C1ACFC99900DD76AC = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +127,8 @@
 				8EBBCC7A1ACFED0600DD76AC /* Bluetooth */,
 				8EBBCC761ACFECF300DD76AC /* Firebase */,
 				8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */,
+				8E5E40211AD01ADB0034415C /* UserIdentities */,
 				8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */,
-				D0A8641F1ACFFB180040A225 /* Performer.xib */,
-				D0A864211ACFFD070040A225 /* Spectator.xib */,
 				8EBBCC311ACFC99900DD76AC /* Images.xcassets */,
 				8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */,
 				8EBBCC281ACFC99900DD76AC /* Supporting Files */,
@@ -177,7 +193,11 @@
 		8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */,
+				D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */,
+				D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */,
+				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
+				8E5E40191AD011CE0034415C /* SpectatorViewController.swift */,
+				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -262,8 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A864201ACFFB180040A225 /* Performer.xib in Resources */,
-				D0A864221ACFFD070040A225 /* Spectator.xib in Resources */,
 				8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */,
 				8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */,
 				8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */,
@@ -285,9 +303,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */,
-				8EBBCC2D1ACFC99900DD76AC /* ViewController.swift in Sources */,
+				8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */,
+				8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */,
+				8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */,
+				8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */,
+				D01FD9FA1AD0343A00C999C6 /* PerformanceViewController.swift in Sources */,
 				8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */,
 				8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */,
+				8E5E40201AD01AD00034415C /* PerformerIdentity.swift in Sources */,
+				D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
