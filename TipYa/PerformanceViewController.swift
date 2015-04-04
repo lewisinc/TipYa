@@ -13,7 +13,7 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var imageButton: UIButton!
     let imagePicker = UIImagePickerController()
     
-    var authData: FAuthData;
+    var authData: FAuthData?
     
     
     override func viewDidLoad() {
