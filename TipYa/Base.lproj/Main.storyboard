@@ -18,27 +18,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-1V-7Ea">
-                                <rect key="frame" x="0.0" y="212" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="424" width="320" height="48"/>
+                                <color key="backgroundColor" red="0.56785618980199193" green="0.63987531565656564" blue="0.60556323507111753" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1Y1-Yt-PEz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="Spectator">
                                     <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="119-DM-Jxg" kind="modal" modalTransitionStyle="crossDissolve" id="rUa-Ju-tsc"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="87v-OL-Xn9">
-                                <rect key="frame" x="0.0" y="260" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="472" width="320" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="pJP-A0-pmM"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JW-Pr-GFl">
-                                <rect key="frame" x="0.0" y="308" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="520" width="320" height="48"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="aXo-IH-1Nf"/>
@@ -51,8 +52,11 @@
                                     <segue destination="z2u-bc-GCE" kind="modal" modalTransitionStyle="crossDissolve" id="apD-QO-mjK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="fogKFiS" highlightedImage="fogKFiS" translatesAutoresizingMaskIntoConstraints="NO" id="moB-Rh-KWt">
+                                <rect key="frame" x="96" y="70" width="128" height="110"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.18431372940540314" green="0.047058828175067902" blue="0.22352942824363708" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="87v-OL-Xn9" secondAttribute="trailing" id="4xN-5J-5fW"/>
                             <constraint firstItem="5JW-Pr-GFl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Bn-JA-y5a"/>
@@ -60,10 +64,13 @@
                             <constraint firstAttribute="centerX" secondItem="qY9-1V-7Ea" secondAttribute="centerX" id="C4a-JI-WYg"/>
                             <constraint firstItem="qY9-1V-7Ea" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Cys-MA-H6e"/>
                             <constraint firstAttribute="trailing" secondItem="5JW-Pr-GFl" secondAttribute="trailing" id="H4M-Qv-uT1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5JW-Pr-GFl" secondAttribute="bottom" id="ZN3-nq-pHg"/>
                             <constraint firstItem="87v-OL-Xn9" firstAttribute="top" secondItem="qY9-1V-7Ea" secondAttribute="bottom" id="ch2-xX-Cv5"/>
+                            <constraint firstItem="qY9-1V-7Ea" firstAttribute="top" relation="greaterThanOrEqual" secondItem="moB-Rh-KWt" secondAttribute="bottom" constant="48" id="dia-Cx-xlK"/>
                             <constraint firstItem="5JW-Pr-GFl" firstAttribute="top" secondItem="87v-OL-Xn9" secondAttribute="bottom" id="eGZ-bm-iMK"/>
+                            <constraint firstAttribute="centerX" secondItem="moB-Rh-KWt" secondAttribute="centerX" id="kDa-Xh-oc3"/>
+                            <constraint firstItem="moB-Rh-KWt" firstAttribute="top" relation="lessThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="mT8-Yb-dLC"/>
                             <constraint firstItem="87v-OL-Xn9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sZV-So-Zvr"/>
-                            <constraint firstAttribute="centerY" secondItem="87v-OL-Xn9" secondAttribute="centerY" id="syE-HZ-ePR"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -110,6 +117,9 @@
             <point key="canvasLocation" x="755" y="-133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fogKFiS" width="128" height="110"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
