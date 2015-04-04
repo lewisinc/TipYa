@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -158,17 +158,19 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Vbs-LM-jun">
-                                <rect key="frame" x="116" y="438" width="88" height="88"/>
+                                <rect key="frame" x="116" y="441" width="88" height="88"/>
                                 <state key="normal" title="Scan" image="map-marker-17">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="scanForPerformers:" destination="119-DM-Jxg" eventType="touchUpInside" id="YZw-OZ-jZo"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="e9r-nk-ZVu"/>
                     <connections>
-                        <outlet property="asd" destination="Vbs-LM-jun" id="WNb-qN-anE"/>
                         <outlet property="refreshNearbyPerformances" destination="Vbs-LM-jun" id="eMn-Fh-oZU"/>
                     </connections>
                 </viewController>
@@ -197,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZ4-dF-3qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="-133"/>
+            <point key="canvasLocation" x="1138" y="-429"/>
         </scene>
         <!--Performer Login View Controller-->
         <scene sceneID="2RY-8H-4UL">
@@ -213,7 +215,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Int-mD-YBU">
                                 <rect key="frame" x="0.0" y="20" width="320" height="48"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.81960784313725488" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="V5k-6h-mfI"/>
                                 </constraints>
@@ -226,19 +228,9 @@
                                     <action selector="login:" destination="64e-lW-oYz" eventType="touchUpInside" id="3qM-xp-qeh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yri-Cv-2xC">
-                                <rect key="frame" x="16" y="212" width="288" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="ps0-4Q-QKA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
-                                <connections>
-                                    <action selector="textFieldShouldReturn:" destination="64e-lW-oYz" eventType="editingDidEndOnExit" id="eQs-MG-tAK"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="username" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UwY-v2-qFg">
                                 <rect key="frame" x="16" y="116" width="288" height="48"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ESP-ce-4hb"/>
                                 </constraints>
@@ -246,6 +238,18 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="textFieldShouldReturn:" destination="64e-lW-oYz" eventType="editingDidEndOnExit" id="0nN-kA-uNs"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yri-Cv-2xC">
+                                <rect key="frame" x="16" y="212" width="288" height="48"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ps0-4Q-QKA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <action selector="textFieldShouldReturn:" destination="64e-lW-oYz" eventType="editingDidEndOnExit" id="eQs-MG-tAK"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R6-8s-HB8">
@@ -264,7 +268,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UwY-v2-qFg" firstAttribute="top" secondItem="Int-mD-YBU" secondAttribute="bottom" constant="48" id="150-rP-43T"/>
                             <constraint firstAttribute="centerX" secondItem="Yri-Cv-2xC" secondAttribute="centerX" id="6xS-tG-tkK"/>
@@ -339,7 +343,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aB3-eo-lm2" firstAttribute="leading" secondItem="HAS-zL-rt4" secondAttribute="leadingMargin" constant="-16" id="5iw-qN-FxA"/>
                             <constraint firstItem="BCc-lA-VWy" firstAttribute="top" secondItem="YzH-iF-eEP" secondAttribute="bottom" id="CH9-TH-QkO"/>
@@ -410,7 +414,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.56862747669219971" green="0.70196080207824707" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

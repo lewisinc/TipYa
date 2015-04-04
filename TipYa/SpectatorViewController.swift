@@ -15,6 +15,10 @@ class SpectatorViewController: UIViewController {
     
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
     
+    @IBAction func scanForPerformers(sender: AnyObject) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +44,7 @@ class SpectatorViewController: UIViewController {
     func addCellToTableView(image:UIImage!, name:String!) {
         
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -48,6 +52,5 @@ class SpectatorViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
