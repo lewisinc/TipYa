@@ -28,7 +28,7 @@
                                     <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="119-DM-Jxg" kind="modal" id="rUa-Ju-tsc"/>
+                                    <segue destination="119-DM-Jxg" kind="modal" modalTransitionStyle="crossDissolve" id="rUa-Ju-tsc"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="87v-OL-Xn9">
@@ -48,7 +48,7 @@
                                     <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="z2u-bc-GCE" kind="modal" id="apD-QO-mjK"/>
+                                    <segue destination="z2u-bc-GCE" kind="modal" modalTransitionStyle="crossDissolve" id="apD-QO-mjK"/>
                                 </connections>
                             </button>
                         </subviews>
