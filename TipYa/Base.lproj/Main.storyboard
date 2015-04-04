@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -56,7 +56,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-1V-7Ea">
                                 <rect key="frame" x="0.0" y="424" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.56785618980199193" green="0.63987531565656564" blue="0.60556323507111753" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.71372549019607845" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1Y1-Yt-PEz"/>
                                 </constraints>
@@ -71,13 +71,15 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="87v-OL-Xn9">
                                 <rect key="frame" x="0.0" y="472" width="320" height="48"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.15686274509803921" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="pJP-A0-pmM"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JW-Pr-GFl">
                                 <rect key="frame" x="0.0" y="520" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.81960784313725488" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="aXo-IH-1Nf"/>
                                 </constraints>
@@ -87,36 +89,35 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="64e-lW-oYz" kind="modal" modalTransitionStyle="crossDissolve" id="lok-oe-kfM"/>
+                                    <action selector="checkPerformerAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vRR-Nb-pHb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu4-qB-kaY">
-                                <rect key="frame" x="96" y="70" width="128" height="110"/>
-                                <state key="normal" image="fogKFiS">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="qrv-CZ-Lb4" kind="modal" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="gyC-2n-BZc"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="jWijs30" translatesAutoresizingMaskIntoConstraints="NO" id="UZ9-7I-jts">
+                                <rect key="frame" x="0.0" y="28" width="320" height="128"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.18431372940540314" green="0.047058828175067902" blue="0.22352942824363708" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.13964859662701645" green="0.70755288957688356" blue="0.70755288957688356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="87v-OL-Xn9" secondAttribute="trailing" id="4xN-5J-5fW"/>
+                            <constraint firstItem="qY9-1V-7Ea" firstAttribute="top" secondItem="UZ9-7I-jts" secondAttribute="bottom" constant="48" id="5zH-Ts-zHW"/>
                             <constraint firstItem="5JW-Pr-GFl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Bn-JA-y5a"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qY9-1V-7Ea" secondAttribute="trailing" constant="-16" id="BCS-qv-aVc"/>
                             <constraint firstAttribute="centerX" secondItem="qY9-1V-7Ea" secondAttribute="centerX" id="C4a-JI-WYg"/>
+                            <constraint firstItem="UZ9-7I-jts" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="CPb-ng-e2z"/>
                             <constraint firstItem="qY9-1V-7Ea" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Cys-MA-H6e"/>
                             <constraint firstAttribute="trailing" secondItem="5JW-Pr-GFl" secondAttribute="trailing" id="H4M-Qv-uT1"/>
-                            <constraint firstAttribute="centerX" secondItem="xu4-qB-kaY" secondAttribute="centerX" id="NbF-dF-j62"/>
+                            <constraint firstAttribute="trailing" secondItem="UZ9-7I-jts" secondAttribute="trailing" constant="24" id="RDM-0s-78p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5JW-Pr-GFl" secondAttribute="bottom" id="ZN3-nq-pHg"/>
                             <constraint firstItem="87v-OL-Xn9" firstAttribute="top" secondItem="qY9-1V-7Ea" secondAttribute="bottom" id="ch2-xX-Cv5"/>
                             <constraint firstItem="5JW-Pr-GFl" firstAttribute="top" secondItem="87v-OL-Xn9" secondAttribute="bottom" id="eGZ-bm-iMK"/>
-                            <constraint firstItem="qY9-1V-7Ea" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xu4-qB-kaY" secondAttribute="bottom" constant="48" id="rgQ-2O-VK6"/>
+                            <constraint firstItem="UZ9-7I-jts" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="rT2-Om-Mct"/>
                             <constraint firstItem="87v-OL-Xn9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sZV-So-Zvr"/>
-                            <constraint firstItem="xu4-qB-kaY" firstAttribute="top" relation="lessThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="tcB-GE-WMt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="64e-lW-oYz" kind="modal" identifier="performerLogin" modalTransitionStyle="crossDissolve" id="hGM-5G-JKF"/>
+                        <segue destination="gJJ-hN-4Ak" kind="modal" identifier="presenterLoggedIn" modalTransitionStyle="crossDissolve" id="2L1-zl-xTC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,6 +223,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="login:" destination="64e-lW-oYz" eventType="touchUpInside" id="3qM-xp-qeh"/>
                                     <segue destination="gJJ-hN-4Ak" kind="modal" modalTransitionStyle="flipHorizontal" id="jCl-Dt-re9"/>
                                 </connections>
                             </button>
@@ -405,13 +407,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1F-Df-1Wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1267" y="1472"/>
+            <point key="canvasLocation" x="1285" y="1456"/>
         </scene>
     </scenes>
     <resources>
         <image name="Circle" width="1024" height="1024"/>
         <image name="coin-money-2" width="512" height="512"/>
-        <image name="fogKFiS" width="128" height="110"/>
+        <image name="jWijs30" width="500" height="500"/>
         <image name="map-marker-17" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -421,5 +423,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Zfi-YB-jtK"/>
+        <segue reference="2L1-zl-xTC"/>
     </inferredMetricsTieBreakers>
 </document>

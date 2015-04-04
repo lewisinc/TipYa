@@ -29,9 +29,9 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func textFieldShouldReturn(sender: UITextField) {
-
+        
         if (sender.restorationIdentifier == "username") {
             sender.resignFirstResponder()
             passwordField.becomeFirstResponder()
@@ -41,12 +41,21 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
             println("wtf")
         }
     }
-
+    
     @IBAction func login(sender: AnyObject) {
-        // Get a reference to our posts
-        let accounts = Firebase(url:"https://tipyalahacks2015.firebaseio.com/Accounts")
         
+        let ref = Firebase(url: "https://tipyalahacks2015.firebaseio.com/")
+        
+        ref.observeAuthEventWithBlock({ authData in
+            if authData != nil {
+                // user authenticated with Firebase
+                println(authData)
+            } else {
+                // No user is logged in
+            }
+        })
         
     }
-
+    
 }
+
