@@ -13,6 +13,14 @@
 		8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC311ACFC99900DD76AC /* Images.xcassets */; };
 		8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */; };
 		8EBBCC411ACFC99900DD76AC /* TipYaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC401ACFC99900DD76AC /* TipYaTests.swift */; };
+		8EBBCC641ACFEB0500DD76AC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC631ACFEB0500DD76AC /* libicucore.dylib */; };
+		8EBBCC671ACFEB3B00DD76AC /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC661ACFEB3B00DD76AC /* libc++.dylib */; };
+		8EBBCC691ACFEB4300DD76AC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC681ACFEB4300DD76AC /* CFNetwork.framework */; };
+		8EBBCC6B1ACFEB4B00DD76AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC6A1ACFEB4B00DD76AC /* Security.framework */; };
+		8EBBCC6D1ACFEB5300DD76AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC6C1ACFEB5300DD76AC /* SystemConfiguration.framework */; };
+		8EBBCC6F1ACFEB6000DD76AC /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC6E1ACFEB6000DD76AC /* Firebase.framework */; };
+		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
+		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,15 @@
 		8EBBCC3A1ACFC99900DD76AC /* TipYaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipYaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBBCC3F1ACFC99900DD76AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EBBCC401ACFC99900DD76AC /* TipYaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipYaTests.swift; sourceTree = "<group>"; };
+		8EBBCC631ACFEB0500DD76AC /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		8EBBCC661ACFEB3B00DD76AC /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		8EBBCC681ACFEB4300DD76AC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8EBBCC6A1ACFEB4B00DD76AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8EBBCC6C1ACFEB5300DD76AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8EBBCC6E1ACFEB6000DD76AC /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipYa-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
+		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBBCC6F1ACFEB6000DD76AC /* Firebase.framework in Frameworks */,
+				8EBBCC6D1ACFEB5300DD76AC /* SystemConfiguration.framework in Frameworks */,
+				8EBBCC6B1ACFEB4B00DD76AC /* Security.framework in Frameworks */,
+				8EBBCC691ACFEB4300DD76AC /* CFNetwork.framework in Frameworks */,
+				8EBBCC671ACFEB3B00DD76AC /* libc++.dylib in Frameworks */,
+				8EBBCC641ACFEB0500DD76AC /* libicucore.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +82,10 @@
 		8EBBCC1C1ACFC99900DD76AC = {
 			isa = PBXGroup;
 			children = (
+				8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */,
 				8EBBCC271ACFC99900DD76AC /* TipYa */,
 				8EBBCC3D1ACFC99900DD76AC /* TipYaTests */,
+				8EBBCC651ACFEB2B00DD76AC /* Frameworks */,
 				8EBBCC261ACFC99900DD76AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */,
-				8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */,
+				8EBBCC7A1ACFED0600DD76AC /* Bluetooth */,
+				8EBBCC761ACFECF300DD76AC /* Firebase */,
+				8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */,
 				8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */,
 				8EBBCC311ACFC99900DD76AC /* Images.xcassets */,
 				8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */,
@@ -110,6 +137,43 @@
 				8EBBCC3F1ACFC99900DD76AC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EBBCC651ACFEB2B00DD76AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EBBCC6E1ACFEB6000DD76AC /* Firebase.framework */,
+				8EBBCC6C1ACFEB5300DD76AC /* SystemConfiguration.framework */,
+				8EBBCC6A1ACFEB4B00DD76AC /* Security.framework */,
+				8EBBCC681ACFEB4300DD76AC /* CFNetwork.framework */,
+				8EBBCC661ACFEB3B00DD76AC /* libc++.dylib */,
+				8EBBCC631ACFEB0500DD76AC /* libicucore.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8EBBCC761ACFECF300DD76AC /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
+		8EBBCC7A1ACFED0600DD76AC /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
+		8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */,
 				8EBBCC2D1ACFC99900DD76AC /* ViewController.swift in Sources */,
 				8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */,
+				8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +404,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TipYa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipYa-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -348,9 +422,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TipYa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipYa-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -407,6 +488,7 @@
 				8EBBCC461ACFC99900DD76AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EBBCC471ACFC99900DD76AC /* Build configuration list for PBXNativeTarget "TipYaTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +497,7 @@
 				8EBBCC491ACFC99900DD76AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
