@@ -8,9 +8,11 @@
 
 import UIKit
 import CoreBluetooth
+import Security
 
 class PerformerIdentity: NSObject {
     var name:String?
+    var passHash:String?
     var image:UIImage?
     var bioText:String?
     var identityKey:CBUUID?

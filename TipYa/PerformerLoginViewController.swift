@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,9 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func login(sender: AnyObject) {
+        // Get a reference to our posts
+        let accounts = Firebase(url:"https://tipyalahacks2015.firebaseio.com/Accounts")
+        
         
     }
 
