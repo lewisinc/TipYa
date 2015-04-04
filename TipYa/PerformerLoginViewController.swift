@@ -69,11 +69,12 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signup(sender: AnyObject) {
-        accounts.createUser(usernameField.text, password: passwordField,
+        accounts.createUser(usernameField.text, password: passwordField.text,
             withValueCompletionBlock: { error, result in
                 
                 if error != nil {
                     // There was an error creating the account
+                    println("Error occurred in Account Creation")
                 } else {
                     let uid = result["uid"] as? String
                     println("Successfully created user account with uid: \(uid)")
