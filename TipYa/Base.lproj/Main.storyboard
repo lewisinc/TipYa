@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -89,7 +89,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="64e-lW-oYz" kind="modal" modalTransitionStyle="crossDissolve" id="lok-oe-kfM"/>
+                                    <action selector="checkPerformerAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vRR-Nb-pHb"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="jWijs30" translatesAutoresizingMaskIntoConstraints="NO" id="UZ9-7I-jts">
@@ -114,6 +114,10 @@
                             <constraint firstItem="87v-OL-Xn9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sZV-So-Zvr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="64e-lW-oYz" kind="modal" identifier="performerLogin" modalTransitionStyle="crossDissolve" id="hGM-5G-JKF"/>
+                        <segue destination="gJJ-hN-4Ak" kind="modal" identifier="presenterLoggedIn" modalTransitionStyle="crossDissolve" id="2L1-zl-xTC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +223,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gJJ-hN-4Ak" kind="modal" modalTransitionStyle="flipHorizontal" id="jCl-Dt-re9"/>
+                                    <action selector="login:" destination="64e-lW-oYz" eventType="touchUpInside" id="3qM-xp-qeh"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="username" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UwY-v2-qFg">
@@ -266,6 +270,7 @@
                     <connections>
                         <outlet property="passwordField" destination="Yri-Cv-2xC" id="x9F-YQ-yoI"/>
                         <outlet property="usernameField" destination="UwY-v2-qFg" id="Hqb-MT-dkh"/>
+                        <segue destination="gJJ-hN-4Ak" kind="modal" identifier="loginComplete" modalTransitionStyle="partialCurl" id="322-8N-3mh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkb-Vw-Mo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,5 +425,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Zfi-YB-jtK"/>
+        <segue reference="322-8N-3mh"/>
     </inferredMetricsTieBreakers>
 </document>
