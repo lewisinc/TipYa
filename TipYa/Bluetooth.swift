@@ -9,26 +9,49 @@
 import Foundation
 import CoreBluetooth
 
+// An Application level UUID - "Is this device running our app?"
+var appUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD540")
+
+// UUIDs for a performer - "Are you a performer? - Let's get your services, etc."
+var performerIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD544")
+var performerServicesUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD545")
+var performerNameCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD546")
+var performerBiographyCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD547")
+var performerImageCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD548")
+
+// UUIDs for a spectator - "You don't need to interact with a spectator."
+var spectatorUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD550")
+
+
 // Has performance data to share
 // This class is a CBPeripheralManager, managing itself essentially.
 // This class also performs callbacks on behalf of a CBCentralManager as its delegate.
-class TJBluetoothPerformer: CBPeripheralManager, CBCentralManagerDelegate {
+
+class SpectatorUtility: CBPeripheralManager, CBCentralManagerDelegate {
+    var centralManager:CBCentralManager?            // Our local central
+    var discoveredPeripherals:[CBPeripheral]?       // Discovered Performer devices
+    var discoveredPerformers:[PerformerIdentity]?   // Performer identities retrieved from Firebase+Performers
     
-    var discoveredPerformers:[PerformerIdentity]?
-    var discoveredPeripherals:[CBPeripheral]?
-    
-    // An Application level UUID - "Is this device running our app?"
-    var appUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD543")
-    
-    // UUIDs for a performer - "Are you a performer? - Let's get your services, etc."
-    var performerIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD545")
-    var performerServicesUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD546")
-    var performerNameCharacteristicUUID
-    var performerBiographyCharacteristicUUID
-    var performerImageCharacteristicUUID
-    
-    // UUIDs for a spectator - "You don't need to interact with a spectator."
-    var spectatorUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD547")
+    func centralManagerDidUpdateState(_ central: CBCentralManager!) {
+        switch central.state {
+        case .PoweredOn:
+            break
+        case .PoweredOff:
+            break
+        case .Resetting:
+            break
+        case .Unauthorized:
+            break
+        case .Unknown:
+            break
+        case .Unsupported:
+            break
+        }
+    }
+}
+
+
+/*
     
 // BELOW: Delegate Methods and their implementations
     
@@ -43,12 +66,11 @@ class TJBluetoothPerformer: CBPeripheralManager, CBCentralManagerDelegate {
         advertisementData: [NSObject : AnyObject]!,
         RSSI: NSNumber!) {
             
-            
     }
     /* Successfully connected to a peripheral
     - needs description
     */
-    func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {
+    func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!, error error: NSError!) {
         
         
     }
@@ -192,3 +214,5 @@ class TJBluetoothSpectator: CBCentralManager, CBPeripheralDelegate {
             
     }
 }
+
+*/
