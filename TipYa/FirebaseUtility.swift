@@ -8,7 +8,8 @@
 
 import Foundation
 
-var rootReference = Firebase(url:"https://tipyalahacks2015.firebaseio.com")
+let rootReference = Firebase(url:"https://tipyalahacks2015.firebaseio.com")
+let accounts = Firebase(url: "https://tipyalahacks2015.firebaseio.com/Accounts")
 
 
 class FirebaseUtility {
