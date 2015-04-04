@@ -224,7 +224,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="64e-lW-oYz" eventType="touchUpInside" id="3qM-xp-qeh"/>
-                                    <segue destination="gJJ-hN-4Ak" kind="modal" modalTransitionStyle="flipHorizontal" id="jCl-Dt-re9"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yri-Cv-2xC">
@@ -269,6 +268,7 @@
                     <connections>
                         <outlet property="passwordField" destination="Yri-Cv-2xC" id="x9F-YQ-yoI"/>
                         <outlet property="usernameField" destination="UwY-v2-qFg" id="Hqb-MT-dkh"/>
+                        <segue destination="gJJ-hN-4Ak" kind="modal" identifier="loginComplete" modalTransitionStyle="partialCurl" id="322-8N-3mh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkb-Vw-Mo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -423,6 +423,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Zfi-YB-jtK"/>
-        <segue reference="2L1-zl-xTC"/>
+        <segue reference="322-8N-3mh"/>
     </inferredMetricsTieBreakers>
 </document>

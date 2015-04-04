@@ -46,16 +46,38 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
         
         let ref = Firebase(url: "https://tipyalahacks2015.firebaseio.com/")
         
-        ref.observeAuthEventWithBlock({ authData in
-            if authData != nil {
-                // user authenticated with Firebase
-                println(authData)
+        ref.authUser(usernameField.text, password: passwordField.text) {
+            error, authData in
+            if (error != nil) {
+                // an error occurred while attempting login
+                if let errorCode = FAuthenticationError(rawValue: error.code) {
+                    switch (errorCode) {
+                    case .UserDoesNotExist:
+                        println("Handle invalid user")
+                    case .InvalidEmail:
+                        println("Handle invalid email")
+                    case .InvalidPassword:
+                        println("Handle invalid password")
+                    default:
+                        println("Handle default situation")
+                    }
+                }
             } else {
-                // No user is logged in
+                // User is logged in
+                self.performSegueWithIdentifier("loginComplete", sender: authData)
             }
-        })
+        }
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        
+        if (segue.identifier == "loginComplete") {
+            let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController
+            viewController.authData = sender as FAuthData
+            // pass data to next view
+        }
+    }
 }
 
