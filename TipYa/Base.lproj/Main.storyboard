@@ -27,6 +27,9 @@
                                 <state key="normal" title="Spectator">
                                     <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="119-DM-Jxg" kind="push" id="YJR-Qm-C4J"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="87v-OL-Xn9">
                                 <rect key="frame" x="0.0" y="260" width="320" height="48"/>
@@ -44,6 +47,9 @@
                                 <state key="normal" title="Performer">
                                     <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="z2u-bc-GCE" kind="push" id="RCT-gR-dwf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,48 +72,42 @@
             <point key="canvasLocation" x="272" y="277"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="de6-aE-9Xd">
+        <scene sceneID="8vF-lt-qPt">
             <objects>
-                <viewController id="g9t-AT-FkD" sceneMemberID="viewController">
+                <viewController id="z2u-bc-GCE" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oPP-q2-Gif"/>
-                        <viewControllerLayoutGuide type="bottom" id="v4Q-Vb-XM6"/>
+                        <viewControllerLayoutGuide type="top" id="7Lm-o0-MZd"/>
+                        <viewControllerLayoutGuide type="bottom" id="HeU-Tm-ZTI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nLw-cQ-jkQ">
+                    <view key="view" contentMode="scaleToFill" id="PkP-2y-9sa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFq-gk-AXv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uN-ne-f09">
-                                <rect key="frame" x="0.0" y="520" width="320" height="48"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="7AR-p2-nKx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="Broadcast">
-                                    <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="KFq-gk-AXv" firstAttribute="top" secondItem="nLw-cQ-jkQ" secondAttribute="top" id="1ID-Dk-pbK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3uN-ne-f09" secondAttribute="trailing" constant="-16" id="7CH-Z3-Yew"/>
-                            <constraint firstAttribute="trailing" secondItem="KFq-gk-AXv" secondAttribute="trailing" id="Avd-4r-3u3"/>
-                            <constraint firstItem="3uN-ne-f09" firstAttribute="top" secondItem="KFq-gk-AXv" secondAttribute="bottom" id="GaD-bz-WtJ"/>
-                            <constraint firstItem="KFq-gk-AXv" firstAttribute="leading" secondItem="nLw-cQ-jkQ" secondAttribute="leading" id="TVV-zy-yhx"/>
-                            <constraint firstItem="v4Q-Vb-XM6" firstAttribute="top" secondItem="3uN-ne-f09" secondAttribute="bottom" id="bco-Yx-CTF"/>
-                            <constraint firstItem="3uN-ne-f09" firstAttribute="leading" secondItem="nLw-cQ-jkQ" secondAttribute="leadingMargin" constant="-16" id="trN-Bq-uGc"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ZhA-ZU-APw"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ae1-aW-z6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ymq-UA-jfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="277"/>
+            <point key="canvasLocation" x="762" y="553"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e6k-4u-nMP">
+            <objects>
+                <viewController id="119-DM-Jxg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2gp-sx-3kl"/>
+                        <viewControllerLayoutGuide type="bottom" id="R3e-hD-eQX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WmE-xV-2aS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e9r-nk-ZVu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ha7-ld-nVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="-133"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
