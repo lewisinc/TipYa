@@ -13,8 +13,22 @@ import CoreBluetooth
 // This class is a CBPeripheralManager, managing itself essentially.
 // This class also performs callbacks on behalf of a CBCentralManager as its delegate.
 class TJBluetoothPerformer: CBPeripheralManager, CBCentralManagerDelegate {
-    var discoveredCentrals:NSArray?
     
+    var discoveredPerformers:[PerformerIdentity]?
+    var discoveredPeripherals:[CBPeripheral]?
+    
+    // An Application level UUID - "Is this device running our app?"
+    var appUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD543")
+    
+    // UUIDs for a performer - "Are you a performer? - Let's get your services, etc."
+    var performerIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD545")
+    var performerServicesUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD546")
+    var performerNameCharacteristicUUID
+    var performerBiographyCharacteristicUUID
+    var performerImageCharacteristicUUID
+    
+    // UUIDs for a spectator - "You don't need to interact with a spectator."
+    var spectatorUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD547")
     
 // BELOW: Delegate Methods and their implementations
     
@@ -28,7 +42,7 @@ class TJBluetoothPerformer: CBPeripheralManager, CBCentralManagerDelegate {
         didDiscoverPeripheral peripheral: CBPeripheral!,
         advertisementData: [NSObject : AnyObject]!,
         RSSI: NSNumber!) {
-            // If correct peripheral object:
+            
             
     }
     /* Successfully connected to a peripheral
