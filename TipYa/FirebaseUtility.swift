@@ -9,4 +9,3 @@
 import Foundation
 
 var rootReference = Firebase(url:"https://tipyalahacks2015.firebaseio.com")
-var testReference = Firebase(url:"https://popping-inferno-8353.firebaseio.com")
