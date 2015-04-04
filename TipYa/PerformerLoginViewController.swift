@@ -44,9 +44,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func login(sender: AnyObject) {
         
-        let ref = Firebase(url: "https://tipyalahacks2015.firebaseio.com/")
-        
-        ref.authUser(usernameField.text, password: passwordField.text) {
+        accounts.authUser(usernameField.text, password: passwordField.text) {
             error, authData in
             if (error != nil) {
                 // an error occurred while attempting login
@@ -70,8 +68,20 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func signup(sender: AnyObject) {
+        accounts.createUser(usernameField.text, password: passwordField,
+            withValueCompletionBlock: { error, result in
+                
+                if error != nil {
+                    // There was an error creating the account
+                } else {
+                    let uid = result["uid"] as? String
+                    println("Successfully created user account with uid: \(uid)")
+                }
+        })
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
         
         if (segue.identifier == "loginComplete") {
             let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController

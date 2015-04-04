@@ -158,17 +158,19 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Vbs-LM-jun">
-                                <rect key="frame" x="116" y="438" width="88" height="88"/>
+                                <rect key="frame" x="116" y="441" width="88" height="88"/>
                                 <state key="normal" title="Scan" image="map-marker-17">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="scanForPerformers:" destination="119-DM-Jxg" eventType="touchUpInside" id="YZw-OZ-jZo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="e9r-nk-ZVu"/>
                     <connections>
-                        <outlet property="asd" destination="Vbs-LM-jun" id="WNb-qN-anE"/>
                         <outlet property="refreshNearbyPerformances" destination="Vbs-LM-jun" id="eMn-Fh-oZU"/>
                     </connections>
                 </viewController>
@@ -197,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZ4-dF-3qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="-133"/>
+            <point key="canvasLocation" x="1138" y="-429"/>
         </scene>
         <!--Performer Login View Controller-->
         <scene sceneID="2RY-8H-4UL">
