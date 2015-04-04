@@ -26,7 +26,7 @@
 		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
 		D01FD9FA1AD0343A00C999C6 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */; };
-		D01FD9FC1AD0687200C999C6 /* PerformerInfoViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = D01FD9FB1AD0687200C999C6 /* PerformerInfoViewController.swift */; };
+		D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */; };
 		D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 		D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
-		D01FD9FB1AD0687200C999C6 /* PerformerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerInfoViewController.swift; sourceTree = "<group>"; };
+		D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerInfoViewController.swift; sourceTree = "<group>"; };
 		D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,7 +197,7 @@
 			children = (
 				D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */,
 				D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */,
-				D01FD9FB1AD0687200C999C6 /* PerformerInfoViewController.swift */,
+				D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */,
 				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
 				8E5E40191AD011CE0034415C /* SpectatorViewController.swift */,
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
@@ -285,7 +285,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D01FD9FC1AD0687200C999C6 /* PerformerInfoViewController.swift in Resources */,
 				8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */,
 				8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */,
 				8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */,
@@ -309,6 +308,7 @@
 				8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */,
 				8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */,
 				8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */,
+				D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */,
 				8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */,
 				8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */,
 				D01FD9FA1AD0343A00C999C6 /* PerformanceViewController.swift in Sources */,

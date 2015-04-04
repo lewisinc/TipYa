@@ -10,6 +10,10 @@ import UIKit
 
 class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var infoView: UIView!
+    
+    @IBOutlet weak var aboutField: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +23,11 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func touchesBegan(touches:NSSet, event:UIEvent){
+            self.aboutField.resignFirstResponder()
+        
     }
     
     
