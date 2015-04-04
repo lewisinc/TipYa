@@ -190,6 +190,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gJJ-hN-4Ak" kind="modal" modalTransitionStyle="flipHorizontal" id="jCl-Dt-re9"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yri-Cv-2xC">
                                 <rect key="frame" x="56" y="414" width="209" height="30"/>
@@ -212,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="708" y="607"/>
         </scene>
-        <!--View Controller-->
+        <!--Performance View Controller-->
         <scene sceneID="rfJ-Z3-awg">
             <objects>
-                <viewController id="gJJ-hN-4Ak" sceneMemberID="viewController">
+                <viewController id="gJJ-hN-4Ak" customClass="PerformanceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YzH-iF-eEP"/>
                         <viewControllerLayoutGuide type="bottom" id="uqE-8M-Lud"/>
@@ -228,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayC-BW-a9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="620"/>
+            <point key="canvasLocation" x="1116" y="607"/>
         </scene>
     </scenes>
     <resources>
