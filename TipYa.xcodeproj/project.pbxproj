@@ -26,6 +26,7 @@
 		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
 		D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */; };
+		D03012881AD02793001F8549 /* PerformanceViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = D03012871AD02793001F8549 /* PerformanceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 		D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerLoginViewController.swift; sourceTree = "<group>"; };
+		D03012871AD02793001F8549 /* PerformanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */,
+				D03012871AD02793001F8549 /* PerformanceViewController.swift */,
 				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
 				8E5E40191AD011CE0034415C /* SpectatorViewController.swift */,
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
@@ -281,6 +284,7 @@
 			files = (
 				8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */,
 				8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */,
+				D03012881AD02793001F8549 /* PerformanceViewController.swift in Resources */,
 				8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
