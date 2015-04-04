@@ -25,6 +25,7 @@
 		8EBBCC6F1ACFEB6000DD76AC /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC6E1ACFEB6000DD76AC /* Firebase.framework */; };
 		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
+		D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipYa-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */,
 				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
 				8E5E40191AD011CE0034415C /* SpectatorViewController.swift */,
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
@@ -304,6 +307,7 @@
 				8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */,
 				8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */,
 				8E5E40201AD01AD00034415C /* PerformerIdentity.swift in Sources */,
+				D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
