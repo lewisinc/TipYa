@@ -21,6 +21,8 @@
 		8EBBCC6F1ACFEB6000DD76AC /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC6E1ACFEB6000DD76AC /* Firebase.framework */; };
 		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
+		D0A864201ACFFB180040A225 /* Performer.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A8641F1ACFFB180040A225 /* Performer.xib */; };
+		D0A864221ACFFD070040A225 /* Spectator.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A864211ACFFD070040A225 /* Spectator.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipYa-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		D0A8641F1ACFFB180040A225 /* Performer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Performer.xib; path = ../Performer.xib; sourceTree = "<group>"; };
+		D0A864211ACFFD070040A225 /* Spectator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Spectator.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				8EBBCC761ACFECF300DD76AC /* Firebase */,
 				8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */,
 				8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */,
+				D0A8641F1ACFFB180040A225 /* Performer.xib */,
+				D0A864211ACFFD070040A225 /* Spectator.xib */,
 				8EBBCC311ACFC99900DD76AC /* Images.xcassets */,
 				8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */,
 				8EBBCC281ACFC99900DD76AC /* Supporting Files */,
@@ -256,6 +262,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A864201ACFFB180040A225 /* Performer.xib in Resources */,
+				D0A864221ACFFD070040A225 /* Spectator.xib in Resources */,
 				8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */,
 				8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */,
 				8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */,
