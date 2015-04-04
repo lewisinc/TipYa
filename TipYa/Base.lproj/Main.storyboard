@@ -24,7 +24,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" id="YDL-8x-Oza"/>
+                                    <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="crossDissolve" id="YDL-8x-Oza"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,7 +96,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qrv-CZ-Lb4" kind="modal" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="gyC-2n-BZc"/>
+                                    <segue destination="qrv-CZ-Lb4" kind="modal" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="gyC-2n-BZc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -405,6 +405,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="YDL-8x-Oza"/>
+        <segue reference="Zfi-YB-jtK"/>
     </inferredMetricsTieBreakers>
 </document>
