@@ -48,17 +48,26 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
             error, authData in
             if (error != nil) {
                 // an error occurred while attempting login
+                let alert = UIAlertView()
+                alert.title = "Error"
+                
                 if let errorCode = FAuthenticationError(rawValue: error.code) {
                     switch (errorCode) {
                     case .UserDoesNotExist:
                         println("Handle invalid user")
+                        alert.message = "User does not exist"
                     case .InvalidEmail:
                         println("Handle invalid email")
+                        alert.message = "Invalid Login"
                     case .InvalidPassword:
                         println("Handle invalid password")
+                        alert.message = "Invalid Login"
                     default:
                         println("Handle default situation")
+                        alert.message = "Something went wrong"
                     }
+                    alert.addButtonWithTitle("OK")
+                    alert.show()
                 }
             } else {
                 // User is logged in
@@ -69,15 +78,25 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signup(sender: AnyObject) {
+        let alert = UIAlertView()
+
         accounts.createUser(usernameField.text, password: passwordField.text,
             withValueCompletionBlock: { error, result in
                 
                 if error != nil {
                     // There was an error creating the account
                     println("Error occurred in Account Creation")
+                    alert.title = "Error"
+                    alert.message = "Try Again"
+                    alert.addButtonWithTitle("OK")
+                    alert.show()
                 } else {
                     let uid = result["uid"] as? String
                     println("Successfully created user account with uid: \(uid)")
+                    alert.title = "Success"
+                    alert.message = "Please Login"
+                    alert.addButtonWithTitle("OK")
+                    alert.show()
                 }
         })
     }
@@ -86,7 +105,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
         
         if (segue.identifier == "loginComplete") {
             let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController
-            viewController.authData = sender as FAuthData
+            viewController.authData = sender as? FAuthData
             // pass data to next view
         }
     }
