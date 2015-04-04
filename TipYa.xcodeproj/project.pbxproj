@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40171AD011AA0034415C /* WelcomeViewController.swift */; };
+		8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40191AD011CE0034415C /* SpectatorViewController.swift */; };
+		8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */; };
 		8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */; };
-		8EBBCC2D1ACFC99900DD76AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */; };
 		8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */; };
 		8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC311ACFC99900DD76AC /* Images.xcassets */; };
 		8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */; };
@@ -36,10 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E5E40171AD011AA0034415C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8E5E40191AD011CE0034415C /* SpectatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorViewController.swift; sourceTree = "<group>"; };
+		8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectateOnPerformerViewController.swift; sourceTree = "<group>"; };
 		8EBBCC251ACFC99900DD76AC /* TipYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBBCC291ACFC99900DD76AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EBBCC2F1ACFC99900DD76AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8EBBCC311ACFC99900DD76AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8EBBCC341ACFC99900DD76AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -177,7 +181,9 @@
 		8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8EBBCC2C1ACFC99900DD76AC /* ViewController.swift */,
+				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
+				8E5E40191AD011CE0034415C /* SpectatorViewController.swift */,
+				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -285,7 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */,
-				8EBBCC2D1ACFC99900DD76AC /* ViewController.swift in Sources */,
+				8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */,
+				8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */,
+				8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */,
 				8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */,
 				8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */,
 			);
