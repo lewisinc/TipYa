@@ -218,7 +218,7 @@
         <!--Performance View Controller-->
         <scene sceneID="rfJ-Z3-awg">
             <objects>
-                <viewController id="gJJ-hN-4Ak" customClass="PerformanceViewController" sceneMemberID="viewController">
+                <viewController id="gJJ-hN-4Ak" customClass="PerformanceViewController" customModule="TipYa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YzH-iF-eEP"/>
                         <viewControllerLayoutGuide type="bottom" id="uqE-8M-Lud"/>
@@ -226,6 +226,17 @@
                     <view key="view" contentMode="scaleToFill" id="HAS-zL-rt4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lex-IA-HyF">
+                                <rect key="frame" x="0.0" y="251" width="320" height="568"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCc-lA-VWy">
+                                <rect key="frame" x="69" y="20" width="182" height="182"/>
+                                <state key="normal" image="Circle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -235,6 +246,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Circle" width="1024" height="1024"/>
         <image name="fogKFiS" width="128" height="110"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
