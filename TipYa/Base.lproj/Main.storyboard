@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -107,7 +107,7 @@
         <!--Spectator View Controller-->
         <scene sceneID="e6k-4u-nMP">
             <objects>
-                <viewController id="119-DM-Jxg" customClass="SpectatorViewController" sceneMemberID="viewController">
+                <viewController id="119-DM-Jxg" customClass="SpectatorViewController" customModule="TipYa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gp-sx-3kl"/>
                         <viewControllerLayoutGuide type="bottom" id="R3e-hD-eQX"/>
@@ -136,7 +136,7 @@
                                 <rect key="frame" x="0.0" y="101" width="320" height="284"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="39" id="deU-Fa-ldu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="39" id="deU-Fa-ldu" customClass="SpectatorTableViewCell" customModule="TipYa" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deU-Fa-ldu" id="Rm1-LT-30A">
@@ -149,6 +149,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="e9r-nk-ZVu"/>
+                    <connections>
+                        <outlet property="asd" destination="Vbs-LM-jun" id="WNb-qN-anE"/>
+                        <outlet property="refreshNearbyPerformances" destination="Vbs-LM-jun" id="eMn-Fh-oZU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha7-ld-nVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
