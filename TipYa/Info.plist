@@ -43,5 +43,24 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string>	&lt;key&gt;CFBundleIconFiles&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;Icon.png&lt;/string&gt;
+		&lt;string&gt;Icon@2x.png&lt;/string&gt;
+		&lt;string&gt;Icon-60.png&lt;/string&gt;
+		&lt;string&gt;Icon-60@2x.png&lt;/string&gt;
+		&lt;string&gt;Icon-72.png&lt;/string&gt;
+		&lt;string&gt;Icon-72@2x.png&lt;/string&gt;
+		&lt;string&gt;Icon-76.png&lt;/string&gt;
+		&lt;string&gt;Icon-76@2x.png&lt;/string&gt;
+		&lt;string&gt;Icon-Small-50.png&lt;/string&gt;
+		&lt;string&gt;Icon-Small-50@2x.png&lt;/string&gt;
+		&lt;string&gt;Icon-Spotlight-40.png&lt;/string&gt;
+		&lt;string&gt;Icon-Spotlight-40@2x.png&lt;/string&gt;
+		&lt;string&gt;Icon-Small.png&lt;/string&gt;
+		&lt;string&gt;Icon-Small@2x.png&lt;/string&gt;
+	&lt;/array&gt;
+</string>
 </dict>
 </plist>
