@@ -17,29 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltB-ed-V57">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Back" id="weP-Jz-rzf">
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="partialCurl" id="x0Q-z1-TLA"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nt-go-eej">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="YDL-8x-Oza"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ha4-Kn-zhM" firstAttribute="top" secondItem="ltB-ed-V57" secondAttribute="bottom" id="Ogf-jp-G0A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ltB-ed-V57" secondAttribute="trailing" constant="-16" id="QHg-Fn-L4w"/>
-                            <constraint firstItem="ltB-ed-V57" firstAttribute="leading" secondItem="kyq-v1-Tkf" secondAttribute="leadingMargin" constant="-16" id="nuY-iw-ywv"/>
+                            <constraint firstItem="ha4-Kn-zhM" firstAttribute="top" secondItem="1nt-go-eej" secondAttribute="bottom" id="ExZ-tw-2R3"/>
+                            <constraint firstItem="1nt-go-eej" firstAttribute="top" secondItem="1ig-OX-4Ee" secondAttribute="bottom" id="YAh-L0-Pw3"/>
+                            <constraint firstAttribute="trailing" secondItem="1nt-go-eej" secondAttribute="trailing" id="fgx-xh-KY1"/>
+                            <constraint firstItem="1nt-go-eej" firstAttribute="leading" secondItem="kyq-v1-Tkf" secondAttribute="leading" id="nhl-D8-3Ao"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ydu-lb-pGp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1a-54-R5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286" y="1085"/>
+            <point key="canvasLocation" x="-176" y="991"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -404,6 +405,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="x0Q-z1-TLA"/>
+        <segue reference="YDL-8x-Oza"/>
     </inferredMetricsTieBreakers>
 </document>
