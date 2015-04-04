@@ -10,8 +10,13 @@ import Foundation
 import CoreBluetooth
 
 // Has performance data to share
+// This class is a CBPeripheralManager, managing itself essentially.
+// This class also performs callbacks on behalf of a CBCentralManager as its delegate.
 class TJBluetoothPerformer: CBPeripheralManager, CBCentralManagerDelegate {
     var discoveredCentrals:NSArray?
+    
+    
+// BELOW: Delegate Methods and their implementations
     
     /* Discovered a nearby peripheral device
     1. Compare CBUUIDs
@@ -79,7 +84,13 @@ class TJBluetoothPerformer: CBPeripheralManager, CBCentralManagerDelegate {
 }
 
 // Requests all nearby peripherals performance data
+// This class is a CBCentralManager and performs callback actions on behalf of a CBPeripheral object as its delegate.
 class TJBluetoothSpectator: CBCentralManager, CBPeripheralDelegate {
+    
+    
+    
+// BELOW: Delegate Methods and their implementations
+
     var discoveredPeripherals:NSArray?
     
     /* Invoked when you discover the peripheral’s available services
