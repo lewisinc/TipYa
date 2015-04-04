@@ -36,6 +36,15 @@ class WelcomeViewController: UIViewController {
         
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+
+        if (segue.identifier == "presenterLoggedIn") {
+            let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController
+            viewController.authData = sender as FAuthData
+            // pass data to next view
+        }
+    }
     /*
     // MARK: - Navigation
 
