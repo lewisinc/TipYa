@@ -213,6 +213,5 @@ class TJBluetoothSpectator: CBCentralManager, CBPeripheralDelegate {
         didModifyServices invalidatedServices: [AnyObject]!) {
             
     }
-}
 
-*/
+*/}
