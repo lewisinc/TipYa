@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1a-54-R5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-176" y="991"/>
+            <point key="canvasLocation" x="-250" y="489"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -122,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272" y="277"/>
+            <point key="canvasLocation" x="196" y="1199"/>
         </scene>
         <!--Spectator View Controller-->
         <scene sceneID="e6k-4u-nMP">
@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha7-ld-nVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="-429"/>
+            <point key="canvasLocation" x="-250" y="1909"/>
         </scene>
         <!--Spectate On Performer View Controller-->
         <scene sceneID="DEP-Bv-2wT">
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZ4-dF-3qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138" y="-429"/>
+            <point key="canvasLocation" x="-250" y="-593"/>
         </scene>
         <!--Performer Login View Controller-->
         <scene sceneID="2RY-8H-4UL">
@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkb-Vw-Mo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="620"/>
+            <point key="canvasLocation" x="632" y="489"/>
         </scene>
         <!--Performance View Controller-->
         <scene sceneID="rfJ-Z3-awg">
@@ -334,6 +334,7 @@
                                     </containerView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="uxB-0B-cmA" secondAttribute="centerX" id="4K1-qN-mre"/>
                                     <constraint firstAttribute="bottom" secondItem="uxB-0B-cmA" secondAttribute="bottom" id="KvU-Wd-fT2"/>
                                     <constraint firstItem="uxB-0B-cmA" firstAttribute="top" secondItem="aB3-eo-lm2" secondAttribute="top" id="Tyt-lR-dVC"/>
                                     <constraint firstItem="uxB-0B-cmA" firstAttribute="leading" secondItem="aB3-eo-lm2" secondAttribute="leading" id="m0M-fc-1SY"/>
@@ -373,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayC-BW-a9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="277"/>
+            <point key="canvasLocation" x="1270" y="489"/>
         </scene>
         <!--Performer Info View Controller-->
         <scene sceneID="Mpc-QK-Pn2">
@@ -384,51 +385,99 @@
                         <viewControllerLayoutGuide type="bottom" id="QoK-Zb-tgg"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="WM9-3G-7Bu">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eli-sR-zeH">
-                                <rect key="frame" x="0.0" y="97" width="500" height="256"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Write a short description here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eli-sR-zeH">
+                                <rect key="frame" x="16" y="112" width="288" height="168"/>
                                 <color key="backgroundColor" red="0.99215692281723022" green="0.9960784912109375" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="Tyx-gn-Ohb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="Z0n-D0-n38"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="AB7-I9-Ira"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-MO-AuW">
-                                <rect key="frame" x="159" y="52" width="182" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose a name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-MO-AuW">
+                                <rect key="frame" x="16" y="32" width="288" height="48"/>
                                 <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="LSk-it-DLK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="TTk-XS-vSq"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Youtube channel..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pP-Ts-QHf">
+                                <rect key="frame" x="16" y="354" width="288" height="48"/>
+                                <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="B3y-tf-rbp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="eUI-t0-UqQ"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Facebook..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6P-0U-zI5">
+                                <rect key="frame" x="16" y="426" width="288" height="48"/>
+                                <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="KM9-sT-GWr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="E8T-Yg-VnR"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Website..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcq-cB-rMN">
+                                <rect key="frame" x="16" y="293" width="288" height="48"/>
+                                <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Z6p-Fm-P4n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="2mk-bm-T0b"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eli-sR-zeH" firstAttribute="top" secondItem="PM8-MO-AuW" secondAttribute="bottom" constant="48" id="W6h-aT-8xo"/>
+                            <constraint firstAttribute="centerX" secondItem="xcq-cB-rMN" secondAttribute="centerX" id="3xL-pE-iI3"/>
+                            <constraint firstAttribute="centerX" secondItem="o6P-0U-zI5" secondAttribute="centerX" id="6Be-BB-N7g"/>
+                            <constraint firstItem="xcq-cB-rMN" firstAttribute="top" secondItem="eli-sR-zeH" secondAttribute="bottom" constant="32" id="7fZ-1b-QqT"/>
+                            <constraint firstAttribute="centerX" secondItem="0pP-Ts-QHf" secondAttribute="centerX" id="HCR-xh-qCp"/>
+                            <constraint firstAttribute="trailing" secondItem="PM8-MO-AuW" secondAttribute="trailing" constant="16" id="VKU-dq-ezW"/>
+                            <constraint firstItem="eli-sR-zeH" firstAttribute="top" secondItem="PM8-MO-AuW" secondAttribute="bottom" constant="32" id="W6h-aT-8xo"/>
+                            <constraint firstItem="o6P-0U-zI5" firstAttribute="top" secondItem="0pP-Ts-QHf" secondAttribute="bottom" constant="32" id="XZt-74-e5p"/>
                             <constraint firstItem="PM8-MO-AuW" firstAttribute="top" secondItem="1yw-k1-6Pn" secondAttribute="bottom" constant="32" id="anv-qv-BSJ"/>
-                            <constraint firstItem="eli-sR-zeH" firstAttribute="leading" secondItem="WM9-3G-7Bu" secondAttribute="leading" id="b13-sF-y7l"/>
-                            <constraint firstAttribute="trailing" secondItem="eli-sR-zeH" secondAttribute="trailing" id="lSX-Yh-Q1c"/>
+                            <constraint firstItem="eli-sR-zeH" firstAttribute="leading" secondItem="WM9-3G-7Bu" secondAttribute="leading" constant="16" id="b13-sF-y7l"/>
+                            <constraint firstItem="PM8-MO-AuW" firstAttribute="leading" secondItem="WM9-3G-7Bu" secondAttribute="leading" constant="16" id="b3A-CA-ZHG"/>
+                            <constraint firstAttribute="trailing" secondItem="eli-sR-zeH" secondAttribute="trailing" constant="16" id="lSX-Yh-Q1c"/>
+                            <constraint firstItem="0pP-Ts-QHf" firstAttribute="top" secondItem="xcq-cB-rMN" secondAttribute="bottom" constant="32" id="lni-Bs-ZRu"/>
                             <constraint firstAttribute="centerX" secondItem="PM8-MO-AuW" secondAttribute="centerX" id="mXf-iI-Rwf"/>
                             <constraint firstAttribute="centerX" secondItem="eli-sR-zeH" secondAttribute="centerX" id="uBo-6y-t9J"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="500" height="800"/>
+                    <size key="freeformSize" width="320" height="512"/>
                     <connections>
                         <outlet property="infoView" destination="WM9-3G-7Bu" id="afF-qW-sjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1F-Df-1Wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="1425"/>
+            <point key="canvasLocation" x="1270" y="1227"/>
         </scene>
     </scenes>
     <resources>
