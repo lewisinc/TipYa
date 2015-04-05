@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -415,7 +415,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="pwH-kC-bdw"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="6Wm-yX-aV7"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="POZ-0x-nbj"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose a name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-MO-AuW">
@@ -427,6 +429,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="J6c-xE-erI"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="6l2-L7-8Zs"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="b6i-5X-gn3"/>
                                 </connections>
                             </textField>

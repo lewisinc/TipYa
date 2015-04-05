@@ -25,19 +25,29 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         user = accounts.childByAppendingPath(authData!.uid)
         user!.observeSingleEventOfType(.Value, withBlock: { snapshot in
-
-        var json = snapshot.value as NSDictionary!
+            if (snapshot.hasChildren() == true) {
+                var json = snapshot.value as NSDictionary!
+                
+                if (json?.valueForKey("image")? != nil) {
+                    let base64String  = json!.valueForKey("image")! as String
+            
+                
+                //decode image and mask it, put it in button
+                let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(0))!
+                var decodedimage = UIImage(data: decodedData)!
+                self.profImage = decodedimage as UIImage!
+                
+                self.imageButton.imageView?.image =  self.maskImage(self.profImage!, maskImage: UIImage(named: "Circle_Mask")!)
+                }
+            }
             
             
-            //grab image
+        })
         
         
-    })
-
-    
         //load info from firebase
         println(authData!.uid)
-    
+        
     }
     
     
@@ -45,7 +55,7 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let mask = UIImage(named: "Circle_Mask")
@@ -60,8 +70,10 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         var imageData = UIImagePNGRepresentation(profImage)
         
+        let encodedString = imageData.base64EncodedStringWithOptions(.allZeros)
+        //let encodedString = imageData.base64EncodedStringWithOptions(nil)
         
-        user!.childByAppendingPath("image").setValue("\(imageData)")
+        user!.childByAppendingPath("image").setValue(encodedString)
         dismissViewControllerAnimated(true, completion: nil) //5
     }
     @IBAction func pickImage(sender: AnyObject) {
@@ -99,12 +111,12 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         var maskedImageRef = CGImageCreateWithMask(image.CGImage, mask)
         
         var maskedImage = UIImage(CGImage: maskedImageRef)
-
+        
         
         return maskedImage!
         
     }
-        
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "infoPane") {
             let viewController:PerformerInfoViewController = segue.destinationViewController as PerformerInfoViewController

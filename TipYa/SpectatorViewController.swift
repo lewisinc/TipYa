@@ -37,8 +37,8 @@ class SpectatorViewController: UIViewController {
         
         var imageOne:UIImage = UIImage(named: "happy-face")!
         var uuidOne:CBUUID = CBUUID(string: "9A2365C7-B3D3-449D-AF84-2381EC4E60C3")
-        foundPerformers?.append(PerformerIdentity(name: "Charles", image: imageOne, text: "I'm a real band, honest", uuidKey: uuidOne))
-        
+        foundPerformers?.append(PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil))
+    
     }
     
     func addCellToTableView(image:UIImage!, name:String!) {
