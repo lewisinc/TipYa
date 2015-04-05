@@ -16,12 +16,30 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
     var authData: FAuthData?
     
     var profImage: UIImage?
-    
+    var user: Firebase?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         imagePicker.delegate = self
+        
+        user = accounts.childByAppendingPath(authData!.uid)
+        user!.observeSingleEventOfType(.Value, withBlock: { snapshot in
+
+        var json = snapshot.value as NSDictionary!
+            
+            let base64String  = json!.valueForKey("description")! as String
+            //grab image
+//            let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(0))!
+//            var decodedimage = UIImage(data: decodedData)!
+//            self.profImage = decodedimage as UIImage!
+        
+        
+    })
+
+    
+        //load info from firebase
+        println(authData!.uid)
     
     }
     
@@ -42,6 +60,13 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         imageButton.imageView?.image = profImage //4
         imageButton.imageView?.highlightedImage = profImage //4
+        
+        var imageData = UIImagePNGRepresentation(profImage)
+        
+        //let encodedString = imageData.base64EncodedStringWithOptions(.allZeros)
+        let encodedString = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+                
+        user!.childByAppendingPath("image").setValue(encodedString)
         dismissViewControllerAnimated(true, completion: nil) //5
     }
     @IBAction func pickImage(sender: AnyObject) {
@@ -83,6 +108,14 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         return maskedImage!
         
+    }
+        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "infoPane") {
+            let viewController:PerformerInfoViewController = segue.destinationViewController as PerformerInfoViewController
+            viewController.authData = self.authData
+            // pass data to next view
+        }
     }
     
 }

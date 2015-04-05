@@ -28,6 +28,7 @@
 		D01FD9FA1AD0343A00C999C6 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */; };
 		D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */; };
 		D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */; };
+		D05DE26F1AD0E80C00632353 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05DE26E1AD0E80C00632353 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerInfoViewController.swift; sourceTree = "<group>"; };
 		D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerLoginViewController.swift; sourceTree = "<group>"; };
+		D05DE26E1AD0E80C00632353 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */,
+				D05DE2701AD0E82200632353 /* SwiftyJSON */,
 				8EBBCC7A1ACFED0600DD76AC /* Bluetooth */,
 				8EBBCC761ACFECF300DD76AC /* Firebase */,
 				8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */,
@@ -203,6 +206,14 @@
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D05DE2701AD0E82200632353 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				D05DE26E1AD0E80C00632353 /* SwiftyJSON.swift */,
+			);
+			name = SwiftyJSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 				8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */,
 				8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */,
 				8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */,
+				D05DE26F1AD0E80C00632353 /* SwiftyJSON.swift in Sources */,
 				D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */,
 				8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */,
 				8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */,
