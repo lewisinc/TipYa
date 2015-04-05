@@ -9,172 +9,69 @@
 import Foundation
 import CoreBluetooth
 
-// Has performance data to share
-// This class is a CBPeripheralManager, managing itself essentially.
-// This class also performs callbacks on behalf of a CBCentralManager as its delegate.
-class TJBluetoothPerformer: CBPeripheralManager, CBCentralManagerDelegate {
-    var discoveredCentrals:NSArray?
+// An Application level UUID - "Is this device running our app?"
+var appUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD540")
+
+// UUIDs for a performer - "Are you a performer? - Let's get your services, etc."
+var performerIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD544")
+var performerServicesUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD545")
+var performerNameCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD546")
+var performerBiographyCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD547")
+var performerImageCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD548")
+
+// UUIDs for a spectator - "You don't need to interact with a spectator."
+var spectatorUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD550")
+
+
+// First list all our CBUUIDs
+
+class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
+    
+    var peripheralManager:CBPeripheralManager?
+    var myIdentity:PerformerIdentity?
+    var bluetoothServices:CBMutableService?                 // All available services
+    var nameCharacteristic:CBMutableCharacteristic?         // Performers name
+    var biographyCharacteristic:CBMutableCharacteristic?    // Short bio
+    var chosenImageCharacteristic:CBMutableCharacteristic?  // Small photo < 10mb
+    var identityKey:CBMutableCharacteristic?                // Identity key for Firebase
+    
+    // Start up a peripheral manager object
+    // also builds our broadcastable services
+    override init() {
+        super.init()
+        peripheralManager = CBPeripheralManager(delegate:self, queue:nil)
+        bluetoothServices = CBMutableService(type: appUUIDKey, primary: true)
+    }
+    
+    // Set up services and characteristics on your local peripheral
+    func configureUtilityForIdentity(identity:PerformerIdentity!) {
+        myIdentity = identity
+        // Build the name characteristic
+        nameCharacteristic = CBMutableCharacteristic(type: performerNameCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: myIdentity?.name?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
+        
+        // Build the biography characteristic
+        biographyCharacteristic = CBMutableCharacteristic(type: performerBiographyCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: myIdentity?.bioText?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
+        
+        // Build the image characteristic
+        chosenImageCharacteristic = CBMutableCharacteristic(type: performerImageCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: nil, permissions: CBAttributePermissions.Readable)
+    }
+    
+    // Publish your services and characteristics to your device’s local database Advertise your services
+    
+    // Respond to read and write requests from a connected central
+    // Send updated characteristic values to subscribed centrals
     
     
-// BELOW: Delegate Methods and their implementations
+    // Mark: - CBPeripheralManagerDelegate Methods
     
-    /* Discovered a nearby peripheral device
-    1. Compare CBUUIDs
-    2. Other stuff
-    ...
-    ?. If all is good, proceed to connect
-    */
-    func centralManager(central: CBCentralManager!,
-        didDiscoverPeripheral peripheral: CBPeripheral!,
-        advertisementData: [NSObject : AnyObject]!,
-        RSSI: NSNumber!) {
-            // If correct peripheral object:
-            
-    }
-    /* Successfully connected to a peripheral
-    - needs description
-    */
-    func centralManager(central: CBCentralManager!, didConnectPeripheral peripheral: CBPeripheral!) {
-        
-        
-    }
-    /* Disconnected a peripheral
-    - needs description
-    */
-    func centralManager(central: CBCentralManager!,
-        didDisconnectPeripheral peripheral: CBPeripheral!,
-        error: NSError!) {
-            
-    }
-    /* Failed to connect to peripheral
-    - needs description
-    */
-    func centralManager(central: CBCentralManager!,
-        didFailToConnectPeripheral peripheral: CBPeripheral!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when the CentralManager retrieves a list of CONNECTED peripherals
-    - needs description
-    */
-    func centralManager(central: CBCentralManager!,
-        didRetrieveConnectedPeripherals peripherals: [AnyObject]!) {
-            
-    }
-    /* Invoked when the CentralManager retrieves a list of KNOWN peripherals
-    - needs description
-    */
-    func centralManager(central: CBCentralManager!,
-        didRetrievePeripherals peripherals: [AnyObject]!) {
-            
-    }
-    /* Invoked when about to restore CentralManager to previous state
-    - needs description
-    */
-    func centralManager(central: CBCentralManager!,
-        willRestoreState dict: [NSObject : AnyObject]!) {
-            
-    }
-    /* Invoked when the central manager’s state is updated. (required)
-    - needs description
-    */
-    func centralManagerDidUpdateState(central: CBCentralManager!) {
-        
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
+        println(peripheral.state)
     }
 }
 
-// Requests all nearby peripherals performance data
-// This class is a CBCentralManager and performs callback actions on behalf of a CBPeripheral object as its delegate.
-class TJBluetoothSpectator: CBCentralManager, CBPeripheralDelegate {
-    
-    
-    
-// BELOW: Delegate Methods and their implementations
 
-    var discoveredPeripherals:NSArray?
-    
-    /* Invoked when you discover the peripheral’s available services
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didDiscoverServices error: NSError!) {
-            
-    }
-    /* Invoked when you discover included services within a specified service
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didDiscoverIncludedServicesForService service: CBService!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when you discover the characteristics of a specified service
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didDiscoverCharacteristicsForService service: CBService!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when you discover the descriptors of a specified characteristic
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didDiscoverDescriptorsForCharacteristic characteristic: CBCharacteristic!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when you retrieve a specified characteristic’s value, or when the peripheral device notifies your app that the characteristic’s value has changed
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didUpdateValueForCharacteristic characteristic: CBCharacteristic!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when you retrieve a specified characteristic descriptor's value
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didUpdateValueForDescriptor descriptor: CBDescriptor!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when you write data to a characteristic’s value
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didWriteValueForCharacteristic characteristic: CBCharacteristic!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when you write data to a characteristic descriptor’s value
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didWriteValueForDescriptor descriptor: CBDescriptor!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when the peripheral receives a request to start or stop providing notifications for a specified characteristic’s value
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didUpdateNotificationStateForCharacteristic characteristic: CBCharacteristic!,
-        error: NSError!) {
-            
-    }
-    /* Invoked when a peripheral’s name changes
-    - needs description
-    */
-    func peripheralDidUpdateName(peripheral: CBPeripheral!) {
-        
-    }
-    /* Invoked when a peripheral’s services have changed
-    - needs description
-    */
-    func peripheral(peripheral: CBPeripheral!,
-        didModifyServices invalidatedServices: [AnyObject]!) {
-            
+class SpectatorUtility: NSObject, CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(central: CBCentralManager!) {
+        println(central.state)
     }
 }

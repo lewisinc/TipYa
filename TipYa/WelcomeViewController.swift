@@ -21,7 +21,33 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func checkPerformerAuth(sender: AnyObject) {
+        
+        rootReference.observeAuthEventWithBlock({ authData in
+            if authData != nil {
+                // user authenticated with Firebase
+                
+                println(authData)
+            self.performSegueWithIdentifier("presenterLoggedIn", sender: authData)
+            } else {
+                
+                println("Not Logged In")
 
+                self.performSegueWithIdentifier("performerLogin", sender: authData)
+            }
+        })
+        
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        
+        if (segue.identifier == "presenterLoggedIn") {
+            let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController
+            viewController.authData = sender as? FAuthData
+            // pass data to next view
+        }
+    }
     /*
     // MARK: - Navigation
 
