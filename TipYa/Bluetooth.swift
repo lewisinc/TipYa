@@ -28,11 +28,14 @@ var spectatorUUIDKey = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD550")
 class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     
     var peripheralManager:CBPeripheralManager?
-    var myIdentity:PerformerIdentity?
+    var myIdentity:PerformerIdentity?           // Full Performer Identity
     var bluetoothServices:CBMutableService?                 // All available services
     var nameCharacteristic:CBMutableCharacteristic?         // Performers name
     var biographyCharacteristic:CBMutableCharacteristic?    // Short bio
     var chosenImageCharacteristic:CBMutableCharacteristic?  // Small photo < 10mb
+    var facebookCharacteristic:CBMutableCharacteristic?     // Facebook
+    var youtubeCharacteristic:CBMutableCharacteristic?      // Youtube
+    var miscWebsiteCharacteristic:CBMutableCharacteristic?  // Other Miscellaneous Website
     var identityKey:CBMutableCharacteristic?                // Identity key for Firebase
     
     // Start up a peripheral manager object
@@ -46,14 +49,40 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     // Set up services and characteristics on your local peripheral
     func configureUtilityForIdentity(identity:PerformerIdentity!) {
         myIdentity = identity
-        // Build the name characteristic
-        nameCharacteristic = CBMutableCharacteristic(type: performerNameCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: myIdentity?.name?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
         
-        // Build the biography characteristic
-        biographyCharacteristic = CBMutableCharacteristic(type: performerBiographyCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: myIdentity?.bioText?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
+        // Build the NAME characteristic
+        if (identity.name != nil) {
+            nameCharacteristic =
+                CBMutableCharacteristic(type: performerNameCharacteristicUUID,
+                    properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                    value: myIdentity?.name?.dataUsingEncoding(NSUTF8StringEncoding,
+                        allowLossyConversion: false),
+                    permissions: CBAttributePermissions.Readable)
+        }
         
-        // Build the image characteristic
-        chosenImageCharacteristic = CBMutableCharacteristic(type: performerImageCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: nil, permissions: CBAttributePermissions.Readable)
+        // Build the BIOGRAPHY characteristic
+        if (identity.bioText != nil) {
+            biographyCharacteristic = CBMutableCharacteristic(type: performerBiographyCharacteristicUUID,
+                properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                value: myIdentity?.bioText?.dataUsingEncoding(NSUTF8StringEncoding,
+                    allowLossyConversion: false),
+                permissions: CBAttributePermissions.Readable)
+        }
+        
+        // Build the IMAGE characteristic
+        if (identity.image != nil) {
+            chosenImageCharacteristic = CBMutableCharacteristic(type: performerImageCharacteristicUUID,
+                properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                value: nil,
+                permissions: CBAttributePermissions.Readable)
+        }
+        
+        // Build the FACEBOOK characteristic
+        
+        // Build the YOUTUBE characteristic
+        
+        // Build the miscellaneous WEBSITE characteristic
+        
     }
     
     // Publish your services and characteristics to your device’s local database Advertise your services
