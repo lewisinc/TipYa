@@ -9,15 +9,11 @@
 import UIKit
 
 class PerformanceViewController:UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
-
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     @IBOutlet weak var imageButton: UIButton!
     let imagePicker = UIImagePickerController()
     
-    var authData: FAuthData;
+    var authData: FAuthData?
     
     
     override func viewDidLoad() {
