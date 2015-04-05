@@ -329,7 +329,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxB-0B-cmA">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="647"/>
                                         <connections>
-                                            <segue destination="quy-dY-h00" kind="embed" id="kIr-XW-Q7r"/>
+                                            <segue destination="quy-dY-h00" kind="embed" identifier="infoPane" id="kIr-XW-Q7r"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -398,7 +398,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="AB7-I9-Ira"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="6Wm-yX-aV7"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose a name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-MO-AuW">
@@ -410,7 +410,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="TTk-XS-vSq"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="b6i-5X-gn3"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Youtube channel..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pP-Ts-QHf">
@@ -472,7 +472,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="512"/>
                     <connections>
+                        <outlet property="descripField" destination="eli-sR-zeH" id="sx0-ws-XgG"/>
                         <outlet property="infoView" destination="WM9-3G-7Bu" id="afF-qW-sjD"/>
+                        <outlet property="nameField" destination="PM8-MO-AuW" id="gFT-v2-RTA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1F-Df-1Wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
