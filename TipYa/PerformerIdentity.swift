@@ -12,10 +12,14 @@ import Security
 
 class PerformerIdentity: NSObject {
     var name:String?
+    var background:String?
     var passHash:String?
     var image:UIImage?
     var bioText:String?
     var identityKey:CBUUID?
+    
+    override init(){
+    }
     
     init(name:String!, image:UIImage!, text:String!, uuidKey:CBUUID!) {
         super.init()

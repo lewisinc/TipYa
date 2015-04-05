@@ -16,12 +16,27 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
     var authData: FAuthData?
     
     var profImage: UIImage?
-    
+    var user: Firebase?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         imagePicker.delegate = self
+        
+        user = accounts.childByAppendingPath(authData!.uid)
+        user!.observeSingleEventOfType(.Value, withBlock: { snapshot in
+
+        var json = snapshot.value as NSDictionary!
+            
+            
+            //grab image
+        
+        
+    })
+
+    
+        //load info from firebase
+        println(authData!.uid)
     
     }
     
@@ -42,6 +57,11 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         imageButton.imageView?.image = profImage //4
         imageButton.imageView?.highlightedImage = profImage //4
+        
+        var imageData = UIImagePNGRepresentation(profImage)
+        
+        
+        user!.childByAppendingPath("image").setValue("\(imageData)")
         dismissViewControllerAnimated(true, completion: nil) //5
     }
     @IBAction func pickImage(sender: AnyObject) {
@@ -83,6 +103,14 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         return maskedImage!
         
+    }
+        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "infoPane") {
+            let viewController:PerformerInfoViewController = segue.destinationViewController as PerformerInfoViewController
+            viewController.authData = self.authData
+            // pass data to next view
+        }
     }
     
 }
