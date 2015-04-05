@@ -28,8 +28,11 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
 
         var json = snapshot.value as NSDictionary!
             
-            
+            let base64String  = json!.valueForKey("description")! as String
             //grab image
+//            let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(0))!
+//            var decodedimage = UIImage(data: decodedData)!
+//            self.profImage = decodedimage as UIImage!
         
         
     })
@@ -60,8 +63,10 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         var imageData = UIImagePNGRepresentation(profImage)
         
-        
-        user!.childByAppendingPath("image").setValue("\(imageData)")
+        //let encodedString = imageData.base64EncodedStringWithOptions(.allZeros)
+        let encodedString = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+                
+        user!.childByAppendingPath("image").setValue(encodedString)
         dismissViewControllerAnimated(true, completion: nil) //5
     }
     @IBAction func pickImage(sender: AnyObject) {
