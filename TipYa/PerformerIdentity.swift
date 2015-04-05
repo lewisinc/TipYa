@@ -19,7 +19,7 @@ class PerformerIdentity: NSObject {
     var miscWebsite:String?     // Other Miscellaneous Website
     var identityKey:CBUUID?
     
-    override init(){
+    override init() {
         super.init()
     }
     
