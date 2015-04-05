@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -398,7 +398,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="pwH-kC-bdw"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="6Wm-yX-aV7"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="POZ-0x-nbj"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose a name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-MO-AuW">
@@ -410,6 +412,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="J6c-xE-erI"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="6l2-L7-8Zs"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="b6i-5X-gn3"/>
                                 </connections>
                             </textField>
@@ -422,7 +426,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="aGJ-ev-apf"/>
                                     <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="eUI-t0-UqQ"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="lSq-jd-VDY"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Facebook..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6P-0U-zI5">
@@ -434,7 +440,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="3qz-fB-fCh"/>
                                     <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="E8T-Yg-VnR"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="kN5-x7-STZ"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Website..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcq-cB-rMN">
@@ -447,6 +455,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="2mk-bm-T0b"/>
+                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="irM-ID-BOJ"/>
+                                    <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="cm6-iS-ryk"/>
                                 </connections>
                             </textField>
                         </subviews>

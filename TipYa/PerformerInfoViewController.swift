@@ -29,12 +29,19 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
         
         user!.observeSingleEventOfType(.Value, withBlock: { snapshot in
             
-            self.json = snapshot.value as NSDictionary!
+            if (snapshot.hasChildren() == true) {
+                self.json = snapshot.value as NSDictionary!
             
-            self.nameField.text = self.json!.valueForKey("name")! as String
-            self.descripField.text  = self.json!.valueForKey("description")! as String
+                if (self.json?.valueForKey("name")? != nil) {
+                    self.nameField.text = self.json!.valueForKey("name")! as String
+                }
+                
+                if (self.json?.valueForKey("description")? != nil) {
+                    self.descripField.text  = self.json!.valueForKey("description")! as String
+                }
             
-            println(self.json!.valueForKey("name")!)
+                println(self.json!.valueForKey("name")!)
+            }
             
         })
         
