@@ -28,11 +28,13 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
 
         var json = snapshot.value as NSDictionary!
             
-            let base64String  = json!.valueForKey("description")! as String
+            let base64String  = json!.valueForKey("image")! as String
             //grab image
-//            let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(0))!
-//            var decodedimage = UIImage(data: decodedData)!
-//            self.profImage = decodedimage as UIImage!
+           let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(0))!
+           var decodedimage = UIImage(data: decodedData)!
+            self.profImage = decodedimage as UIImage!
+            
+            self.imageButton.imageView?.image =  self.maskImage(self.profImage!, maskImage: UIImage(named: "Circle_Mask")!)
         
         
     })
@@ -63,8 +65,8 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
         var imageData = UIImagePNGRepresentation(profImage)
         
-        //let encodedString = imageData.base64EncodedStringWithOptions(.allZeros)
-        let encodedString = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+        let encodedString = imageData.base64EncodedStringWithOptions(.allZeros)
+        //let encodedString = imageData.base64EncodedStringWithOptions(nil)
                 
         user!.childByAppendingPath("image").setValue(encodedString)
         dismissViewControllerAnimated(true, completion: nil) //5
