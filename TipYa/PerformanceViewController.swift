@@ -34,6 +34,7 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage //2
         imageButton.contentMode = .ScaleAspectFit //3
         imageButton.imageView?.image = chosenImage //4
+        imageButton.imageView?.highlightedImage = chosenImage //4
         dismissViewControllerAnimated(true, completion: nil) //5
     }
     @IBAction func pickImage(sender: AnyObject) {
@@ -47,6 +48,16 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        //upload to firebase
+        println("i've got an image");
+    }
+    
+    @IBAction func signOut(sender: AnyObject) {
+        rootReference.unauth()
+        self.performSegueWithIdentifier("signout", sender: sender)
+        
+    }
     
     
 }

@@ -214,4 +214,4 @@ class TJBluetoothSpectator: CBCentralManager, CBPeripheralDelegate {
             
     }
 
-*/}
+*/
