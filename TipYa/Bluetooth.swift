@@ -53,6 +53,8 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         biographyCharacteristic = CBMutableCharacteristic(type: performerBiographyCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: myIdentity?.bioText?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
         
         // Build the image characteristic
+        
+        
         chosenImageCharacteristic = CBMutableCharacteristic(type: performerImageCharacteristicUUID, properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast), value: nil, permissions: CBAttributePermissions.Readable)
     }
     
