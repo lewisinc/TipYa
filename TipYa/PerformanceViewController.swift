@@ -15,6 +15,8 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
     
     var authData: FAuthData?
     
+    var profImage: UIImage?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +33,20 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
 
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        let mask = UIImage(named: "Circle_Mask")
+        
         var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage //2
         imageButton.contentMode = .ScaleAspectFit //3
-        imageButton.imageView?.image = chosenImage //4
-        imageButton.imageView?.highlightedImage = chosenImage //4
+        self.profImage = maskImage(chosenImage, maskImage: mask!)
+        //self.profImage = chosenImage
+        
+        imageButton.imageView?.image = profImage //4
+        imageButton.imageView?.highlightedImage = profImage //4
         dismissViewControllerAnimated(true, completion: nil) //5
     }
     @IBAction func pickImage(sender: AnyObject) {
         
-        imagePicker.allowsEditing = false //2
+        imagePicker.allowsEditing = true //2
         imagePicker.sourceType = .PhotoLibrary //3
         presentViewController(imagePicker, animated: true, completion: nil)//
     }
@@ -59,5 +66,23 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         
     }
     
+    func maskImage(image:UIImage, maskImage:UIImage) -> UIImage{
+        var maskRef = maskImage.CGImage
+        
+        var mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
+            CGImageGetHeight(maskRef),
+            CGImageGetBitsPerComponent(maskRef),
+            CGImageGetBitsPerPixel(maskRef),
+            CGImageGetBytesPerRow(maskRef),
+            CGImageGetDataProvider(maskRef), nil, false);
+        
+        var maskedImageRef = CGImageCreateWithMask(image.CGImage, mask)
+        
+        var maskedImage = UIImage(CGImage: maskedImageRef)
+
+        
+        return maskedImage!
+        
+    }
     
 }

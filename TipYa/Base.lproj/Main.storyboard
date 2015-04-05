@@ -318,6 +318,7 @@
                                 <state key="normal" image="Circle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="Circle_Mask"/>
                                 <connections>
                                     <action selector="pickImage:" destination="gJJ-hN-4Ak" eventType="touchUpInside" id="fX1-gJ-dIJ"/>
                                 </connections>
@@ -432,6 +433,7 @@
     </scenes>
     <resources>
         <image name="Circle" width="1024" height="1024"/>
+        <image name="Circle_Mask" width="400" height="400"/>
         <image name="coin-money-2" width="512" height="512"/>
         <image name="jWijs30" width="500" height="500"/>
         <image name="map-marker-17" width="512" height="512"/>
