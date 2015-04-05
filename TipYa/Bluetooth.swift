@@ -27,10 +27,8 @@ var performerMiscWebsiteCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-
 var spectatorIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD550")
 
 
-// First list all our CBUUIDs
-
 class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
-    
+
     var peripheralManager:CBPeripheralManager?
     var myIdentity:PerformerIdentity?           // Full Performer Identity
     var bluetoothServices:CBMutableService?                 // All available services
@@ -169,14 +167,26 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     func peripheralManagerIsReadyToUpdateSubscribers(peripheral: CBPeripheralManager!) {
         println("Updating subscribed devices")
     }
-    /* Unimplemented delegate methods:
-    
-    */
 }
 
 
 class SpectatorUtility: NSObject, CBCentralManagerDelegate {
+    
+    var centralManager:CBCentralManager?
+    var discoveredPerformers:[CBPeripheral]?
+    
+    override init() {
+        super.init()
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        discoveredPerformers = [CBPeripheral]()
+    }
+    
     func centralManagerDidUpdateState(central: CBCentralManager!) {
         println(central.state)
+    }
+    
+    func centralManager(central: CBCentralManager!,
+        didConnectPeripheral peripheral: CBPeripheral!) {
+
     }
 }

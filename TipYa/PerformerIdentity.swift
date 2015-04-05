@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreBluetooth
-import Security
+// import Security
 
 class PerformerIdentity: NSObject {
     var name:String?            // Name
