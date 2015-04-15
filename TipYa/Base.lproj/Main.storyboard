@@ -267,7 +267,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="64e-lW-oYz" eventType="editingDidEndOnExit" id="eQs-MG-tAK"/>
+                                    <action selector="textFieldShouldReturn2:" destination="64e-lW-oYz" eventType="editingDidEndOnExit" id="eQs-MG-tAK"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="username" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UwY-v2-qFg">
@@ -279,7 +279,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="64e-lW-oYz" eventType="editingDidEndOnExit" id="0nN-kA-uNs"/>
+                                    <action selector="textFieldShouldReturn2:" destination="64e-lW-oYz" eventType="editingDidEndOnExit" id="0nN-kA-uNs"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -415,7 +415,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="pwH-kC-bdw"/>
+                                    <action selector="textFieldShouldReturn2:" destination="quy-dY-h00" eventType="touchUpOutside" id="pwH-kC-bdw"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="6Wm-yX-aV7"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="POZ-0x-nbj"/>
                                 </connections>
@@ -429,7 +429,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="touchUpOutside" id="J6c-xE-erI"/>
+                                    <action selector="textFieldShouldReturn2:" destination="quy-dY-h00" eventType="touchUpOutside" id="J6c-xE-erI"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEnd" id="6l2-L7-8Zs"/>
                                     <action selector="updateFirebase:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="b6i-5X-gn3"/>
                                 </connections>
@@ -443,7 +443,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="E8T-Yg-VnR"/>
+                                    <action selector="textFieldShouldReturn2:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="E8T-Yg-VnR"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Website..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcq-cB-rMN">
@@ -455,7 +455,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="2mk-bm-T0b"/>
+                                    <action selector="textFieldShouldReturn2:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="2mk-bm-T0b"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkw-9f-dYi">
@@ -482,7 +482,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldShouldReturn:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="eUI-t0-UqQ"/>
+                                    <action selector="textFieldShouldReturn2:" destination="quy-dY-h00" eventType="editingDidEndOnExit" id="eUI-t0-UqQ"/>
                                 </connections>
                             </textField>
                         </subviews>

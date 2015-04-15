@@ -26,10 +26,10 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         user = accounts.childByAppendingPath(authData!.uid)
         user!.observeSingleEventOfType(.Value, withBlock: { snapshot in
             if (snapshot.hasChildren() == true) {
-                var json = snapshot.value as NSDictionary!
+                var json = snapshot.value as! NSDictionary!
                 
-                if (json?.valueForKey("image")? != nil) {
-                    let base64String  = json!.valueForKey("image")! as String
+                if (json?.valueForKey("image") != nil) {
+                    let base64String  = json!.valueForKey("image")! as! String
             
                 
                 //decode image and mask it, put it in button
@@ -60,7 +60,7 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let mask = UIImage(named: "Circle_Mask")
         
-        var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage //2
+        var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         imageButton.contentMode = .ScaleAspectFit //3
         self.profImage = maskImage(chosenImage, maskImage: mask!)
         //self.profImage = chosenImage
@@ -87,10 +87,10 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+    /*func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         //upload to firebase
         println("i've got an image");
-    }
+    }*/
     
     @IBAction func signOut(sender: AnyObject) {
         rootReference.unauth()
@@ -119,7 +119,7 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "infoPane") {
-            let viewController:PerformerInfoViewController = segue.destinationViewController as PerformerInfoViewController
+            let viewController:PerformerInfoViewController = segue.destinationViewController as! PerformerInfoViewController
             viewController.authData = self.authData
             // pass data to next view
         }
