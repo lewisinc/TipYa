@@ -51,7 +51,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     // Set up services and characteristics on your local peripheral
     func configureUtilityForIdentity(identity:PerformerIdentity!) {
         myIdentity = identity
-        var characteristicsArray:NSMutableArray = []
+        var characteristicsArray:[CBCharacteristic] = []
         
         // Build the NAME characteristic
         if (identity.name != nil) {
@@ -62,7 +62,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                         allowLossyConversion: false),
                     permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(nameCharacteristic!)
+            characteristicsArray.append(nameCharacteristic!)
         }
         
         // Build the BIOGRAPHY characteristic
@@ -73,7 +73,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                     allowLossyConversion: false),
                 permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(biographyCharacteristic!)
+            characteristicsArray.append(biographyCharacteristic!)
         }
         
         // Build the IMAGE characteristic
@@ -84,7 +84,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 value: imageData,
                 permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(chosenImageCharacteristic!)
+            characteristicsArray.append(chosenImageCharacteristic!)
         }
         
         // Build the FACEBOOK characteristic
@@ -94,7 +94,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 value: identity.facebookLink?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false),
                 permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(facebookCharacteristic!)
+            characteristicsArray.append(facebookCharacteristic!)
         }
         
         // Build the YOUTUBE characteristic
@@ -103,7 +103,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
                 value: identity.youtubeLink?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(youtubeCharacteristic!)
+            characteristicsArray.append(youtubeCharacteristic!)
         }
         
         // Build the miscellaneous WEBSITE characteristic
@@ -112,7 +112,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
                 value: identity.miscWebsite?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(miscWebsiteCharacteristic!)
+            characteristicsArray.append(miscWebsiteCharacteristic!)
         }
         
         // Add all the existing characteristics to our CBMutableService object
@@ -171,7 +171,8 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
 
 
 class SpectatorUtility: NSObject, CBCentralManagerDelegate {
-    
+
+    var myIdentity:SpectatorIdentity?           // Full Spectator Identity
     var centralManager:CBCentralManager?
     var discoveredPerformers:[CBPeripheral]?
     
@@ -179,6 +180,11 @@ class SpectatorUtility: NSObject, CBCentralManagerDelegate {
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
         discoveredPerformers = [CBPeripheral]()
+    }
+    
+    // Set up local central utility
+    func configureUtilityForIdentity(identity:SpectatorIdentity!) {
+        myIdentity = identity
     }
     
     func centralManagerDidUpdateState(central: CBCentralManager!) {
