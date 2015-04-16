@@ -10,6 +10,10 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var applicationLogoImageView: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -104,7 +104,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if (segue.identifier == "loginComplete") {
-            let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController
+            let viewController:PerformanceViewController = segue.destinationViewController as! PerformanceViewController
             viewController.authData = sender as? FAuthData
             // pass data to next view
         }

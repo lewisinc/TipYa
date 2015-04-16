@@ -13,7 +13,6 @@
 		8E5E40201AD01AD00034415C /* PerformerIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */; };
 		8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40221AD01AE90034415C /* SpectatorIdentity.swift */; };
 		8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */; };
-		8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */; };
 		8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC311ACFC99900DD76AC /* Images.xcassets */; };
 		8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */; };
 		8EBBCC411ACFC99900DD76AC /* TipYaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC401ACFC99900DD76AC /* TipYaTests.swift */; };
@@ -25,6 +24,7 @@
 		8EBBCC6F1ACFEB6000DD76AC /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBCC6E1ACFEB6000DD76AC /* Firebase.framework */; };
 		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
+		8ED210741ADF54ED0017A2D2 /* Main_iPhone_6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED210721ADF54ED0017A2D2 /* Main_iPhone_6.storyboard */; };
 		D01FD9FA1AD0343A00C999C6 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */; };
 		D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */; };
 		D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */; };
@@ -50,7 +50,6 @@
 		8EBBCC251ACFC99900DD76AC /* TipYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBBCC291ACFC99900DD76AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8EBBCC2F1ACFC99900DD76AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8EBBCC311ACFC99900DD76AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8EBBCC341ACFC99900DD76AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8EBBCC3A1ACFC99900DD76AC /* TipYaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipYaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +64,7 @@
 		8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipYa-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		8ED210731ADF54ED0017A2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone_6.storyboard; sourceTree = "<group>"; };
 		D01FD9F91AD0343A00C999C6 /* PerformanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerInfoViewController.swift; sourceTree = "<group>"; };
 		D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerLoginViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 		8EBBCC1C1ACFC99900DD76AC = {
 			isa = PBXGroup;
 			children = (
-				8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */,
 				8EBBCC271ACFC99900DD76AC /* TipYa */,
 				8EBBCC3D1ACFC99900DD76AC /* TipYaTests */,
 				8EBBCC651ACFEB2B00DD76AC /* Frameworks */,
@@ -127,13 +126,14 @@
 		8EBBCC271ACFC99900DD76AC /* TipYa */ = {
 			isa = PBXGroup;
 			children = (
+				8ED210721ADF54ED0017A2D2 /* Main_iPhone_6.storyboard */,
+				8EBBCC701ACFEC2B00DD76AC /* TipYa-Bridging-Header.h */,
 				8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */,
 				D05DE2701AD0E82200632353 /* SwiftyJSON */,
 				8EBBCC7A1ACFED0600DD76AC /* Bluetooth */,
 				8EBBCC761ACFECF300DD76AC /* Firebase */,
 				8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */,
 				8E5E40211AD01ADB0034415C /* UserIdentities */,
-				8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */,
 				8EBBCC311ACFC99900DD76AC /* Images.xcassets */,
 				8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */,
 				8EBBCC281ACFC99900DD76AC /* Supporting Files */,
@@ -296,8 +296,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EBBCC301ACFC99900DD76AC /* Main.storyboard in Resources */,
 				8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */,
+				8ED210741ADF54ED0017A2D2 /* Main_iPhone_6.storyboard in Resources */,
 				8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,20 +350,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8EBBCC2E1ACFC99900DD76AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8EBBCC2F1ACFC99900DD76AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8EBBCC341ACFC99900DD76AC /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		8ED210721ADF54ED0017A2D2 /* Main_iPhone_6.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8ED210731ADF54ED0017A2D2 /* Base */,
+			);
+			name = Main_iPhone_6.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -458,6 +458,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipYa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,6 +477,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TipYa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -60,9 +60,11 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    /*
     @IBAction func textFieldShouldReturn(sender: UITextField) {
         sender.resignFirstResponder()
     }
+    */
     
     @IBOutlet weak var descripField: UITextField!
     @IBOutlet weak var nameField: UITextField!
