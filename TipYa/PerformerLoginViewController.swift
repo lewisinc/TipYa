@@ -30,7 +30,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func textFieldShouldReturn(sender: UITextField) {
+    @IBAction func textFieldShouldReturn2(sender: UITextField) {
         
         if (sender.restorationIdentifier == "username") {
             sender.resignFirstResponder()

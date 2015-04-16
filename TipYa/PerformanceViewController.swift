@@ -87,10 +87,10 @@ class PerformanceViewController:UIViewController, UIImagePickerControllerDelegat
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+    /*func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         //upload to firebase
         println("i've got an image");
-    }
+    }*/
     
     @IBAction func signOut(sender: AnyObject) {
         rootReference.unauth()
