@@ -12,15 +12,19 @@ import CoreBluetooth
 class SpectatorViewController: UIViewController {
 
     var foundPerformers:[PerformerIdentity]?
+    var spectatorBluetoothUtility:SpectatorUtility?
     
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
     
+    @IBOutlet weak var foundPerformanceTableView: UITableView!
+   
     @IBAction func scanForPerformers(sender: AnyObject) {
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spectatorBluetoothUtility = SpectatorUtility()
 
         // Do any additional setup after loading the view.
         foundPerformers = [PerformerIdentity]()
