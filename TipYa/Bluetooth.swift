@@ -209,23 +209,29 @@ class SpectatorUtility: NSObject, CBCentralManagerDelegate {
                 break;
             case .PoweredOff:
                 println("Current Bluetooth State:   PoweredOff")
+                connectedPerformers = nil
                 break;
             case .Resetting:
                 println("Current Bluetooth State:   Resetting")
+                connectedPerformers = [CBPeripheral]()
                 break;
             case .Unauthorized:
                 println("Current Bluetooth State:   Unauthorized")
+                connectedPerformers = nil
             case .Unknown:
                 println("Current Bluetooth State:   Unknown")
                 break;
             case .Unsupported:
+                // bluetooth unsupported?! NAOAOAOAO!
                 println("Current Bluetooth State:   Unsupported")
+                connectedPerformers = nil
                 break;
-            
         }
     }
     
     func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
+        
+        peripheral.
         
     }
 
