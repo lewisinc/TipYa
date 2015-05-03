@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerformanceViewController:UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
+class PerformanceControlViewController:UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
     
     @IBOutlet weak var imageButton: UIButton!
     let imagePicker = UIImagePickerController()
