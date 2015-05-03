@@ -182,6 +182,9 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     }
 }
 
+protocol SpectatorUtilityDelegate {
+    
+}
 
 class SpectatorUtility: NSObject, CBCentralManagerDelegate {
 /*
@@ -230,14 +233,17 @@ class SpectatorUtility: NSObject, CBCentralManagerDelegate {
     }
     
     func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
-        
-        // peripheral.
+
+        println("Central Manger didDiscoverPeripheral!")
+        println(advertisementData.debugDescription)
         
     }
 
     func centralManager(central: CBCentralManager!,
         didConnectPeripheral peripheral: CBPeripheral!) {
-        
+
+        println("Central Manger didConnectPeripheral!")
+
     }
     
 }
