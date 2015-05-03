@@ -231,7 +231,7 @@ class SpectatorUtility: NSObject, CBCentralManagerDelegate {
     
     func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
         
-        peripheral.
+        // peripheral.
         
     }
 
