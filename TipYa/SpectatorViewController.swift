@@ -14,12 +14,14 @@ class SpectatorViewController: UIViewController {
     var verifiedPerformers:[PerformerIdentity]?
     var spectatorBluetoothUtility:SpectatorUtility?
     
-    @IBOutlet weak var refreshNearbyPerformances: UIButton!
     
-    @IBOutlet weak var foundPerformanceTableView: UITableView!
-   
+    @IBOutlet weak var verifiedPerformerTableView: UITableView!
+
+    @IBOutlet weak var refreshNearbyPerformances: UIButton!
     @IBAction func scanForPerformers(sender: AnyObject) {
-        
+        spectatorBluetoothUtility?.centralManager?.scanForPeripheralsWithServices([performerServicesUUID], options: nil)
+        println("SCANNING!")
+        println(spectatorBluetoothUtility?.centralManager?.state)
     }
     
     override func viewDidLoad() {

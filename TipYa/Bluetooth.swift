@@ -129,7 +129,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         }
         
         // Add all the existing characteristics to our CBMutableService object
-        bluetoothServices?.characteristics = characteristicsArray as [AnyObject]
+        bluetoothServices?.characteristics = characteristicsArray as [CBCharacteristic]
         
         publishServices(bluetoothServices)
     }
