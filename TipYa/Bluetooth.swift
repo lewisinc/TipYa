@@ -22,6 +22,7 @@ var performerImageCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7
 var performerFacebookCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD549")
 var performerYoutubeCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD54A")
 var performerMiscWebsiteCharacteristicUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD54B")
+var performerSpecificIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD54C")
 
 // UUIDs for a spectator - "You don't need to interact with a spectator."
 var spectatorIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD550")
@@ -38,7 +39,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     var facebookCharacteristic:CBMutableCharacteristic?     // Facebook
     var youtubeCharacteristic:CBMutableCharacteristic?      // Youtube
     var miscWebsiteCharacteristic:CBMutableCharacteristic?  // Other Miscellaneous Website
-    var identityKey:CBMutableCharacteristic?                // Identity key for Firebase
+    var identityKeyCharacteristic:CBMutableCharacteristic?                // Identity key for Firebase (user specific!)
     
     // Start up a peripheral manager object
     // also builds our broadcastable services
@@ -51,7 +52,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     // Set up services and characteristics on your local peripheral
     func configureUtilityForIdentity(identity:PerformerIdentity!) {
         myIdentity = identity
-        var characteristicsArray:NSMutableArray = []
+        var characteristicsArray:[CBCharacteristic] = []
         
         // Build the NAME characteristic
         if (identity.name != nil) {
@@ -62,8 +63,20 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                         allowLossyConversion: false),
                     permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(nameCharacteristic!)
+            characteristicsArray.append(nameCharacteristic!)
         }
+        
+        // Build the UUIDKEY characteristic
+        if (identity.identityKey != nil) {
+            identityKeyCharacteristic =
+                CBMutableCharacteristic(type: performerSpecificIdentityUUID,
+                    properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                    value: myIdentity?.identityKey?.UUIDString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false),
+                    permissions: CBAttributePermissions.Readable)
+            
+            characteristicsArray.append(identityKeyCharacteristic!)
+        }
+
         
         // Build the BIOGRAPHY characteristic
         if (identity.bioText != nil) {
@@ -73,7 +86,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                     allowLossyConversion: false),
                 permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(biographyCharacteristic!)
+            characteristicsArray.append(biographyCharacteristic!)
         }
         
         // Build the IMAGE characteristic
@@ -84,7 +97,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 value: imageData,
                 permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(chosenImageCharacteristic!)
+            characteristicsArray.append(chosenImageCharacteristic!)
         }
         
         // Build the FACEBOOK characteristic
@@ -94,7 +107,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 value: identity.facebookLink?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false),
                 permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(facebookCharacteristic!)
+            characteristicsArray.append(facebookCharacteristic!)
         }
         
         // Build the YOUTUBE characteristic
@@ -103,7 +116,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
                 value: identity.youtubeLink?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(youtubeCharacteristic!)
+            characteristicsArray.append(youtubeCharacteristic!)
         }
         
         // Build the miscellaneous WEBSITE characteristic
@@ -112,11 +125,11 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
                 value: identity.miscWebsite?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.addObject(miscWebsiteCharacteristic!)
+            characteristicsArray.append(miscWebsiteCharacteristic!)
         }
         
         // Add all the existing characteristics to our CBMutableService object
-        bluetoothServices?.characteristics = characteristicsArray
+        bluetoothServices?.characteristics = characteristicsArray as [CBCharacteristic]
         
         publishServices(bluetoothServices)
     }
@@ -169,24 +182,68 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     }
 }
 
+protocol SpectatorUtilityDelegate {
+    
+}
 
 class SpectatorUtility: NSObject, CBCentralManagerDelegate {
+/*
+    1. Start up a central manager object
+    2. Discover and connect to peripheral devices that are advertising
+    3. Explore the data on a peripheral device after you’ve connected to it
+    4. Send read and write requests to a characteristic value of a peripheral’s service Subscribe to a characteristic’s value to be notified when it is updated
+*/
     
+    var myIdentity:SpectatorIdentity?           // Full Spectator Identity
     var centralManager:CBCentralManager?
-    var discoveredPerformers:[CBPeripheral]?
+    var connectedPerformers:[CBPeripheral]?
     
     override init() {
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        discoveredPerformers = [CBPeripheral]()
+        connectedPerformers = [CBPeripheral]()
     }
     
     func centralManagerDidUpdateState(central: CBCentralManager!) {
         println(central.state)
+        switch (central.state) {
+            case .PoweredOn:
+                println("Current Bluetooth State:   PoweredOn")
+                break;
+            case .PoweredOff:
+                println("Current Bluetooth State:   PoweredOff")
+                connectedPerformers = nil
+                break;
+            case .Resetting:
+                println("Current Bluetooth State:   Resetting")
+                connectedPerformers = [CBPeripheral]()
+                break;
+            case .Unauthorized:
+                println("Current Bluetooth State:   Unauthorized")
+                connectedPerformers = nil
+            case .Unknown:
+                println("Current Bluetooth State:   Unknown")
+                break;
+            case .Unsupported:
+                // bluetooth unsupported?! NAOAOAOAO!
+                println("Current Bluetooth State:   Unsupported")
+                connectedPerformers = nil
+                break;
+        }
     }
     
+    func centralManager(central: CBCentralManager!, didDiscoverPeripheral peripheral: CBPeripheral!, advertisementData: [NSObject : AnyObject]!, RSSI: NSNumber!) {
+
+        println("Central Manger didDiscoverPeripheral!")
+        println(advertisementData.debugDescription)
+        
+    }
+
     func centralManager(central: CBCentralManager!,
         didConnectPeripheral peripheral: CBPeripheral!) {
 
+        println("Central Manger didConnectPeripheral!")
+
     }
+    
 }

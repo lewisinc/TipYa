@@ -27,7 +27,7 @@ class SpectateOnPerformerViewController: UIViewController {
         
             Returns true if the performer is successfully added, otherwise returns false. */
         
-        return true | false
+        return true
     }
     
     /*

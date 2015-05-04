@@ -30,7 +30,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func textFieldShouldReturn(sender: UITextField) {
+    @IBAction func textFieldShouldReturn2(sender: UITextField) {
         
         if (sender.restorationIdentifier == "username") {
             sender.resignFirstResponder()
@@ -66,7 +66,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
                         println("Handle default situation")
                         alert.message = "Something went wrong"
                     }
-                    alert.addButtonWithTitle("OK")
+                    alert.addButtonWithTitle("OK, you don't belong here.")
                     alert.show()
                 }
             } else {
@@ -104,7 +104,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if (segue.identifier == "loginComplete") {
-            let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController
+            let viewController:PerformanceViewController = segue.destinationViewController as! PerformanceViewController
             viewController.authData = sender as? FAuthData
             // pass data to next view
         }

@@ -10,9 +10,13 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var applicationLogoImageView: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 1, alpha: 1)
         // Do any additional setup after loading the view.
     }
 
@@ -43,7 +47,7 @@ class WelcomeViewController: UIViewController {
         
         
         if (segue.identifier == "presenterLoggedIn") {
-            let viewController:PerformanceViewController = segue.destinationViewController as PerformanceViewController
+            let viewController:PerformanceViewController = segue.destinationViewController as! PerformanceViewController
             viewController.authData = sender as? FAuthData
             // pass data to next view
         }
