@@ -47,7 +47,7 @@ class WelcomeViewController: UIViewController {
         
         
         if (segue.identifier == "presenterLoggedIn") {
-            let viewController:PerformanceViewController = segue.destinationViewController as! PerformanceViewController
+            let viewController:PerformanceControlViewController = segue.destinationViewController as! PerformanceControlViewController
             viewController.authData = sender as? FAuthData
             // pass data to next view
         }
