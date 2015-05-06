@@ -26,6 +26,7 @@
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
 		8ED210741ADF54ED0017A2D2 /* Main_iPhone_6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED210721ADF54ED0017A2D2 /* Main_iPhone_6.storyboard */; };
 		BFEC57C11AF981D300CA8206 /* SpectatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */; };
+		BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */; };
 		D01FD9FA1AD0343A00C999C6 /* PerformanceControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */; };
 		D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */; };
 		D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */; };
@@ -67,6 +68,7 @@
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 		8ED210731ADF54ED0017A2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone_6.storyboard; sourceTree = "<group>"; };
 		BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorTableViewController.swift; sourceTree = "<group>"; };
+		BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBlackboxTests.swift; sourceTree = "<group>"; };
 		D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceControlViewController.swift; sourceTree = "<group>"; };
 		D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerInfoViewController.swift; sourceTree = "<group>"; };
 		D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerLoginViewController.swift; sourceTree = "<group>"; };
@@ -155,10 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				8EBBCC401ACFC99900DD76AC /* TipYaTests.swift */,
+				BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */,
 				8EBBCC3E1ACFC99900DD76AC /* Supporting Files */,
 			);
 			path = TipYaTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		8EBBCC3E1ACFC99900DD76AC /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC411ACFC99900DD76AC /* TipYaTests.swift in Sources */,
+				BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

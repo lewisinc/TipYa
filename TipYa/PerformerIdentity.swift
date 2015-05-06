@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 // import Security
 
-class PerformerIdentity: NSObject {
+public class PerformerIdentity: NSObject {
     var name:String?            // Name
     var image:UIImage?          // Image
     var bioText:String?         // Biography
@@ -23,7 +23,7 @@ class PerformerIdentity: NSObject {
         super.init()
     }
     
-    init(name:String?, image:UIImage?, text:String?, facebook:String?, youtube:String?, otherWebsite:String?, idKey:CBUUID?) {
+    public init(name:String?, image:UIImage?, text:String?, facebook:String?, youtube:String?, otherWebsite:String?, idKey:CBUUID?) {
         super.init()
         self.name = name
         self.image = image

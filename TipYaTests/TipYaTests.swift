@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import TipYa
 
 class TipYaTests: XCTestCase {
     
@@ -23,6 +24,7 @@ class TipYaTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
+        //let person :PerformerIdentity = PerfomerIdentity.init("John Doe")
         XCTAssert(true, "Pass")
     }
     
