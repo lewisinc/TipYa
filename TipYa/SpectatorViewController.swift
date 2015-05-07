@@ -11,7 +11,7 @@ import CoreBluetooth
 
 class SpectatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var verifiedPerformers = [String]()
+    var verifiedPerformers :[String] = ["My","Table","Works","even though it's static..."]
     var spectatorBluetoothUtility :SpectatorUtility?
     
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
@@ -30,7 +30,7 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-        return 0
+        return self.verifiedPerformers.count
     }
         
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -54,7 +54,7 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        verifiedPerformers = ["apple","juice","fruit"]
+        //verifiedPerformers = ["apple","juice","fruit"]
         
         //verifiedPerformers.append(PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil))
         
