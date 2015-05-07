@@ -78,5 +78,9 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
             user!.childByAppendingPath("description").setValue(descripField.text);
         }
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
 }

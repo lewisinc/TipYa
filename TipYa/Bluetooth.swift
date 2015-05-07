@@ -28,6 +28,7 @@ var performerSpecificIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75
 var spectatorIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD550")
 
 
+//  MARK:   -   Performer-Side Bluetooth Functionality
 class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
 
     var peripheralManager:CBPeripheralManager?
@@ -41,6 +42,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     var miscWebsiteCharacteristic:CBMutableCharacteristic?  // Other Miscellaneous Website
     var identityKeyCharacteristic:CBMutableCharacteristic?  // Identity key for Firebase (user specific!)
     
+    var subscribedCentrals:[CBCentral]?
     // Start up a peripheral manager object
     // also builds our broadcastable services
     override init() {
@@ -52,7 +54,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     // Set up services and characteristics on your local peripheral
     func configureUtilityForIdentity(identity:PerformerIdentity!) {
         myIdentity = identity
-        var characteristicsArray:[CBCharacteristic] = []
+        var characteristicsArray = [CBMutableCharacteristic]()
         
         // Build the NAME characteristic
         if (identity.name != nil) {
@@ -63,7 +65,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                         allowLossyConversion: false),
                     permissions: CBAttributePermissions.Readable)
             
-            characteristicsArray.append(nameCharacteristic!)
+            characteristicsArray.append(nameCharacteristic! as CBMutableCharacteristic)
         }
         
         // Build the UUIDKEY characteristic
@@ -129,12 +131,12 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         }
         
         // Add all the existing characteristics to our CBMutableService object
-        bluetoothServices?.characteristics = characteristicsArray as [CBCharacteristic]
+        bluetoothServices?.characteristics = characteristicsArray as [CBCharacteristic]?
         
         publishServices(bluetoothServices)
     }
     
-    // Publish your services and characteristics to your device’s local database Advertise your services
+    // Publish your services and characteristics to your device’s local database, advertise your services
     func publishServices(newService:CBMutableService!) {
         self.peripheralManager?.addService(newService)
     }
@@ -161,6 +163,9 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 println("peripheralManagerDidStartAdvertising encountered an error.")
                 println(error.localizedDescription)
                 println(error.localizedFailureReason)
+                
+                peripheralManager?.stopAdvertising()
+                println("peripheralManager no longer advertising.")
             }
     }
     
@@ -179,8 +184,11 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     
     func peripheralManagerIsReadyToUpdateSubscribers(peripheral: CBPeripheralManager!) {
         println("Updating subscribed devices")
+        
     }
 }
+
+//  MARK:   -   Spectator-Side Bluetooth Functionality
 
 protocol SpectatorUtilityDelegate {
     
@@ -238,6 +246,8 @@ class SpectatorUtility: NSObject, CBCentralManagerDelegate {
 
         println("Central Manger didDiscoverPeripheral!")
         println(advertisementData.debugDescription)
+        
+        
         
     }
 

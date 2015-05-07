@@ -62,4 +62,8 @@ class WelcomeViewController: UIViewController {
     }
     */
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
 }

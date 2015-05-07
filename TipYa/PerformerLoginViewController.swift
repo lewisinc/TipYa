@@ -43,38 +43,15 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(sender: AnyObject) {
-        
-        accounts.authUser(usernameField.text, password: passwordField.text) {
-            error, authData in
-            if (error != nil) {
-                // an error occurred while attempting login
-                let alert = UIAlertView()
-                alert.title = "Error"
-                
-                if let errorCode = FAuthenticationError(rawValue: error.code) {
-                    switch (errorCode) {
-                    case .UserDoesNotExist:
-                        println("Handle invalid user")
-                        alert.message = "User does not exist"
-                    case .InvalidEmail:
-                        println("Handle invalid email")
-                        alert.message = "Invalid Login"
-                    case .InvalidPassword:
-                        println("Handle invalid password")
-                        alert.message = "Invalid Login"
-                    default:
-                        println("Handle default situation")
-                        alert.message = "Something went wrong"
-                    }
-                    alert.addButtonWithTitle("OK, you don't belong here.")
-                    alert.show()
-                }
-            } else {
-                // User is logged in
-                self.performSegueWithIdentifier("loginComplete", sender: authData)
+        if firebaseWorks {
+            let successfulLogin:Bool = attemptUserLogin(usernameField.text, passwordField.text)
+            if successfulLogin {
+                self.performSegueWithIdentifier("loginComplete", sender: )
             }
         }
-        
+        else {  // Until firebaseWorks == true, do this
+            self.performSegueWithIdentifier("loginComplete", sender: authData)
+        }
     }
     
     @IBAction func signup(sender: AnyObject) {
@@ -109,5 +86,10 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
             // pass data to next view
         }
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
 }
 

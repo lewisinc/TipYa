@@ -57,6 +57,10 @@ class SpectatorViewController: UIViewController, SpectatorUtilityDelegate {
         
     }
     
+    func clearTableView() {
+        // reset the table view to an empty state
+    }
+    
     /* MARK: - Navigation
         In a storyboard-based application, you will often want to do a little preparation before navigation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -67,12 +71,24 @@ class SpectatorViewController: UIViewController, SpectatorUtilityDelegate {
     // MARK: - SpectatorUtilityDelegate Function Definitions
     func foundNewPerformer(identity: PerformerIdentity) {
         
+        if (verifiedPerformers == nil) {
+            verifiedPerformers = [PerformerIdentity]()
+        }
+        
+        verifiedPerformers?.append(identity)
+        
         addCellToTableView(identity.image, name: identity.name)
     }
     
     /* Called by this classes delegating object: SpectatorUtility,
         it shouldn't be necessary to call this directly. */
     func resetFoundPerformers() {
-        
+        verifiedPerformers = [PerformerIdentity]()
+        clearTableView()
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
 }
