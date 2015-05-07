@@ -111,7 +111,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="prV-fB-aQ7" kind="modal" modalTransitionStyle="flipHorizontal" id="Fvk-qj-Hxp"/>
+                                    <segue destination="prV-fB-aQ7" kind="modal" identifier="artistLogin" modalTransitionStyle="crossDissolve" id="Fvk-qj-Hxp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To appreciate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3B-Sn-ghW">
@@ -231,6 +231,7 @@
                         <outlet property="loginButton" destination="g31-Ai-y2L" id="eKh-Ju-eKw"/>
                         <outlet property="passwordField" destination="PQ6-OG-iXR" id="XaF-S7-k1Y"/>
                         <outlet property="signUpButton" destination="e2Z-6M-KBD" id="s7t-yI-pBK"/>
+                        <outlet property="tipyaLogo" destination="BeK-l5-Yrf" id="xaF-0E-O85"/>
                         <outlet property="usernameField" destination="nLZ-jL-RBh" id="wAy-7z-aT3"/>
                     </connections>
                 </viewController>
@@ -366,7 +367,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="D4W-bc-x7n"/>
+        <segue reference="Fvk-qj-Hxp"/>
         <segue reference="gRG-z6-fbE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,43 +25,21 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func checkPerformerAuth(sender: AnyObject) {
-        
-        rootReference.observeAuthEventWithBlock({ authData in
-            if authData != nil {
-                // user authenticated with Firebase
-                
-                println(authData)
-            self.performSegueWithIdentifier("presenterLoggedIn", sender: authData)
-            } else {
-                
-                println("Not Logged In")
 
-                self.performSegueWithIdentifier("performerLogin", sender: authData)
-            }
-        })
-        
-    }
-
+    
+// MARK: - Navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        
-        if (segue.identifier == "presenterLoggedIn") {
-            let viewController:PerformanceControlViewController = segue.destinationViewController as! PerformanceControlViewController
-            viewController.authData = sender as? FAuthData
-            // pass data to next view
-        }
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
+        if (segue.identifier == "artistLogin") {
+            UIView.animateWithDuration(0.2, delay: 0,
+                options: UIViewAnimationOptions.CurveEaseInOut,
+                animations: { self.applicationLogoImageView.transform = CGAffineTransformMakeTranslation(0.0, 80)},
+                completion: nil)
+        }
         // Pass the selected object to the new view controller.
     }
-    */
-
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }

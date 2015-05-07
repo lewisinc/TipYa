@@ -10,6 +10,7 @@ import UIKit
 
 class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var tipyaLogo: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
