@@ -12,36 +12,60 @@ import UIKit
 let rootReference = Firebase(url:"https://tipyalahacks2015.firebaseio.com")
 let accounts = Firebase(url: "https://tipyalahacks2015.firebaseio.com/Accounts")
 
-let firebaseWorks: Bool = false
-class FirebaseUtility {
-    var loggedInUserData:FAuthData?
 
-    func attemptUserLogin(name:String!, password:String!) -> Bool {
-        var returnVal:Bool?
+class FirebaseUtility {
+
+    let firebaseWorks: Bool = false
+    
+    var loggedInUserData:FAuthData?
+    
+    func configure(identity: AnyObject) {
+        if identity.isMemberOfClass(PerformerIdentity) {
+            
+        }
+        if identity.isMemberOfClass(SpectatorIdentity) {
+            println("FirebaseUtility does not yet support Spectator interactivity.")
+        }
+    }
+    
+    func attemptNormalUserLogin(name:String!, password:String!) -> Bool {
+        var loginAttemptResult:Bool?
         
-        accounts.authUser(name, password: password, withCompletionBlock: { error, authData -> Void in
-            if error != nil {
+        accounts.authUser(name, password: password, withCompletionBlock: {
+            (error, authData) in
+            if (error != nil) {
+                let alert = UIAlertView()
+                alert.title = "Error"
+                loginAttemptResult = false
                 
-                switch (error) {
-                    case .UserDoesNotExist:
-                        println("Handle invalid user")
-                        alert.message = "User does not exist"
-                    case .InvalidEmail:
-                        println("Handle invalid email")
-                        alert.message = "Invalid Login"
-                    case .InvalidPassword:
-                        println("Handle invalid password")
-                        alert.message = "Invalid Login"
-                    default:
-                        println("Handle default situation")
-                        alert.message = "Something went wrong"
+                if let errorCode = FAuthenticationError(rawValue: error.code) {
+                    switch (errorCode) {
+                        case .UserDoesNotExist:
+                            println("Handle invalid user")
+                            alert.message = "User does not exist"
+                        case .InvalidEmail:
+                            println("Handle invalid email")
+                            alert.message = "Invalid Login"
+                        case .InvalidPassword:
+                            println("Handle invalid password")
+                            alert.message = "Invalid Login"
+                        default:
+                            println("Handle default situation")
+                            alert.message = "Something went wrong"
                     }
+                }
+                
                 alert.addButtonWithTitle("Unsuccessful login.")
                 alert.show()
+                
             } else {
-            
+                loginAttemptResult = true
+                self.loggedInUserData = authData
             }
         })
+        
+        return loginAttemptResult!
+    }
 //        accounts.authUser(name, password: password, withCompletionBlock: { error, authData in
 //            if (error != nil) {
 //                // an error occurred while attempting login
@@ -72,8 +96,5 @@ class FirebaseUtility {
 //                returnVal = true
 //            }
 //        })
-        
-        return returnVal!
-    }
     
 }

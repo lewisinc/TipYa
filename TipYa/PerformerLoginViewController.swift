@@ -8,16 +8,23 @@
 
 import UIKit
 
-
 class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    let firebaseUtility:FirebaseUtility = FirebaseUtility()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        usernameField.delegate = self
+        passwordField.delegate = self
+        
     }
     
     deinit {
@@ -30,27 +37,33 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func textFieldShouldReturn2(sender: UITextField) {
-        
-        if (sender.restorationIdentifier == "username") {
-            sender.resignFirstResponder()
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField.restorationIdentifier == "emailTextfield") {
+            textField.resignFirstResponder()
             passwordField.becomeFirstResponder()
-        } else if (sender.restorationIdentifier == "password") {
-            sender.resignFirstResponder()
+        } else if (textField.restorationIdentifier == "passwordTextfield") {
+            textField.resignFirstResponder()
         } else {
-            println("wtf")
+            println("Unknown TextField trying to return from editing")
         }
+        
+        return true
+    }
+    @IBAction func backgroundTapped(sender: AnyObject) {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
     }
     
     @IBAction func login(sender: AnyObject) {
-        if firebaseWorks {
-            let successfulLogin:Bool = attemptUserLogin(usernameField.text, passwordField.text)
+        if firebaseUtility.firebaseWorks {
+            let successfulLogin:Bool = firebaseUtility.attemptNormalUserLogin(usernameField.text, password: passwordField.text)
             if successfulLogin {
-                self.performSegueWithIdentifier("loginComplete", sender: )
+                self.performSegueWithIdentifier("loginComplete", sender: firebaseUtility.loggedInUserData!)
             }
         }
         else {  // Until firebaseWorks == true, do this
-            self.performSegueWithIdentifier("loginComplete", sender: authData)
+            // self.performSegueWithIdentifier("loginComplete", sender: authData)
         }
     }
     
@@ -90,6 +103,8 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+
     
 }
 
