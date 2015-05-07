@@ -34,8 +34,7 @@ class PerformerIdentity: NSObject {
         self.identityKey = idKey
     }
     
-    // IN THE FUTURE
-    /*
+    /*                  IN THE FUTURE
         It will be possible to save a users data (not another user's) to NSUserDefaults for persistence across relaunches.
     
     func saveToNSUserDefaults(identity:PerformerIdentity!)

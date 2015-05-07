@@ -9,17 +9,22 @@
 import UIKit
 import CoreBluetooth
 
-class SpectatorViewController: UIViewController {
+class SpectatorViewController: UIViewController, SpectatorUtilityDelegate {
 
     var verifiedPerformers:[PerformerIdentity]?
     var spectatorBluetoothUtility:SpectatorUtility?
     
-    
     @IBOutlet weak var verifiedPerformerTableView: UITableView!
-
+    
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
     @IBAction func scanForPerformers(sender: AnyObject) {
-        spectatorBluetoothUtility?.centralManager?.scanForPeripheralsWithServices([performerServicesUUID], options: nil)
+        if spectatorBluetoothUtility != nil {
+            spectatorBluetoothUtility?.centralManager?.scanForPeripheralsWithServices([performerServicesUUID], options: nil)
+        } else {
+            println("Called scanForPerformers without a spectatorBluetoothUtility")
+            spectatorBluetoothUtility = SpectatorUtility()
+        }
+
         println("SCANNING!")
         println(spectatorBluetoothUtility?.centralManager?.state)
     }
@@ -30,7 +35,6 @@ class SpectatorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         verifiedPerformers = [PerformerIdentity]()
-        populateTableView()
 
     }
 
@@ -53,12 +57,22 @@ class SpectatorViewController: UIViewController {
         
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /* MARK: - Navigation
+        In a storyboard-based application, you will often want to do a little preparation before navigation */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
 
+    // MARK: - SpectatorUtilityDelegate Function Definitions
+    func foundNewPerformer(identity: PerformerIdentity) {
+        
+        addCellToTableView(identity.image, name: identity.name)
+    }
+    
+    /* Called by this classes delegating object: SpectatorUtility,
+        it shouldn't be necessary to call this directly. */
+    func resetFoundPerformers() {
+        
+    }
 }

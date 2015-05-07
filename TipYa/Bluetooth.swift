@@ -39,7 +39,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     var facebookCharacteristic:CBMutableCharacteristic?     // Facebook
     var youtubeCharacteristic:CBMutableCharacteristic?      // Youtube
     var miscWebsiteCharacteristic:CBMutableCharacteristic?  // Other Miscellaneous Website
-    var identityKeyCharacteristic:CBMutableCharacteristic?                // Identity key for Firebase (user specific!)
+    var identityKeyCharacteristic:CBMutableCharacteristic?  // Identity key for Firebase (user specific!)
     
     // Start up a peripheral manager object
     // also builds our broadcastable services
@@ -183,6 +183,8 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
 }
 
 protocol SpectatorUtilityDelegate {
+    
+    func foundNewPerformer(identity: PerformerIdentity)
     
 }
 
