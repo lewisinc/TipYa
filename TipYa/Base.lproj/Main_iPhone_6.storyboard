@@ -18,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vy6-Wl-mxU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vy6-Wl-mxU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.7843137255" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="75S-ma-JAE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title">&lt;&lt;	Go Back		</string>
@@ -31,9 +34,12 @@
                                     <segue destination="01M-jC-DKD" kind="modal" modalTransitionStyle="flipHorizontal" id="4eZ-VT-0Ty"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wr-24-czA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wr-24-czA">
                                 <rect key="frame" x="0.0" y="500" width="320" height="48"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.45882352939999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="2Aw-wh-xSw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="Who's Performing Nearby?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,11 +49,32 @@
                                     <action selector="scanForPerformers:" destination="ZPn-xb-LX5" eventType="touchUpInside" id="8aS-Kw-V4l"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t1O-hR-Pgl">
+                                <rect key="frame" x="0.0" y="49" width="320" height="432"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZPn-xb-LX5" id="KJd-VU-HdX"/>
+                                    <outlet property="delegate" destination="ZPn-xb-LX5" id="iz1-Ue-MTU"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.65490196079999996" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6Wr-24-czA" secondAttribute="bottom" constant="20" symbolic="YES" id="9pJ-Ka-Fbx"/>
+                            <constraint firstAttribute="trailing" secondItem="6Wr-24-czA" secondAttribute="trailing" id="9wC-Kx-zzd"/>
+                            <constraint firstItem="vy6-Wl-mxU" firstAttribute="top" secondItem="HR7-Kf-9DQ" secondAttribute="top" id="JVj-bo-Cmk"/>
+                            <constraint firstItem="t1O-hR-Pgl" firstAttribute="leading" secondItem="6Wr-24-czA" secondAttribute="leading" id="P5v-ZK-ynR"/>
+                            <constraint firstItem="vy6-Wl-mxU" firstAttribute="trailing" secondItem="t1O-hR-Pgl" secondAttribute="trailing" id="Rjh-lv-g1b"/>
+                            <constraint firstItem="t1O-hR-Pgl" firstAttribute="top" secondItem="vy6-Wl-mxU" secondAttribute="bottom" constant="1" id="W6L-lO-n5K"/>
+                            <constraint firstItem="vy6-Wl-mxU" firstAttribute="leading" secondItem="HR7-Kf-9DQ" secondAttribute="leading" id="Yx3-tv-h05"/>
+                            <constraint firstItem="6Wr-24-czA" firstAttribute="top" secondItem="t1O-hR-Pgl" secondAttribute="bottom" constant="19" id="aco-GD-kGV"/>
+                            <constraint firstItem="t1O-hR-Pgl" firstAttribute="trailing" secondItem="6Wr-24-czA" secondAttribute="trailing" id="hfE-kJ-s6D"/>
+                            <constraint firstItem="vy6-Wl-mxU" firstAttribute="leading" secondItem="t1O-hR-Pgl" secondAttribute="leading" id="vNt-nt-mpo"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="refreshNearbyPerformances" destination="6Wr-24-czA" id="cze-7c-ZKD"/>
+                        <outlet property="tableView" destination="t1O-hR-Pgl" id="Woe-HU-KQD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MA-IB-EMd" userLabel="First Responder" sceneMemberID="firstResponder"/>

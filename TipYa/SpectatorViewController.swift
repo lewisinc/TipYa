@@ -9,11 +9,10 @@
 import UIKit
 import CoreBluetooth
 
-class SpectatorViewController: UIViewController {
+class SpectatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var verifiedPerformers = [PerfomerIdentity]()
-    
-    let tvc :UITableViewController, UITableViewDelegate, UITableViewDataSource
+    var verifiedPerformers = [String]()
+    var spectatorBluetoothUtility :SpectatorUtility?
     
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
     @IBAction func scanForPerformers(sender: AnyObject) {
@@ -22,38 +21,44 @@ class SpectatorViewController: UIViewController {
         println(spectatorBluetoothUtility?.centralManager?.state)
     }
     
+    /* MARK: -TableView Goodness
+    Funtions for storyboard are below
+    */
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    @IBOutlet var tableView: UITableView!
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var number :Int? = verifiedPerformers.count + 1
-        return number
-
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        verifiedPerformers.count
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         
         return 0
     }
+        
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      
+        println("You selected cell #\(indexPath.row)!")
+        
+    }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        tableView
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("reusableCell", forIndexPath: indexPath) as! UITableViewCell
-        
-        // Configure the cell...
+        cell.textLabel?.text = self.verifiedPerformers[indexPath.row]
         
         return cell
     }
     
+    /* MARK:
+        UIViewController funtions are below here
+    */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tvc = UITableViewController.init(UITableViewStylePlain)
-        tvc.tableView.reloadData()
+        
+        verifiedPerformers = ["apple","juice","fruit"]
+        
+        //verifiedPerformers.append(PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil))
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
     }
 

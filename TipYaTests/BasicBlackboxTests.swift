@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 import XCTest
 import CoreBluetooth
-import TipYa
 
 class BasicBlackboxTests: XCTestCase {
     
@@ -35,7 +34,7 @@ class BasicBlackboxTests: XCTestCase {
             3. Assert that the information SpectatorTableViewController uses to build a cell is the same as the passed in information for all randomly chosen possiblilities for identity up to 10,000 characters.
         */
         
-        let randomIdentity :PerformerIdentity = PerformerIdentity.init(name: self.randomStringWithLength(100),image: nil ,text: self.randomStringWithLength(10000), facebook: self.randomStringWithLength(200), youtube: self.randomStringWithLength(200), otherWebsite: self.randomStringWithLength(), idkey: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD54C")
+        //let randomIdentity :PerformerIdentity = PerformerIdentity.init(name: self.randomStringWithLength(100),image: nil ,text: self.randomStringWithLength(10000), facebook: self.randomStringWithLength(200), youtube: self.randomStringWithLength(200), otherWebsite: self.randomStringWithLength(), idkey: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD54C")
         
         //XCTAssertEqual(expression1: [T : U], <#expression2: [T : U]#>, "Final identity was the same as expected")
     }

@@ -8,7 +8,6 @@
 
 import UIKit
 import XCTest
-import TipYa
 
 class TipYaTests: XCTestCase {
     
