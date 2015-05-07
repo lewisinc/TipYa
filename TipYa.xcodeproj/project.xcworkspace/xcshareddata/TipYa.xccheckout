@@ -7,21 +7,21 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>58AE25A9-91D8-4699-8E8A-2DDC73960304</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TipYa</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F8B664C4D085EBE52B35AE72933BCC16AB3DA5F9</key>
-		<string>github.com:lewisinc/TipYa.git</string>
+		<string>https://github.com/lewisinc/TipYa.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TipYa.xcodeproj</string>
+	<string>TipYa.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F8B664C4D085EBE52B35AE72933BCC16AB3DA5F9</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:lewisinc/TipYa.git</string>
+	<string>https://github.com/lewisinc/TipYa.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

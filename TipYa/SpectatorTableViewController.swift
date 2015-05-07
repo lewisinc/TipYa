@@ -37,7 +37,6 @@ class SpectatorTableViewController :UITableViewController, UITableViewDelegate, 
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        verifiedPerformers.count
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return 0

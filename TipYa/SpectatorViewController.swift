@@ -2,7 +2,7 @@
 //  SpectatorViewController.swift
 //  TipYa
 //
-//  Created by David Lewis on 4/4/15.
+//  Created by Paul Wren on 5/6/15.
 //  Copyright (c) 2015 LAHacksDLNSJO. All rights reserved.
 //
 
@@ -11,12 +11,10 @@ import CoreBluetooth
 
 class SpectatorViewController: UIViewController {
 
-    var verifiedPerformers  = [PerformerIdentity]()
-    let spectatorBluetoothUtility :SpectatorUtility?
+    var verifiedPerformers = [PerfomerIdentity]()
     
+    let tvc :UITableViewController, UITableViewDelegate, UITableViewDataSource
     
-    @IBOutlet weak var verifiedPerformerTableView: UITableView!
-
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
     @IBAction func scanForPerformers(sender: AnyObject) {
         spectatorBluetoothUtility?.centralManager?.scanForPeripheralsWithServices([performerServicesUUID], options: nil)
@@ -24,12 +22,39 @@ class SpectatorViewController: UIViewController {
         println(spectatorBluetoothUtility?.centralManager?.state)
     }
     
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        var number :Int? = verifiedPerformers.count + 1
+        return number
+
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        verifiedPerformers.count
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        
+        return 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        tableView
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("reusableCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        // Configure the cell...
+        
+        return cell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tvc = UITableViewController.init(UITableViewStylePlain)
+        tvc.tableView.reloadData()
         // Do any additional setup after loading the view.
-        populateTableView()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,23 +62,8 @@ class SpectatorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func populateTableView() {
-        
-        var imageOne:UIImage = UIImage(named: "happy-face")!
-        var uuidOne:CBUUID = CBUUID(string: "9A2365C7-B3D3-449D-AF84-2381EC4E60C3")
-    
-        
-            
-        
-        //verifiedPerformers[0] = (PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil))
-    
-        // Add cell to table for each verifiedPerformer
-    }
-    
-    func addCellToTableView(image:UIImage!, name:String!) {
-        
-    }
-    
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -61,5 +71,6 @@ class SpectatorViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+    */
 
 }
