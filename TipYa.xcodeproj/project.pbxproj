@@ -25,13 +25,13 @@
 		8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */; };
 		8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */; };
 		8ED210741ADF54ED0017A2D2 /* Main_iPhone_6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED210721ADF54ED0017A2D2 /* Main_iPhone_6.storyboard */; };
-		BF6833E81AFBEAC300175B55 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6833E71AFBEAC300175B55 /* TableViewCell.swift */; };
 		BF7F9A0D1AFAD8D500BB61CB /* SpectatorViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A0C1AFAD8D500BB61CB /* SpectatorViewController2.swift */; };
 		BF7F9A131AFAED3200BB61CB /* SpectatorViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A0C1AFAD8D500BB61CB /* SpectatorViewController2.swift */; };
 		BF7F9A141AFAED3600BB61CB /* SpectateOnPerformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */; };
 		BF7F9A151AFAED4300BB61CB /* SpectatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */; };
 		BF7F9A161AFAEDC800BB61CB /* PerformerIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */; };
 		BF7F9A181AFAF57500BB61CB /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */; };
+		BF80BCE61B0170BA00F2C024 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */; };
 		BFEC57C11AF981D300CA8206 /* SpectatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */; };
 		BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */; };
 		D01FD9FA1AD0343A00C999C6 /* PerformanceControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */; };
@@ -74,9 +74,9 @@
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 		8ED210731ADF54ED0017A2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone_6.storyboard; sourceTree = "<group>"; };
-		BF6833E71AFBEAC300175B55 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BF7F9A0C1AFAD8D500BB61CB /* SpectatorViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpectatorViewController2.swift; path = TipYa/SpectatorViewController2.swift; sourceTree = "<group>"; };
 		BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorViewController.swift; sourceTree = "<group>"; };
+		BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpectatorTableViewController.swift; path = TipYa/SpectatorTableViewController.swift; sourceTree = "<group>"; };
 		BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBlackboxTests.swift; sourceTree = "<group>"; };
 		D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceControlViewController.swift; sourceTree = "<group>"; };
@@ -216,13 +216,13 @@
 		8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */,
 				D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */,
 				D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */,
 				D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */,
 				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
 				BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */,
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
-				BF6833E71AFBEAC300175B55 /* TableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */,
-				BF6833E81AFBEAC300175B55 /* TableViewCell.swift in Sources */,
+				BF80BCE61B0170BA00F2C024 /* TableViewCell.swift in Sources */,
 				BF7F9A181AFAF57500BB61CB /* SpectatorViewController.swift in Sources */,
 				8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */,
 				BF7F9A0D1AFAD8D500BB61CB /* SpectatorViewController2.swift in Sources */,
