@@ -72,33 +72,9 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signup(sender: AnyObject) {
-        let alert = UIAlertView()
-
-        accounts.createUser(usernameField.text, password: passwordField.text,
-            withValueCompletionBlock: { error, result in
-                
-                if error != nil {
-                    // There was an error creating the account
-                    println("Error occurred in Account Creation")
-                    alert.title = "Error"
-                    alert.message = "Try Again"
-                    alert.addButtonWithTitle("OK")
-                    alert.show()
-                } else {
-                    let uid = result["uid"] as? String
-                    println("Successfully created user account with uid: \(uid)")
-                    alert.title = "Success"
-                    alert.message = "Please Login"
-                    alert.addButtonWithTitle("OK")
-                    alert.show()
-                }
-                
-        })
+        firebaseUtility.createAccount(usernameField.text, password: passwordField.text)
     }
     
-    @IBAction func skipSignup(sender: AnyObject) {
-        
-    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if (segue.identifier == "loginComplete") {

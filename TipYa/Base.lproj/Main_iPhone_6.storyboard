@@ -212,6 +212,7 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="prV-fB-aQ7" eventType="touchUpInside" id="opl-n4-dbm"/>
+                                    <segue destination="pAl-zO-7aH" kind="modal" identifier="firebaseLogin" modalTransitionStyle="flipHorizontal" id="Vib-iP-LgD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="logoButtonOverlay" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-l5-Yrf">
@@ -232,7 +233,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="skipSignup:" destination="prV-fB-aQ7" eventType="touchUpInside" id="1XU-oJ-K3B"/>
+                                    <segue destination="pAl-zO-7aH" kind="modal" identifier="noFirebase" modalTransitionStyle="flipHorizontal" id="k92-7p-TMb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -255,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bb0-v2-ldz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="289"/>
+            <point key="canvasLocation" x="860" y="289"/>
         </scene>
         <!--Performance Control View Controller-->
         <scene sceneID="57v-SS-6gU">
@@ -321,8 +322,8 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-BT-1Nb">
-                                <rect key="frame" x="16" y="56" width="288" height="174"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="performanceimage" image="TipYa_logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-BT-1Nb">
+                                <rect key="frame" x="0.0" y="56" width="320" height="174"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                 </accessibility>
@@ -330,6 +331,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.65490196079999996" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f1U-2B-XQ3"/>
                     <connections>
                         <outlet property="imageButton" destination="2Ow-BT-1Nb" id="jMR-kT-79X"/>
                     </connections>
@@ -381,7 +383,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="k92-7p-TMb"/>
+        <segue reference="D4W-bc-x7n"/>
         <segue reference="gRG-z6-fbE"/>
-        <segue reference="Fvk-qj-Hxp"/>
     </inferredMetricsTieBreakers>
 </document>

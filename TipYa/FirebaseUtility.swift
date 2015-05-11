@@ -66,6 +66,32 @@ class FirebaseUtility {
         
         return loginAttemptResult!
     }
+    
+    func createAccount(username:String!, password: String!) {
+        
+        let alert:UIAlertView = UIAlertView()
+        
+        accounts.createUser(username, password: password,
+        withValueCompletionBlock: { error, result in
+        
+            if error != nil {
+                // There was an error creating the account
+                println("Error occurred in Account Creation")
+                alert.title = "Error"
+                alert.message = "Try Again"
+                alert.addButtonWithTitle("OK")
+            alert.show()
+            } else {
+                let uid = result["uid"] as? String
+                println("Successfully created user account with uid: \(uid)")
+                alert.title = "Success"
+                alert.message = "Please Login"
+                alert.addButtonWithTitle("OK")
+                alert.show()
+            }
+            
+        })
+    }
 //        accounts.authUser(name, password: password, withCompletionBlock: { error, authData in
 //            if (error != nil) {
 //                // an error occurred while attempting login
