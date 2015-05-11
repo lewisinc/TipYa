@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 LAHacksDLNSJO. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 class SpectatorTableViewController :UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -97,4 +97,4 @@ class SpectatorTableViewController :UITableViewController, UITableViewDelegate, 
     }
     */
 
-}
+}*/

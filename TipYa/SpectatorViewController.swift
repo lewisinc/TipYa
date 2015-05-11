@@ -11,8 +11,9 @@ import CoreBluetooth
 
 class SpectatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var verifiedPerformers :[String] = ["My","Table","Works","even though it's static..."]
-    var spectatorBluetoothUtility :SpectatorUtility?
+    var verifiedPerformers :Array<PerformerIdentity>?
+    
+    var spectatorBluetoothUtility :SpectatorUtility? 
     
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
     @IBAction func scanForPerformers(sender: AnyObject) {
@@ -26,11 +27,15 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     */
     
     @IBOutlet var tableView: UITableView!
+    let spectCellIdentifier = "spectCell"
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        return self.verifiedPerformers.count
+        if var count :Int = self.verifiedPerformers?.count {
+            return count
+        } else {
+            return 1
+        }
     }
         
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -39,13 +44,60 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        cell.textLabel?.text = self.verifiedPerformers[indexPath.row]
-        
-        return cell
+        return basicCellAtIndexPath(indexPath)
+    
     }
+    
+    func basicCellAtIndexPath(indexPath:NSIndexPath) -> TableViewCell {
+    
+        let cell = tableView.dequeueReusableCellWithIdentifier(spectCellIdentifier) as! TableViewCell
+        setTitleForCell(cell, indexPath: indexPath)
+        setSubtitleForCell(cell, indexPath: indexPath)
+        return cell
+    
+    }
+    
+    func setTitleForCell(cell:TableViewCell, indexPath:NSIndexPath) {
+        
+        let item :PerformerIdentity? = verifiedPerformers?[indexPath.row]
+        if var temp = item?.name {
+            cell.titleLabel.text = temp
+        } else {
+            cell.titleLabel.text = "None Found"
+        }
+    }
+    
+    func setSubtitleForCell(cell:TableViewCell, indexPath:NSIndexPath) {
+        let item :PerformerIdentity? = verifiedPerformers?[indexPath.row]
+        if var temp = item?.bioText {
+            cell.subtitleLabel.text = temp
+        } else {
+            cell.subtitleLabel.text = "No Description"
+        }
+    }
+    
+    /*if let subtitle = subtitle {
+    
+    // Some subtitles are really long, so only display the first 200 characters
+    if subtitle.length > 200 {
+    cell.subtitleLabel.text = "\(subtitle.substringToIndex(200))..."
+    
+    } else {
+    cell.subtitleLabel.text = subtitle as String
+    }
+    
+    } else {
+    cell.subtitleLabel.text = ""
+    }
+    }*/
+
+    /*func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 160.0
+    }*/
     
     /* MARK:
         UIViewController funtions are below here
@@ -56,9 +108,9 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         
         //verifiedPerformers = ["apple","juice","fruit"]
         
-        //verifiedPerformers.append(PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil))
+        verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "spectCell")
         // Do any additional setup after loading the view.
     }
 
@@ -78,4 +130,4 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     */
 
-}
+    }
