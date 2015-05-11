@@ -167,6 +167,9 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
                 peripheralManager?.stopAdvertising()
                 println("peripheralManager no longer advertising.")
             }
+            else {
+                println("peripheralManager is now broadcasting a performance!")
+            }
     }
     
     func peripheralManager(peripheral: CBPeripheralManager!,
@@ -246,8 +249,6 @@ class SpectatorUtility: NSObject, CBCentralManagerDelegate {
 
         println("Central Manger didDiscoverPeripheral!")
         println(advertisementData.debugDescription)
-        
-        
         
     }
 

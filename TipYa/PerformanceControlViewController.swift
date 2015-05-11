@@ -10,7 +10,7 @@ import UIKit
 
 class PerformanceControlViewController:UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
     
-    @IBOutlet weak var imageButton: UIButton!
+    @IBOutlet weak var imageButton: UIImageView!
     let imagePicker = UIImagePickerController()
     
     var authData: FAuthData?
@@ -37,7 +37,7 @@ class PerformanceControlViewController:UIViewController, UIImagePickerController
                     var decodedimage = UIImage(data: decodedData)!
                     self.profImage = decodedimage as UIImage!
                     
-                    self.imageButton.imageView?.image =  self.maskImage(self.profImage!, maskImage: UIImage(named: "Circle_Mask")!)
+                    self.imageButton.image =  self.maskImage(self.profImage!, maskImage: UIImage(named: "Circle_Mask")!)
                 }
             }
             
@@ -46,7 +46,9 @@ class PerformanceControlViewController:UIViewController, UIImagePickerController
         
         
         //load info from firebase
-        println(authData!.uid)
+        if (authData != nil) {
+            println(authData!.uid)
+        }
         
     }
     
@@ -65,8 +67,8 @@ class PerformanceControlViewController:UIViewController, UIImagePickerController
         self.profImage = maskImage(chosenImage, maskImage: mask!)
         //self.profImage = chosenImage
         
-        imageButton.imageView?.image = profImage //4
-        imageButton.imageView?.highlightedImage = profImage //4
+        imageButton.image = profImage //4
+        imageButton.highlightedImage = profImage //4
         
         var imageData = UIImagePNGRepresentation(profImage)
         
@@ -76,6 +78,7 @@ class PerformanceControlViewController:UIViewController, UIImagePickerController
         user!.childByAppendingPath("image").setValue(encodedString)
         dismissViewControllerAnimated(true, completion: nil) //5
     }
+    
     @IBAction func pickImage(sender: AnyObject) {
         
         imagePicker.allowsEditing = true //2

@@ -15,6 +15,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var bypassFirebaseLoginButton: UIButton!
     
     let firebaseUtility:FirebaseUtility = FirebaseUtility()
     
@@ -51,20 +52,22 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
     @IBAction func backgroundTapped(sender: AnyObject) {
         usernameField.resignFirstResponder()
         passwordField.resignFirstResponder()
     }
     
     @IBAction func login(sender: AnyObject) {
-        if firebaseUtility.firebaseWorks {
+        
+        if sender.restorationIdentifier == "firebaseLogin" {
             let successfulLogin:Bool = firebaseUtility.attemptNormalUserLogin(usernameField.text, password: passwordField.text)
             if successfulLogin {
                 self.performSegueWithIdentifier("loginComplete", sender: firebaseUtility.loggedInUserData!)
             }
         }
-        else {  // Until firebaseWorks == true, do this
-            // self.performSegueWithIdentifier("loginComplete", sender: authData)
+        if sender.restorationIdentifier == "bypassFirebaseLogin" {
+            self.performSegueWithIdentifier("noFirebase", sender: nil)
         }
     }
     
@@ -89,9 +92,13 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
                     alert.addButtonWithTitle("OK")
                     alert.show()
                 }
+                
         })
     }
     
+    @IBAction func skipSignup(sender: AnyObject) {
+        
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if (segue.identifier == "loginComplete") {
@@ -99,13 +106,12 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
             viewController.authData = sender as? FAuthData
             // pass data to next view
         }
+        
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
 
-    
 }
 

@@ -12,6 +12,8 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var applicationLogoImageView: UIImageView!
     
+    @IBOutlet weak var fansButton: UIButton!
+    @IBOutlet weak var artistsButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -29,6 +31,9 @@ class WelcomeViewController: UIViewController {
     
 // MARK: - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 
         if (segue.identifier == "artistLogin") {
