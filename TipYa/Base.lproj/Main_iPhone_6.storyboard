@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -60,38 +59,34 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eGs-pB-Dxq" id="XyF-2S-06S">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="BandName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLb-Ob-95p">
-                                                    <rect key="frame" x="65" y="1" width="247" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BandName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLb-Ob-95p">
+                                                    <rect key="frame" x="69" y="0.0" width="243" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nlp-Rc-YDE">
-                                                    <rect key="frame" x="65" y="14" width="247" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nlp-Rc-YDE">
+                                                    <rect key="frame" x="69" y="18" width="243" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v22-RC-UXO">
-                                                    <rect key="frame" x="1" y="1" width="57" height="57"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="v22-RC-UXO" secondAttribute="height" multiplier="1:1" id="r8U-F1-wM5"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v22-RC-UXO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="61" height="59"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Nlp-Rc-YDE" firstAttribute="trailing" secondItem="XyF-2S-06S" secondAttribute="trailingMargin" id="50x-Fn-8Fn"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="leading" secondItem="v22-RC-UXO" secondAttribute="trailing" constant="7" id="9HS-UY-xUV"/>
-                                                <constraint firstItem="v22-RC-UXO" firstAttribute="leading" secondItem="XyF-2S-06S" secondAttribute="leadingMargin" constant="-7" id="JM1-lF-jam"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="top" secondItem="v22-RC-UXO" secondAttribute="top" id="OZp-Yz-LWn"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="top" secondItem="XyF-2S-06S" secondAttribute="topMargin" constant="-7" id="P0o-B1-i7y"/>
-                                                <constraint firstItem="v22-RC-UXO" firstAttribute="top" secondItem="XyF-2S-06S" secondAttribute="topMargin" constant="-7" id="TDm-h6-rq2"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Nlp-Rc-YDE" secondAttribute="bottom" constant="-7" id="WXq-ko-04y"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="centerX" secondItem="Nlp-Rc-YDE" secondAttribute="centerX" id="Xkk-3D-cY3"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="trailing" secondItem="Nlp-Rc-YDE" secondAttribute="trailing" id="bXl-Vi-sWx"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="leading" secondItem="Nlp-Rc-YDE" secondAttribute="leading" id="fE6-MT-YJf"/>
-                                                <constraint firstItem="v22-RC-UXO" firstAttribute="bottom" secondItem="Nlp-Rc-YDE" secondAttribute="bottom" id="lVb-hR-UZv"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="bottom" secondItem="Nlp-Rc-YDE" secondAttribute="top" constant="8" id="zSo-oX-Rbn"/>
+                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="leading" secondItem="v22-RC-UXO" secondAttribute="trailing" constant="8" symbolic="YES" id="3ur-SS-dwb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XLb-Ob-95p" secondAttribute="trailing" constant="-7" id="48d-bg-aFR"/>
+                                                <constraint firstItem="v22-RC-UXO" firstAttribute="leading" secondItem="XyF-2S-06S" secondAttribute="leading" id="9WS-uJ-qf4"/>
+                                                <constraint firstItem="Nlp-Rc-YDE" firstAttribute="trailing" secondItem="XLb-Ob-95p" secondAttribute="trailing" id="A4W-az-hr6"/>
+                                                <constraint firstItem="v22-RC-UXO" firstAttribute="bottom" secondItem="Nlp-Rc-YDE" secondAttribute="bottom" id="M7I-ze-ket"/>
+                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="top" secondItem="v22-RC-UXO" secondAttribute="top" id="OaP-6O-GyA"/>
+                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="leading" secondItem="Nlp-Rc-YDE" secondAttribute="leading" id="cly-Ni-4Pw"/>
+                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="top" secondItem="XyF-2S-06S" secondAttribute="top" id="dfd-ng-f9i"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="XLb-Ob-95p" secondAttribute="bottom" constant="29" id="hS7-zr-fEd"/>
+                                                <constraint firstItem="Nlp-Rc-YDE" firstAttribute="top" secondItem="XyF-2S-06S" secondAttribute="topMargin" constant="10" id="qLZ-Xy-zqA"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nlp-Rc-YDE" secondAttribute="bottom" id="wEF-za-Xfj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -101,6 +96,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZPn-xb-LX5" id="KJd-VU-HdX"/>
+                                    <outlet property="delegate" destination="ZPn-xb-LX5" id="iz1-Ue-MTU"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.65490196079999996" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
