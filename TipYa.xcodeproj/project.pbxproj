@@ -33,6 +33,9 @@
 		BF7F9A181AFAF57500BB61CB /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */; };
 		BF80BCE61B0170BA00F2C024 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */; };
 		BFB7A5691B01CD0E001D6068 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */; };
+		BFD135961B02A04F00E3847D /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */; };
+		BFD135971B02A05400E3847D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */; };
+		BFD135981B02A05800E3847D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */; };
 		BFEC57C11AF981D300CA8206 /* SpectatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */; };
 		BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */; };
 		D01FD9FA1AD0343A00C999C6 /* PerformanceControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */; };
@@ -337,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD135981B02A05800E3847D /* TableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +375,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC411ACFC99900DD76AC /* TipYaTests.swift in Sources */,
+				BFD135971B02A05400E3847D /* TableViewCell.swift in Sources */,
 				BF7F9A151AFAED4300BB61CB /* SpectatorTableViewController.swift in Sources */,
+				BFD135961B02A04F00E3847D /* SpectatorViewController.swift in Sources */,
 				BF7F9A141AFAED3600BB61CB /* SpectateOnPerformerViewController.swift in Sources */,
 				BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */,
 				BF7F9A161AFAEDC800BB61CB /* PerformerIdentity.swift in Sources */,

@@ -7,20 +7,17 @@
 //
 
 import UIKit
-import CoreBluetooth
 
 class SpectatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var verifiedPerformers :Array<PerformerIdentity>?
     
-    var spectatorBluetoothUtility :SpectatorUtility? 
-    
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
-    @IBAction func scanForPerformers(sender: AnyObject) {
+    /*@IBAction func scanForPerformers(sender: AnyObject) {
         spectatorBluetoothUtility?.centralManager?.scanForPeripheralsWithServices([performerServicesUUID], options: nil)
         println("SCANNING!")
         println(spectatorBluetoothUtility?.centralManager?.state)
-    }
+    }*/
     
     /* MARK: -TableView Goodness
     Funtions for storyboard are below
@@ -45,22 +42,10 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         println("You selected cell #\(indexPath.row)!")
         
     }
-    
-    /*
-    var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-    
-    // Configure the cell...
-    cell.textLabel?.text = self.verifiedPerformers[indexPath.row]
-    
-    return cell
-    */
+
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        //let cell :TableViewCell = basicCellAtIndexPath(indexPath)
-        
-        
         
         
         if let cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier(spectCellIdentifier) as? TableViewCell {
@@ -94,7 +79,7 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
+        //verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
         
         tableView.registerNib(UINib(nibName: "TableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: spectCellIdentifier)
         // Do any additional setup after loading the view.
@@ -109,6 +94,25 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
+    // MARK: - Spectator Utility Delegate Methods
+    
+    func foundPerformer(performer: PerformerIdentity) {
+        verifiedPerformers?.append(performer)
+        tableView.reloadData()
+    }
+    
+    func clear() {
+        
+        let rowsToDelete: NSMutableArray = []
+        
+        for (var i = 0; i < self.verifiedPerformers?.count; i++) {
+            rowsToDelete.addObject(NSIndexPath(forRow: i, inSection: 0))
+        }
+        
+        tableView.deleteRowsAtIndexPaths(rowsToDelete as [AnyObject], withRowAnimation: .Automatic)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
