@@ -5,16 +5,19 @@
 //  Created by David Lewis on 4/4/15.
 //  Copyright (c) 2015 LAHacksDLNSJO. All rights reserved.
 //
-import Foundation
-import UIKit
-import XCTest
-import CoreBluetooth
 
-class BasicBlackboxTests: XCTestCase {
+/*import Foundation
+import UIKit
+
+class BasicBlackboxTests: UIView {
+    
+    //var ids :Array<PerformerIdentity>
+    var spectView :SpectatorViewController? = nil
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        spectView = SpectatorViewController()
     }
     
     override func tearDown() {
@@ -33,10 +36,15 @@ class BasicBlackboxTests: XCTestCase {
             2. Append identity to Array verifiedPerformers in SpectatorUtility
             3. Assert that the information SpectatorTableViewController uses to build a cell is the same as the passed in information for all randomly chosen possiblilities for identity up to 10,000 characters.
         */
+        var randomIdentitys :Array<PerformerIdentity> = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
+        //verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
         
-        //let randomIdentity :PerformerIdentity = PerformerIdentity.init(name: self.randomStringWithLength(100),image: nil ,text: self.randomStringWithLength(10000), facebook: self.randomStringWithLength(200), youtube: self.randomStringWithLength(200), otherWebsite: self.randomStringWithLength(), idkey: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD54C")
+        spectView?.foundPerformer(randomIdentitys[0])
         
-        //XCTAssertEqual(expression1: [T : U], <#expression2: [T : U]#>, "Final identity was the same as expected")
+        if spectView?.verifiedPerformers ==  {
+            println("Final identity was the same as expected")
+
+        }
     }
     func testPerformanceExample() {
         // This is an example of a performance test case.
@@ -96,4 +104,4 @@ class BasicBlackboxTests: XCTestCase {
     func loadFromNSUserDefaults()
     */
     
-}*/
+}*/*/

@@ -10,7 +10,7 @@ import UIKit
 
 class SpectatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var verifiedPerformers :Array<PerformerIdentity>?
+    var verifiedPerformers :Array<PerformerIdentity>? = nil
     
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
     /*@IBAction func scanForPerformers(sender: AnyObject) {
@@ -96,7 +96,7 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: - Spectator Utility Delegate Methods
     
-    func foundPerformer(performer: PerformerIdentity) {
+    func foundPerformer(performer:PerformerIdentity) {
         verifiedPerformers?.append(performer)
         tableView.reloadData()
     }
@@ -111,6 +111,11 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableView.deleteRowsAtIndexPaths(rowsToDelete as [AnyObject], withRowAnimation: .Automatic)
         
+    }
+    
+    func checkIDs() -> PerformerIdentity {
+        //let int :Int = 0
+        return PerformerIdentity()
     }
     
     /*

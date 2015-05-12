@@ -22,9 +22,9 @@ class TipYaTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        //let person :PerformerIdentity = PerfomerIdentity.init("John Doe")
-        XCTAssert(true, "Pass")
+        let tests :Tests = Tests()
+        tests.IdentityPassAndLoad()
+        tests.CountTest()
     }
     
     func testPerformanceExample() {

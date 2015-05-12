@@ -27,15 +27,16 @@
 		8ED210741ADF54ED0017A2D2 /* Main_iPhone_6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED210721ADF54ED0017A2D2 /* Main_iPhone_6.storyboard */; };
 		BF7F9A0D1AFAD8D500BB61CB /* SpectatorViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A0C1AFAD8D500BB61CB /* SpectatorViewController2.swift */; };
 		BF7F9A131AFAED3200BB61CB /* SpectatorViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A0C1AFAD8D500BB61CB /* SpectatorViewController2.swift */; };
-		BF7F9A141AFAED3600BB61CB /* SpectateOnPerformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */; };
 		BF7F9A151AFAED4300BB61CB /* SpectatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */; };
-		BF7F9A161AFAEDC800BB61CB /* PerformerIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */; };
 		BF7F9A181AFAF57500BB61CB /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */; };
 		BF80BCE61B0170BA00F2C024 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */; };
 		BFB7A5691B01CD0E001D6068 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */; };
-		BFD135961B02A04F00E3847D /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */; };
 		BFD135971B02A05400E3847D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */; };
 		BFD135981B02A05800E3847D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */; };
+		BFD1359D1B02B59500E3847D /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD1359C1B02B59500E3847D /* Tests.swift */; };
+		BFD1359E1B02B59500E3847D /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD1359C1B02B59500E3847D /* Tests.swift */; };
+		BFD1359F1B02B85800E3847D /* PerformerIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */; };
+		BFD135A01B02B86000E3847D /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */; };
 		BFEC57C11AF981D300CA8206 /* SpectatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */; };
 		BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */; };
 		D01FD9FA1AD0343A00C999C6 /* PerformanceControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */; };
@@ -82,6 +83,7 @@
 		BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorViewController.swift; sourceTree = "<group>"; };
 		BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		BFD1359C1B02B59500E3847D /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpectatorTableViewController.swift; path = TipYa/SpectatorTableViewController.swift; sourceTree = "<group>"; };
 		BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBlackboxTests.swift; sourceTree = "<group>"; };
 		D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceControlViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				8EBBCC311ACFC99900DD76AC /* Images.xcassets */,
 				8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */,
 				8EBBCC281ACFC99900DD76AC /* Supporting Files */,
+				BFD1359C1B02B59500E3847D /* Tests.swift */,
 			);
 			path = TipYa;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				8EBBCC741ACFECED00DD76AC /* FirebaseUtility.swift in Sources */,
 				8E5E40201AD01AD00034415C /* PerformerIdentity.swift in Sources */,
 				D03012861AD0244B001F8549 /* PerformerLoginViewController.swift in Sources */,
+				BFD1359D1B02B59500E3847D /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,13 +379,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC411ACFC99900DD76AC /* TipYaTests.swift in Sources */,
+				BFD1359E1B02B59500E3847D /* Tests.swift in Sources */,
 				BFD135971B02A05400E3847D /* TableViewCell.swift in Sources */,
 				BF7F9A151AFAED4300BB61CB /* SpectatorTableViewController.swift in Sources */,
-				BFD135961B02A04F00E3847D /* SpectatorViewController.swift in Sources */,
-				BF7F9A141AFAED3600BB61CB /* SpectateOnPerformerViewController.swift in Sources */,
+				BFD135A01B02B86000E3847D /* SpectatorViewController.swift in Sources */,
 				BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */,
-				BF7F9A161AFAEDC800BB61CB /* PerformerIdentity.swift in Sources */,
 				BF7F9A131AFAED3200BB61CB /* SpectatorViewController2.swift in Sources */,
+				BFD1359F1B02B85800E3847D /* PerformerIdentity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
