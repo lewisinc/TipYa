@@ -32,8 +32,10 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if var count :Int = self.verifiedPerformers?.count {
+            println("Count Success: \(count)")
             return count
         } else {
+            println("Count Failed")
             return 1
         }
     }
@@ -47,7 +49,13 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return basicCellAtIndexPath(indexPath)
+        let cell :TableViewCell = basicCellAtIndexPath(indexPath)
+        
+        println("Final Cell: #\(indexPath.row) = #\(self.verifiedPerformers?[indexPath.row].name)")
+        println("Name = \(cell.titleLabel.text)")
+        println("Text = \(cell.subtitleLabel.text)")
+        
+        return cell as UITableViewCell
     
     }
     
@@ -56,52 +64,44 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(spectCellIdentifier) as! TableViewCell
         setTitleForCell(cell, indexPath: indexPath)
         setSubtitleForCell(cell, indexPath: indexPath)
+        
+        println("Gotten Cell: #\(indexPath.row) = #\(self.verifiedPerformers?[indexPath.row].name)")
+        
         return cell
-    
     }
+    
     
     func setTitleForCell(cell:TableViewCell, indexPath:NSIndexPath) {
         
-        let item :PerformerIdentity? = verifiedPerformers?[indexPath.row]
-        if var temp = item?.name {
-            cell.titleLabel.text = temp
+        let item :PerformerIdentity? = self.verifiedPerformers?[indexPath.row]
+        
+        if cell.titleLabel == nil {
+            println("Error TitleLabel = nil")
+            cell.titleLabel = UILabel()
+        }
+        
+        if var temp = item {
+            cell.titleLabel.text = temp.name
         } else {
             cell.titleLabel.text = "None Found"
         }
     }
     
     func setSubtitleForCell(cell:TableViewCell, indexPath:NSIndexPath) {
+        
         let item :PerformerIdentity? = verifiedPerformers?[indexPath.row]
-        if var temp = item?.bioText {
-            cell.subtitleLabel.text = temp
+        
+        if cell.subtitleLabel == nil {
+            println("Error SubtitleLabel = nil")
+            cell.subtitleLabel = UILabel()
+        }
+        
+        if var temp = item {
+            cell.subtitleLabel.text = temp.bioText
         } else {
             cell.subtitleLabel.text = "No Description"
         }
     }
-    
-    /*if let subtitle = subtitle {
-    
-    // Some subtitles are really long, so only display the first 200 characters
-    if subtitle.length > 200 {
-    cell.subtitleLabel.text = "\(subtitle.substringToIndex(200))..."
-    
-    } else {
-    cell.subtitleLabel.text = subtitle as String
-    }
-    
-    } else {
-    cell.subtitleLabel.text = ""
-    }
-    }*/
-
-    /*func configureTableView() {
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 160.0
-    }*/
-    
-    /* MARK:
-        UIViewController funtions are below here
-    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,4 +130,4 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     */
 
-    }
+}

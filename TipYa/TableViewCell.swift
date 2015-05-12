@@ -14,6 +14,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var random: UIImageView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
