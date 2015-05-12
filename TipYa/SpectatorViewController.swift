@@ -81,59 +81,18 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
             return cell
     
         } else {
-            return basicCellAtIndexPath(indexPath)
+            
+            return UITableViewCell()
+            
         }
     }
     
     
-    func basicCellAtIndexPath(indexPath:NSIndexPath) -> TableViewCell {
-    
-        let cell = tableView.dequeueReusableCellWithIdentifier(spectCellIdentifier) as! TableViewCell
-        setTitleForCell(cell, indexPath: indexPath)
-        setSubtitleForCell(cell, indexPath: indexPath)
-        
-        println("Gotten Cell: #\(indexPath.row) = #\(self.verifiedPerformers?[indexPath.row].name)")
-        
-        return cell
-    }
     
     
-    func setTitleForCell(cell:TableViewCell, indexPath:NSIndexPath) {
-        
-        let item :PerformerIdentity? = self.verifiedPerformers?[indexPath.row]
-        
-        if cell.titleLabel == nil {
-            println("Error TitleLabel = nil")
-            cell.titleLabel = UILabel()
-        }
-        
-        if var temp = item {
-            cell.titleLabel.text = temp.name
-        } else {
-            cell.titleLabel.text = "None Found"
-        }
-    }
-    
-    func setSubtitleForCell(cell:TableViewCell, indexPath:NSIndexPath) {
-        
-        let item :PerformerIdentity? = verifiedPerformers?[indexPath.row]
-        
-        if cell.subtitleLabel == nil {
-            println("Error SubtitleLabel = nil")
-            cell.subtitleLabel = UILabel()
-        }
-        
-        if var temp = item {
-            cell.subtitleLabel.text = temp.bioText
-        } else {
-            cell.subtitleLabel.text = "No Description"
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //verifiedPerformers = ["apple","juice","fruit"]
         
         verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
         
@@ -141,7 +100,7 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 44.0
+        tableView.estimatedRowHeight = 60.0
     }
 
     override func didReceiveMemoryWarning() {

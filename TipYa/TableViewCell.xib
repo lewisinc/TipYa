@@ -14,7 +14,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-SH-Tdp">
                     <rect key="frame" x="8" y="8" width="584" height="28"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="28" id="Abc-fG-bkM"/>
+                        <constraint firstAttribute="height" constant="20" id="Abc-fG-bkM"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
