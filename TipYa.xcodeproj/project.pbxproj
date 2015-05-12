@@ -70,8 +70,6 @@
 		8EBBCC731ACFECED00DD76AC /* FirebaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtility.swift; sourceTree = "<group>"; };
 		8EBBCC771ACFECFE00DD76AC /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 		8ED210731ADF54ED0017A2D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone_6.storyboard; sourceTree = "<group>"; };
-		8EED96FA1B01CDBE009A3836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8EED96FB1B01CDBE009A3836 /* TipYa_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipYa_Tests.swift; sourceTree = "<group>"; };
 		8EED97021B01F11F009A3836 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceControlViewController.swift; sourceTree = "<group>"; };
 		D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerInfoViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				8EBBCC271ACFC99900DD76AC /* TipYa */,
 				8EBBCC3D1ACFC99900DD76AC /* TipYaTests */,
-				8EED96F81B01CDBE009A3836 /* TipYa Tests */,
 				8EBBCC651ACFEB2B00DD76AC /* Frameworks */,
 				8EBBCC261ACFC99900DD76AC /* Products */,
 			);
@@ -226,23 +223,6 @@
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		8EED96F81B01CDBE009A3836 /* TipYa Tests */ = {
-			isa = PBXGroup;
-			children = (
-				8EED96FB1B01CDBE009A3836 /* TipYa_Tests.swift */,
-				8EED96F91B01CDBE009A3836 /* Supporting Files */,
-			);
-			path = "TipYa Tests";
-			sourceTree = "<group>";
-		};
-		8EED96F91B01CDBE009A3836 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8EED96FA1B01CDBE009A3836 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D05DE2701AD0E82200632353 /* SwiftyJSON */ = {
