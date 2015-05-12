@@ -7,20 +7,18 @@
 //
 
 import UIKit
-import CoreBluetooth
 
 class SpectatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var verifiedPerformers :Array<PerformerIdentity>?
     
-    var spectatorBluetoothUtility :SpectatorUtility? 
     
     @IBOutlet weak var refreshNearbyPerformances: UIButton!
-    @IBAction func scanForPerformers(sender: AnyObject) {
+    /*@IBAction func scanForPerformers(sender: AnyObject) {
         spectatorBluetoothUtility?.centralManager?.scanForPeripheralsWithServices([performerServicesUUID], options: nil)
         println("SCANNING!")
         println(spectatorBluetoothUtility?.centralManager?.state)
-    }
+    }*/
     
     /* MARK: -TableView Goodness
     Funtions for storyboard are below
@@ -70,6 +68,7 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
             
             cell.titleLabel.text = item?.name
             cell.subtitleLabel.text = item?.bioText
+            cell.customImage.image = item?.image
             
             cell.setNeedsUpdateConstraints()
             cell.updateConstraintsIfNeeded()
@@ -77,6 +76,7 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
             println("Final Cell: #\(indexPath.row) = #\(self.verifiedPerformers?[indexPath.row].name)")
             println("Name = \(cell.titleLabel.text)")
             println("Text = \(cell.subtitleLabel.text)")
+            println("Image = \(cell.customImage.image)")
             
             return cell
     
@@ -94,7 +94,9 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
+        var image:UIImage! = UIImage(named: "happy face")
+        
+        verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: image, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
         
         tableView.registerNib(UINib(nibName: "TableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: spectCellIdentifier)
         // Do any additional setup after loading the view.
@@ -108,6 +110,23 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Spectator Utility Delegate Methods
+    
+    func foundPerformer(performer: PerformerIdentity) {
+        verifiedPerformers?.append(performer)
+    }
+    
+    func clear() {
+        
+        let rowsToDelete: NSMutableArray = []
+        
+        for (var i = 0; i < self.verifiedPerformers?.count; i++) {
+            rowsToDelete.addObject(NSIndexPath(forRow: i, inSection: 0))
+        }
+        
+        tableView.deleteRowsAtIndexPaths(rowsToDelete as [AnyObject], withRowAnimation: .Automatic)
+        
+    }
 
     /*
     // MARK: - Navigation
