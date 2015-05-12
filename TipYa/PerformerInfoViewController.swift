@@ -10,6 +10,9 @@ import UIKit
 
 class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var infoView: UIView!
+    
+    @IBOutlet weak var aboutField: UITextView!
     
     var authData: FAuthData?
     var user: Firebase?
@@ -28,7 +31,7 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
             
             if (snapshot.hasChildren() == true) {
                 self.json = snapshot.value as! NSDictionary!
-                
+            
                 if (self.json?.valueForKey("name") != nil) {
                     self.nameField.text = self.json!.valueForKey("name")! as! String
                 }
@@ -36,7 +39,7 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
                 if (self.json?.valueForKey("description") != nil) {
                     self.descripField.text  = self.json!.valueForKey("description")! as! String
                 }
-                
+            
                 println(self.json!.valueForKey("name")!)
             }
             
@@ -59,7 +62,7 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
     
     /*
     @IBAction func textFieldShouldReturn(sender: UITextField) {
-    sender.resignFirstResponder()
+        sender.resignFirstResponder()
     }
     */
     
@@ -74,6 +77,14 @@ class PerformerInfoViewController: UIViewController, UITextFieldDelegate {
         if (descripField.text != ""){
             user!.childByAppendingPath("description").setValue(descripField.text);
         }
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
     
 }
