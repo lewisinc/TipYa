@@ -10,8 +10,10 @@ import UIKit
 
 class PerformanceControlViewController:UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
     
-    @IBOutlet weak var imageButton: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageButton: UIButton!
     let imagePicker = UIImagePickerController()
+    
     
     var authData: FAuthData?
     
@@ -60,6 +62,7 @@ class PerformanceControlViewController:UIViewController, UIImagePickerController
     }
     
     
+    // MARK:    - UIImagePickerDelegate methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let mask = UIImage(named: "Circle_Mask")
         
