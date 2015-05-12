@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TipYa_logo" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-Ke-1PF">
-                                <rect key="frame" x="0.0" y="28" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="256"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The best way for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yl-Oz-4WT">
                                 <rect key="frame" x="0.0" y="376" width="320" height="48"/>
@@ -161,21 +161,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="emailTextfield" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLZ-jL-RBh">
-                                <rect key="frame" x="16" y="244" width="288" height="48"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="passwordTextfield" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ6-OG-iXR">
-                                <rect key="frame" x="16" y="308" width="288" height="48"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TipYa_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5uF-r1-sjb">
-                                <rect key="frame" x="0.0" y="108" width="320" height="128"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw0-ix-OCt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.7843137255" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -189,8 +174,32 @@
                                     <segue destination="01M-jC-DKD" kind="modal" identifier="backFromArtistLogin" modalTransitionStyle="flipHorizontal" id="gRG-z6-fbE"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="emailTextfield" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLZ-jL-RBh">
+                                <rect key="frame" x="16" y="270" width="288" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="passwordTextfield" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ6-OG-iXR">
+                                <rect key="frame" x="16" y="334" width="288" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TipYa_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5uF-r1-sjb" userLabel="TipYa Logo UIImageView">
+                                <rect key="frame" x="0.0" y="108" width="320" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="logoButtonOverlay" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-l5-Yrf" userLabel="TipYa Overlay Button">
+                                <rect key="frame" x="0.0" y="108" width="320" height="128"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backgroundTapped:" destination="prV-fB-aQ7" eventType="touchUpInside" id="bYs-2e-U4w"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="signup" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-6M-KBD">
-                                <rect key="frame" x="0.0" y="450" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="424" width="320" height="48"/>
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.45882352941176469" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="Sign Up if you haven't!">
@@ -201,8 +210,20 @@
                                     <action selector="signup:" destination="prV-fB-aQ7" eventType="touchUpInside" id="Og5-id-hPA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="firebaseLogin" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g31-Ai-y2L">
-                                <rect key="frame" x="0.0" y="506" width="320" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="bypassFirebaseLogin" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hn-Mc-IEc">
+                                <rect key="frame" x="0.0" y="520" width="320" height="48"/>
+                                <color key="backgroundColor" red="0.73214115628943266" green="0.53449965269630217" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Try Me Out!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pAl-zO-7aH" kind="modal" identifier="noFirebaseLogin" modalTransitionStyle="flipHorizontal" id="k92-7p-TMb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g31-Ai-y2L">
+                                <rect key="frame" x="0.0" y="472" width="320" height="48"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.78431372549019607" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal">
@@ -215,27 +236,6 @@
                                     <segue destination="pAl-zO-7aH" kind="modal" identifier="firebaseLogin" modalTransitionStyle="flipHorizontal" id="Vib-iP-LgD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="logoButtonOverlay" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-l5-Yrf">
-                                <rect key="frame" x="0.0" y="108" width="320" height="128"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backgroundTapped:" destination="prV-fB-aQ7" eventType="touchUpInside" id="bYs-2e-U4w"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="bypassFirebaseLogin" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hn-Mc-IEc">
-                                <rect key="frame" x="0.0" y="374" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.73214115628943266" green="0.53449965269630217" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="Try Me Out!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="pAl-zO-7aH" kind="modal" identifier="noFirebaseLogin" modalTransitionStyle="flipHorizontal" id="k92-7p-TMb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.65490196079999996" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration">
@@ -246,11 +246,13 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="mw0-ix-OCt" id="g30-m9-034"/>
                         <outlet property="bypassFirebaseLoginButton" destination="5hn-Mc-IEc" id="ZBi-Co-nzH"/>
                         <outlet property="loginButton" destination="g31-Ai-y2L" id="eKh-Ju-eKw"/>
                         <outlet property="passwordField" destination="PQ6-OG-iXR" id="XaF-S7-k1Y"/>
                         <outlet property="signUpButton" destination="e2Z-6M-KBD" id="s7t-yI-pBK"/>
                         <outlet property="tipyaLogo" destination="BeK-l5-Yrf" id="xaF-0E-O85"/>
+                        <outlet property="tipyaLogoImageView" destination="5uF-r1-sjb" id="v1e-SZ-a5t"/>
                         <outlet property="usernameField" destination="nLZ-jL-RBh" id="wAy-7z-aT3"/>
                     </connections>
                 </viewController>
@@ -280,75 +282,96 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="prV-fB-aQ7" kind="modal" modalTransitionStyle="flipHorizontal" id="D4W-bc-x7n"/>
+                                    <segue destination="prV-fB-aQ7" kind="modal" identifier="backToLogin" modalTransitionStyle="flipHorizontal" id="D4W-bc-x7n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-hX-2Pi" userLabel="Toggle Broadcast Button">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="toggleBluetoothButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-hX-2Pi" userLabel="Toggle Broadcast Button">
                                 <rect key="frame" x="160" y="0.0" width="160" height="48"/>
                                 <color key="backgroundColor" red="0.45773307185620737" green="0.59148161736517291" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="Inactive">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggleBluetooth:" destination="pAl-zO-7aH" eventType="touchUpInside" id="VGh-pu-jby"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="performanceImage" image="BlankPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-BT-1Nb" userLabel="Performance Image">
-                                <rect key="frame" x="73" y="56" width="174" height="174"/>
+                                <rect key="frame" x="57" y="56" width="206" height="206"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                 </accessibility>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-JD-JBw" userLabel="Performance Image Button">
-                                <rect key="frame" x="73" y="56" width="174" height="174"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="artistName" scrollEnabled="NO" text="Artist Name" translatesAutoresizingMaskIntoConstraints="NO" id="gfg-Hp-ugc" userLabel="Artist Name">
+                                <rect key="frame" x="16" y="270" width="288" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="facebookLink" scrollEnabled="NO" text="Facebook Link" translatesAutoresizingMaskIntoConstraints="NO" id="XdJ-B6-SVf" userLabel="Facebook Link">
+                                <rect key="frame" x="16" y="308" width="288" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="youtubeLink" scrollEnabled="NO" text="Youtube Link" translatesAutoresizingMaskIntoConstraints="NO" id="K5v-ZG-8GD" userLabel="Youtube Link">
+                                <rect key="frame" x="16" y="346" width="288" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="otherLink" scrollEnabled="NO" text="Other Link" translatesAutoresizingMaskIntoConstraints="NO" id="SmB-Lr-oIT" userLabel="Other Link">
+                                <rect key="frame" x="16" y="384" width="288" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="biographyText" text="Enter your biography here..." translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-WY-YUo" userLabel="Biography TextField">
+                                <rect key="frame" x="16" y="422" width="288" height="139"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done"/>
+                            </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FirstResponder's text here." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrU-ml-gla" userLabel="Text Entry Feedback Label">
+                                <rect key="frame" x="7" y="126" width="306" height="174"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.60999999999999999" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfp-qg-7GG" userLabel="Performance Image Button">
+                                <rect key="frame" x="57" y="56" width="206" height="206"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pickImage:" destination="pAl-zO-7aH" eventType="touchUpInside" id="VKW-bt-SNa"/>
+                                    <action selector="pickImage:" destination="pAl-zO-7aH" eventType="touchUpInside" id="WRA-Eg-PXh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Artist Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQ2-DA-ARt">
-                                <rect key="frame" x="16" y="238" width="288" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Facebook Link" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMR-8P-ybX">
-                                <rect key="frame" x="16" y="276" width="288" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Youtube Link" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mte-ce-4hL">
-                                <rect key="frame" x="16" y="314" width="288" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other Web Link" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vpd-2X-I58">
-                                <rect key="frame" x="16" y="352" width="288" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter your biography here..." translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-WY-YUo" userLabel="Biography TextField">
-                                <rect key="frame" x="16" y="390" width="288" height="170"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.65490196079999996" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="f1U-2B-XQ3"/>
                     <connections>
-                        <outlet property="imageButton" destination="JhD-JD-JBw" id="E5N-Kw-I1H"/>
+                        <outlet property="artistNameTextView" destination="gfg-Hp-ugc" id="tfA-us-qiq"/>
+                        <outlet property="biographyTextView" destination="Fc1-WY-YUo" id="XqN-bc-LsS"/>
+                        <outlet property="editFeedbackLabel" destination="JrU-ml-gla" id="LdR-Lo-qOz"/>
+                        <outlet property="facebookLinkTextView" destination="XdJ-B6-SVf" id="Obg-hw-P7U"/>
+                        <outlet property="imageButton" destination="nfp-qg-7GG" id="8OZ-60-HDe"/>
                         <outlet property="imageView" destination="2Ow-BT-1Nb" id="9lv-CL-oLO"/>
+                        <outlet property="otherWebLinkTextView" destination="SmB-Lr-oIT" id="O2J-eD-HWI"/>
+                        <outlet property="toggleBluetoothButton" destination="Mi3-hX-2Pi" id="d2g-xt-4eI"/>
+                        <outlet property="youtubeLinkTextView" destination="K5v-ZG-8GD" id="tPw-Pm-VUv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EdZ-Zu-OjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287" y="289"/>
+            <point key="canvasLocation" x="1292" y="289"/>
         </scene>
         <!--Performer Info View Controller-->
         <scene sceneID="TiS-M2-94m">
@@ -394,8 +417,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="k92-7p-TMb"/>
-        <segue reference="D4W-bc-x7n"/>
         <segue reference="gRG-z6-fbE"/>
+        <segue reference="Fvk-qj-Hxp"/>
+        <segue reference="Vib-iP-LgD"/>
     </inferredMetricsTieBreakers>
 </document>

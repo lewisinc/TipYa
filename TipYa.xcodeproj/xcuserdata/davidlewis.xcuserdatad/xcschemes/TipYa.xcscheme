@@ -34,6 +34,20 @@
                ReferencedContainer = "container:TipYa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8EED96F61B01CDBE009A3836"
+               BuildableName = "TipYa Tests.xctest"
+               BlueprintName = "TipYa Tests"
+               ReferencedContainer = "container:TipYa.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "8EBBCC391ACFC99900DD76AC"
                BuildableName = "TipYaTests.xctest"
                BlueprintName = "TipYaTests"
+               ReferencedContainer = "container:TipYa.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8EED96F61B01CDBE009A3836"
+               BuildableName = "TipYa Tests.xctest"
+               BlueprintName = "TipYa Tests"
                ReferencedContainer = "container:TipYa.xcodeproj">
             </BuildableReference>
          </TestableReference>

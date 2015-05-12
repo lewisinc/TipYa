@@ -29,6 +29,14 @@ var spectatorIdentityUUID = CBUUID(string: "9BC1F0DC-F4CB-4159-BD38-7B75CD0CD550
 
 
 //  MARK:   -   Performer-Side Bluetooth Functionality
+
+protocol PeripheralUtilityDelegate {
+    /**
+        Allows new Identities to be passed to the `delegateObjects` property the protocol
+        :param: The new PerformerIdentity to be used to configure the delegate
+    */
+    func feedNewIdentityConfiguration(identity: PerformerIdentity)
+}
 class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
 
     var peripheralManager:CBPeripheralManager?
@@ -51,16 +59,26 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         bluetoothServices = CBMutableService(type: appUUIDKey, primary: true)
     }
     
+    func cleanup() {
+        peripheralManager?.stopAdvertising()
+        peripheralManager?.removeAllServices()
+        
+        peripheralManager = CBPeripheralManager(delegate:self, queue:nil)
+        bluetoothServices = CBMutableService(type: appUUIDKey, primary: true)
+        
+    }
     // Set up services and characteristics on your local peripheral
     func configureUtilityForIdentity(identity:PerformerIdentity!) {
         myIdentity = identity
-        var characteristicsArray = [CBMutableCharacteristic]()
+        cleanup()
         
+        var characteristicsArray = [CBMutableCharacteristic]()
+
         // Build the NAME characteristic
         if (identity.name != nil) {
             nameCharacteristic =
                 CBMutableCharacteristic(type: performerNameCharacteristicUUID,
-                    properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                    properties: CBCharacteristicProperties.Read,
                     value: myIdentity?.name?.dataUsingEncoding(NSUTF8StringEncoding,
                         allowLossyConversion: false),
                     permissions: CBAttributePermissions.Readable)
@@ -83,7 +101,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         // Build the BIOGRAPHY characteristic
         if (identity.bioText != nil) {
             biographyCharacteristic = CBMutableCharacteristic(type: performerBiographyCharacteristicUUID,
-                properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                properties: CBCharacteristicProperties.Read,
                 value: myIdentity?.bioText?.dataUsingEncoding(NSUTF8StringEncoding,
                     allowLossyConversion: false),
                 permissions: CBAttributePermissions.Readable)
@@ -95,7 +113,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         if (identity.image != nil) {
             var imageData:NSData = UIImageJPEGRepresentation(identity.image, 0.0)
             chosenImageCharacteristic = CBMutableCharacteristic(type: performerImageCharacteristicUUID,
-                properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                properties: CBCharacteristicProperties.Read,
                 value: imageData,
                 permissions: CBAttributePermissions.Readable)
             
@@ -105,7 +123,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         // Build the FACEBOOK characteristic
         if (identity.facebookLink != nil) {
             facebookCharacteristic = CBMutableCharacteristic(type: performerFacebookCharacteristicUUID,
-                properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                properties: CBCharacteristicProperties.Read,
                 value: identity.facebookLink?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false),
                 permissions: CBAttributePermissions.Readable)
             
@@ -115,7 +133,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         // Build the YOUTUBE characteristic
         if (identity.youtubeLink != nil) {
             youtubeCharacteristic = CBMutableCharacteristic(type: performerYoutubeCharacteristicUUID,
-                properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                properties: CBCharacteristicProperties.Read,
                 value: identity.youtubeLink?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
             
             characteristicsArray.append(youtubeCharacteristic!)
@@ -124,7 +142,7 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         // Build the miscellaneous WEBSITE characteristic
         if (identity.miscWebsite != nil) {
             miscWebsiteCharacteristic = CBMutableCharacteristic(type: performerMiscWebsiteCharacteristicUUID,
-                properties: (CBCharacteristicProperties.Read | CBCharacteristicProperties.Broadcast),
+                properties: CBCharacteristicProperties.Read,
                 value: identity.miscWebsite?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), permissions: CBAttributePermissions.Readable)
             
             characteristicsArray.append(miscWebsiteCharacteristic!)

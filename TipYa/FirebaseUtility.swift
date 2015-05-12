@@ -29,9 +29,9 @@ class FirebaseUtility {
     }
     
     func attemptNormalUserLogin(name:String!, password:String!) -> Bool {
-        var loginAttemptResult:Bool?
+        var loginAttemptResult:Bool = false
         
-        accounts.authUser(name, password: password, withCompletionBlock: {
+        accounts?.authUser(name, password: password, withCompletionBlock: {
             (error, authData) in
             if (error != nil) {
                 let alert = UIAlertView()
@@ -64,7 +64,7 @@ class FirebaseUtility {
             }
         })
         
-        return loginAttemptResult!
+        return loginAttemptResult
     }
     
     func createAccount(username:String!, password: String!) {

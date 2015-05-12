@@ -11,6 +11,7 @@ import UIKit
 class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tipyaLogo: UIButton!
+    @IBOutlet weak var tipyaLogoImageView: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -19,11 +20,12 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     let firebaseUtility:FirebaseUtility = FirebaseUtility()
     
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
-        
         usernameField.delegate = self
         passwordField.delegate = self
         
@@ -59,15 +61,14 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(sender: AnyObject) {
-        
         if sender.identifier == "firebaseLogin" {
-            let successfulLogin:Bool = firebaseUtility.attemptNormalUserLogin(usernameField.text, password: passwordField.text)
+            var successfulLogin:Bool = firebaseUtility.attemptNormalUserLogin(usernameField.text, password: passwordField.text)
             if successfulLogin {
                 self.performSegueWithIdentifier("loginComplete", sender: firebaseUtility.loggedInUserData!)
             }
         }
         if sender.identifier == "bypassFirebaseLogin" {
-            self.performSegueWithIdentifier("noFirebaseLogin", sender: nil)
+            self.performSegueWithIdentifier("noFirebaseLogin", sender: sender)
         }
     }
     
@@ -77,12 +78,24 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
-        if (segue.identifier == "loginComplete") {
+        if (segue.identifier == "firebaseLogin") {
             let viewController:PerformanceControlViewController = segue.destinationViewController as! PerformanceControlViewController
-            viewController.authData = sender as? FAuthData
-            // pass data to next view
+                    viewController.authData = sender as? FAuthData
         }
         
+        
+        // pass data to next view
+        if (segue.identifier != "backFromArtistLogin") {
+            UIView.animateWithDuration(0.2, delay: 0,
+                options: UIViewAnimationOptions.CurveEaseInOut,
+                animations: { self.tipyaLogoImageView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.609375, 1.609375), CGAffineTransformMakeTranslation(0.0, -13.0))},
+                completion: nil)
+        } else {
+            UIView.animateWithDuration(0.2, delay: 0,
+                options: UIViewAnimationOptions.CurveEaseInOut,
+                animations: { self.tipyaLogoImageView.transform = CGAffineTransformMakeScale(2.0, 2.0)},
+                completion: nil)
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {

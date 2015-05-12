@@ -39,7 +39,7 @@ class WelcomeViewController: UIViewController {
         if (segue.identifier == "artistLogin") {
             UIView.animateWithDuration(0.2, delay: 0,
                 options: UIViewAnimationOptions.CurveEaseInOut,
-                animations: { self.applicationLogoImageView.transform = CGAffineTransformMakeTranslation(0.0, 80)},
+                animations: { self.applicationLogoImageView.transform = CGAffineTransformMakeScale(0.5, 0.5)},
                 completion: nil)
         }
         // Pass the selected object to the new view controller.
