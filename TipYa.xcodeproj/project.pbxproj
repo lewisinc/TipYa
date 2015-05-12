@@ -220,9 +220,9 @@
 			children = (
 				D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */,
 				D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */,
-				D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */,
 				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
 				BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */,
+				D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */,
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
 				BFB7A56A1B01CD15001D6068 /* TableViewCell */,
 			);
