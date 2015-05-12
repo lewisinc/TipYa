@@ -81,6 +81,9 @@ class SpectatorViewController: UIViewController, SpectatorUtilityDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
+        
         tableView?.registerNib(UINib(nibName: "TableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: spectCellIdentifier)
         // Do any additional setup after loading the view.
         

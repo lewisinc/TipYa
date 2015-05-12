@@ -4,80 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Spectator View Controller-->
-        <scene sceneID="F4w-fL-yAv">
-            <objects>
-                <viewController id="ZPn-xb-LX5" customClass="SpectatorViewController" customModule="TipYa" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Lwe-rW-JwV"/>
-                        <viewControllerLayoutGuide type="bottom" id="zRU-CE-rmd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HR7-Kf-9DQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vy6-Wl-mxU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.7843137255" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal">
-                                    <string key="title">&lt;&lt;	Go Back		</string>
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="01M-jC-DKD" kind="modal" modalTransitionStyle="flipHorizontal" id="4eZ-VT-0Ty"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wr-24-czA">
-                                <rect key="frame" x="0.0" y="520" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.45882352939999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="Who's Performing Nearby?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="scanForPerformers:" destination="ZPn-xb-LX5" eventType="touchUpInside" id="8aS-Kw-V4l"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Xds-66-f4Q">
-                                <rect key="frame" x="0.0" y="118" width="320" height="377"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="mtp-PP-rqD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mtp-PP-rqD" id="rPN-vj-piI">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Long band name that takes up multiple lines of text to display" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEF-Qe-tIJ">
-                                                    <rect key="frame" x="148" y="0.0" width="164" height="99"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNm-rF-bbP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="99"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.65490196079999996" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="refreshNearbyPerformances" destination="6Wr-24-czA" id="cze-7c-ZKD"/>
-                        <outlet property="verifiedPerformerTableView" destination="Xds-66-f4Q" id="fwu-BQ-nlQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8MA-IB-EMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="332" y="1332"/>
-        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="lAJ-SC-3hz">
             <objects>
@@ -132,7 +58,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZPn-xb-LX5" kind="modal" identifier="fanLogin" modalTransitionStyle="flipHorizontal" id="PT0-ct-lX0"/>
+                                    <segue destination="WRL-hv-h45" kind="modal" modalTransitionStyle="flipHorizontal" id="LYX-39-axt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -406,6 +332,81 @@
             </objects>
             <point key="canvasLocation" x="804" y="1332"/>
         </scene>
+        <!--Spectator View Controller-->
+        <scene sceneID="GSE-B4-aP1">
+            <objects>
+                <viewController id="WRL-hv-h45" customClass="SpectatorViewController" customModule="TipYa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bTc-Sy-6Zy"/>
+                        <viewControllerLayoutGuide type="bottom" id="rCO-Zr-G72"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ez-n9-6S6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWW-c6-UbQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.7843137255" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="4eW-qz-UXw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal">
+                                    <string key="title">&lt;&lt;	Go Back		</string>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="01M-jC-DKD" kind="modal" modalTransitionStyle="flipHorizontal" id="Hvh-z4-Swf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0t-12-Npl">
+                                <rect key="frame" x="0.0" y="500" width="320" height="48"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.45882352939999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="LDn-f7-6jq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Who's Performing Nearby?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanForPerformers:" destination="WRL-hv-h45" eventType="touchUpInside" id="sCg-WH-SMS"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tVQ-Iv-mrY">
+                                <rect key="frame" x="0.0" y="49" width="320" height="432"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WRL-hv-h45" id="ABN-KL-ZER"/>
+                                    <outlet property="delegate" destination="WRL-hv-h45" id="DBr-8p-x3G"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.65490196079999996" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tVQ-Iv-mrY" firstAttribute="top" secondItem="qWW-c6-UbQ" secondAttribute="bottom" constant="1" id="47F-PN-HQz"/>
+                            <constraint firstItem="qWW-c6-UbQ" firstAttribute="trailing" secondItem="tVQ-Iv-mrY" secondAttribute="trailing" id="APn-bB-RbA"/>
+                            <constraint firstItem="qWW-c6-UbQ" firstAttribute="top" secondItem="9ez-n9-6S6" secondAttribute="top" id="AyU-oF-CFF"/>
+                            <constraint firstItem="qWW-c6-UbQ" firstAttribute="leading" secondItem="tVQ-Iv-mrY" secondAttribute="leading" id="S1H-uB-40L"/>
+                            <constraint firstAttribute="trailing" secondItem="g0t-12-Npl" secondAttribute="trailing" id="SOy-nu-pKG"/>
+                            <constraint firstItem="tVQ-Iv-mrY" firstAttribute="trailing" secondItem="g0t-12-Npl" secondAttribute="trailing" id="cCC-v7-tj3"/>
+                            <constraint firstItem="g0t-12-Npl" firstAttribute="top" secondItem="tVQ-Iv-mrY" secondAttribute="bottom" constant="19" id="f9A-Ws-pXo"/>
+                            <constraint firstItem="tVQ-Iv-mrY" firstAttribute="leading" secondItem="g0t-12-Npl" secondAttribute="leading" id="heJ-2S-voa"/>
+                            <constraint firstAttribute="bottom" secondItem="g0t-12-Npl" secondAttribute="bottom" constant="20" symbolic="YES" id="wLp-Uq-DAA"/>
+                            <constraint firstItem="qWW-c6-UbQ" firstAttribute="leading" secondItem="9ez-n9-6S6" secondAttribute="leading" id="zVv-EZ-wAG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="refreshNearbyPerformances" destination="g0t-12-Npl" id="7bq-Xq-Mh0"/>
+                        <outlet property="tableView" destination="tVQ-Iv-mrY" id="BOx-W4-Zth"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nc1-mv-IEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="1332"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BlankPhoto" width="500" height="500"/>
@@ -417,8 +418,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Hvh-z4-Swf"/>
+        <segue reference="Fvk-qj-Hxp"/>
         <segue reference="Vib-iP-LgD"/>
-        <segue reference="D4W-bc-x7n"/>
-        <segue reference="4eZ-VT-0Ty"/>
     </inferredMetricsTieBreakers>
 </document>

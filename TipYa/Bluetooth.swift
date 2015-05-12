@@ -286,6 +286,7 @@ class SpectatorUtility: NSObject, CBCentralManagerDelegate {
         switch (central.state) {
             case .PoweredOn:
                 println("Current Bluetooth State:   PoweredOn")
+                self.centralManager?.scanForPeripheralsWithServices([performerServicesUUID], options: nil)
                 break;
             case .PoweredOff:
                 println("Current Bluetooth State:   PoweredOff")
