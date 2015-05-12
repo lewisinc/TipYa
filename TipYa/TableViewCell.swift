@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
-    @IBOutlet var customImage: UIImageView!
+    @IBOutlet var random: UIImageView!
     
     
     override func awakeFromNib() {
