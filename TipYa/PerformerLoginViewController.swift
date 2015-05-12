@@ -61,7 +61,7 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(sender: AnyObject) {
-        if sender.identifier == "firebaseLogin" {
+        if sender.identifier == "firebaseLogin" && firebaseWorks == true {
             var successfulLogin:Bool = firebaseUtility.attemptNormalUserLogin(usernameField.text, password: passwordField.text)
             if successfulLogin {
                 self.performSegueWithIdentifier("loginComplete", sender: self)

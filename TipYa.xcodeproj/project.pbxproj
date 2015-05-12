@@ -11,7 +11,6 @@
 		8E410CD41B02507600400308 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E410CD21B02507600400308 /* TableViewCell.xib */; };
 		8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40171AD011AA0034415C /* WelcomeViewController.swift */; };
 		8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40191AD011CE0034415C /* SpectatorViewController.swift */; };
-		8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */; };
 		8E5E40201AD01AD00034415C /* PerformerIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */; };
 		8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40221AD01AE90034415C /* SpectatorIdentity.swift */; };
 		8EBBCC2B1ACFC99900DD76AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBBCC2A1ACFC99900DD76AC /* AppDelegate.swift */; };
@@ -49,7 +48,6 @@
 		8E410CD21B02507600400308 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		8E5E40171AD011AA0034415C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8E5E40191AD011CE0034415C /* SpectatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorViewController.swift; sourceTree = "<group>"; };
-		8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectateOnPerformerViewController.swift; sourceTree = "<group>"; };
 		8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformerIdentity.swift; sourceTree = "<group>"; };
 		8E5E40221AD01AE90034415C /* SpectatorIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorIdentity.swift; sourceTree = "<group>"; };
 		8EBBCC251ACFC99900DD76AC /* TipYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,7 +218,6 @@
 				8E7ED4291AFAF48100C1F01F /* PerformerViews */,
 				D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */,
 				8E5E40191AD011CE0034415C /* SpectatorViewController.swift */,
-				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 			files = (
 				8EBBCC781ACFECFE00DD76AC /* Bluetooth.swift in Sources */,
 				8E5E40231AD01AE90034415C /* SpectatorIdentity.swift in Sources */,
-				8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */,
 				D05DE26F1AD0E80C00632353 /* SwiftyJSON.swift in Sources */,
 				D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */,
 				8E410CD31B02507600400308 /* TableViewCell.swift in Sources */,
