@@ -16,34 +16,35 @@ class PerformanceControlViewController:UIViewController, UIImagePickerController
     var authData: FAuthData?
     
     var profImage: UIImage?
-    var user: Firebase?
+    var firebase: Firebase?
+    var user:Firebase?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         imagePicker.delegate = self
         
-        user = accounts.childByAppendingPath(authData!.uid)
-        user!.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            if (snapshot.hasChildren() == true) {
-                var json = snapshot.value as! NSDictionary!
-                
-                if (json?.valueForKey("image") != nil) {
-                    let base64String  = json!.valueForKey("image")! as! String
+        if firebaseWorks {
+            user = accounts.childByAppendingPath(authData!.uid)
+            user!.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                if (snapshot.hasChildren() == true) {
+                    var json = snapshot.value as! NSDictionary!
                     
-                    
-                    //decode image and mask it, put it in button
-                    let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(0))!
-                    var decodedimage = UIImage(data: decodedData)!
-                    self.profImage = decodedimage as UIImage!
-                    
-                    self.imageButton.image =  self.maskImage(self.profImage!, maskImage: UIImage(named: "Circle_Mask")!)
+                    if (json?.valueForKey("image") != nil) {
+                        let base64String  = json!.valueForKey("image")! as! String
+                        
+                        
+                        //decode image and mask it, put it in button
+                        let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(0))!
+                        var decodedimage = UIImage(data: decodedData)!
+                        self.profImage = decodedimage as UIImage!
+                        
+                        self.imageButton.image =  self.maskImage(self.profImage!, maskImage: UIImage(named: "Circle_Mask")!)
+                    }
                 }
-            }
-            
-            
-        })
-        
+    
+            })
+        }
         
         //load info from firebase
         if (authData != nil) {

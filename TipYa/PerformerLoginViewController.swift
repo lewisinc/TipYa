@@ -60,14 +60,14 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func login(sender: AnyObject) {
         
-        if sender.restorationIdentifier == "firebaseLogin" {
+        if sender.identifier == "firebaseLogin" {
             let successfulLogin:Bool = firebaseUtility.attemptNormalUserLogin(usernameField.text, password: passwordField.text)
             if successfulLogin {
                 self.performSegueWithIdentifier("loginComplete", sender: firebaseUtility.loggedInUserData!)
             }
         }
-        if sender.restorationIdentifier == "bypassFirebaseLogin" {
-            self.performSegueWithIdentifier("noFirebase", sender: nil)
+        if sender.identifier == "bypassFirebaseLogin" {
+            self.performSegueWithIdentifier("noFirebaseLogin", sender: nil)
         }
     }
     

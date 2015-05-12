@@ -233,7 +233,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pAl-zO-7aH" kind="modal" identifier="noFirebase" modalTransitionStyle="flipHorizontal" id="k92-7p-TMb"/>
+                                    <segue destination="pAl-zO-7aH" kind="modal" identifier="noFirebaseLogin" modalTransitionStyle="flipHorizontal" id="k92-7p-TMb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -261,7 +261,7 @@
         <!--Performance Control View Controller-->
         <scene sceneID="57v-SS-6gU">
             <objects>
-                <viewController id="pAl-zO-7aH" customClass="PerformanceControlViewController" sceneMemberID="viewController">
+                <viewController id="pAl-zO-7aH" customClass="PerformanceControlViewController" customModule="TipYa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nst-pr-h5V"/>
                         <viewControllerLayoutGuide type="bottom" id="RRA-Sw-qk5"/>
@@ -322,7 +322,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="performanceimage" image="TipYa_logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-BT-1Nb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="performanceimage" image="BlankPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-BT-1Nb">
                                 <rect key="frame" x="0.0" y="56" width="320" height="174"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
@@ -375,6 +375,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BlankPhoto" width="500" height="500"/>
         <image name="TipYa_logo" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

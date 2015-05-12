@@ -12,10 +12,10 @@ import UIKit
 let rootReference = Firebase(url:"https://tipyalahacks2015.firebaseio.com")
 let accounts = Firebase(url: "https://tipyalahacks2015.firebaseio.com/Accounts")
 
+let firebaseWorks: Bool = false
+
 
 class FirebaseUtility {
-
-    let firebaseWorks: Bool = false
     
     var loggedInUserData:FAuthData?
     
