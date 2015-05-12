@@ -32,6 +32,7 @@
 		BF7F9A161AFAEDC800BB61CB /* PerformerIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401F1AD01AD00034415C /* PerformerIdentity.swift */; };
 		BF7F9A181AFAF57500BB61CB /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */; };
 		BF80BCE61B0170BA00F2C024 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */; };
+		BFB7A5691B01CD0E001D6068 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */; };
 		BFEC57C11AF981D300CA8206 /* SpectatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */; };
 		BFEC57C61AF99F2400CA8206 /* BasicBlackboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */; };
 		D01FD9FA1AD0343A00C999C6 /* PerformanceControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */; };
@@ -77,6 +78,7 @@
 		BF7F9A0C1AFAD8D500BB61CB /* SpectatorViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpectatorViewController2.swift; path = TipYa/SpectatorViewController2.swift; sourceTree = "<group>"; };
 		BF7F9A171AFAF57500BB61CB /* SpectatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorViewController.swift; sourceTree = "<group>"; };
 		BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		BFEC57C01AF981D300CA8206 /* SpectatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpectatorTableViewController.swift; path = TipYa/SpectatorTableViewController.swift; sourceTree = "<group>"; };
 		BFEC57C51AF99F2400CA8206 /* BasicBlackboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBlackboxTests.swift; sourceTree = "<group>"; };
 		D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceControlViewController.swift; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 		8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */,
+				BFB7A56A1B01CD15001D6068 /* TableViewCell */,
 				D01FD9F91AD0343A00C999C6 /* PerformanceControlViewController.swift */,
 				D03012851AD0244B001F8549 /* PerformerLoginViewController.swift */,
 				D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */,
@@ -225,6 +227,15 @@
 				8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BFB7A56A1B01CD15001D6068 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF80BCE51B0170BA00F2C024 /* TableViewCell.swift */,
+				BFB7A5681B01CD0E001D6068 /* TableViewCell.xib */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		D05DE2701AD0E82200632353 /* SwiftyJSON */ = {
@@ -316,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */,
+				BFB7A5691B01CD0E001D6068 /* TableViewCell.xib in Resources */,
 				8ED210741ADF54ED0017A2D2 /* Main_iPhone_6.storyboard in Resources */,
 				8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */,
 			);

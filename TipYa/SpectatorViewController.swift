@@ -46,18 +46,45 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    /*
+    var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+    
+    // Configure the cell...
+    cell.textLabel?.text = self.verifiedPerformers[indexPath.row]
+    
+    return cell
+    */
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell :TableViewCell = basicCellAtIndexPath(indexPath)
+        //let cell :TableViewCell = basicCellAtIndexPath(indexPath)
         
-        println("Final Cell: #\(indexPath.row) = #\(self.verifiedPerformers?[indexPath.row].name)")
-        println("Name = \(cell.titleLabel.text)")
-        println("Text = \(cell.subtitleLabel.text)")
         
-        return cell as UITableViewCell
+        
+        
+        if let cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier(spectCellIdentifier) as? TableViewCell {
+            // Configure the cell for this indexPath
+            
+            let item = self.verifiedPerformers?[indexPath.row]
+            
+            cell.titleLabel.text = item?.name
+            cell.subtitleLabel.text = item?.bioText
+            
+            cell.setNeedsUpdateConstraints()
+            cell.updateConstraintsIfNeeded()
+            
+            println("Final Cell: #\(indexPath.row) = #\(self.verifiedPerformers?[indexPath.row].name)")
+            println("Name = \(cell.titleLabel.text)")
+            println("Text = \(cell.subtitleLabel.text)")
+            
+            return cell
     
+        } else {
+            return basicCellAtIndexPath(indexPath)
+        }
     }
+    
     
     func basicCellAtIndexPath(indexPath:NSIndexPath) -> TableViewCell {
     
@@ -110,8 +137,11 @@ class SpectatorViewController: UIViewController, UITableViewDelegate, UITableVie
         
         verifiedPerformers = [PerformerIdentity(name: "Chad", image: nil, text: "I'm definitely a band", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil), PerformerIdentity(name: "Bill", image: nil, text: "I'm cool", facebook: nil, youtube: nil, otherWebsite: nil, idKey: nil)]
         
-        self.tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "spectCell")
+        tableView.registerNib(UINib(nibName: "TableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: spectCellIdentifier)
         // Do any additional setup after loading the view.
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
     }
 
     override func didReceiveMemoryWarning() {

@@ -52,50 +52,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t1O-hR-Pgl">
                                 <rect key="frame" x="0.0" y="49" width="320" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="spectCell" rowHeight="60" id="eGs-pB-Dxq" customClass="TableViewCell" customModule="TipYa" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eGs-pB-Dxq" id="XyF-2S-06S">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BandName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLb-Ob-95p">
-                                                    <rect key="frame" x="69" y="0.0" width="243" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nlp-Rc-YDE">
-                                                    <rect key="frame" x="69" y="18" width="243" height="41"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v22-RC-UXO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="61" height="59"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="leading" secondItem="v22-RC-UXO" secondAttribute="trailing" constant="8" symbolic="YES" id="3ur-SS-dwb"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XLb-Ob-95p" secondAttribute="trailing" constant="-7" id="48d-bg-aFR"/>
-                                                <constraint firstItem="v22-RC-UXO" firstAttribute="leading" secondItem="XyF-2S-06S" secondAttribute="leading" id="9WS-uJ-qf4"/>
-                                                <constraint firstItem="Nlp-Rc-YDE" firstAttribute="trailing" secondItem="XLb-Ob-95p" secondAttribute="trailing" id="A4W-az-hr6"/>
-                                                <constraint firstItem="v22-RC-UXO" firstAttribute="bottom" secondItem="Nlp-Rc-YDE" secondAttribute="bottom" id="M7I-ze-ket"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="top" secondItem="v22-RC-UXO" secondAttribute="top" id="OaP-6O-GyA"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="leading" secondItem="Nlp-Rc-YDE" secondAttribute="leading" id="cly-Ni-4Pw"/>
-                                                <constraint firstItem="XLb-Ob-95p" firstAttribute="top" secondItem="XyF-2S-06S" secondAttribute="top" id="dfd-ng-f9i"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="XLb-Ob-95p" secondAttribute="bottom" constant="29" id="hS7-zr-fEd"/>
-                                                <constraint firstItem="Nlp-Rc-YDE" firstAttribute="top" secondItem="XyF-2S-06S" secondAttribute="topMargin" constant="10" id="qLZ-Xy-zqA"/>
-                                                <constraint firstAttribute="bottom" secondItem="Nlp-Rc-YDE" secondAttribute="bottom" id="wEF-za-Xfj"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="random" destination="v22-RC-UXO" id="AY3-eW-D6z"/>
-                                            <outlet property="subtitleLabel" destination="Nlp-Rc-YDE" id="Zlr-tk-yx8"/>
-                                            <outlet property="titleLabel" destination="XLb-Ob-95p" id="ZFc-pL-pfe"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ZPn-xb-LX5" id="KJd-VU-HdX"/>
                                     <outlet property="delegate" destination="ZPn-xb-LX5" id="iz1-Ue-MTU"/>
