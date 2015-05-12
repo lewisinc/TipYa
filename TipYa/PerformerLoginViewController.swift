@@ -64,11 +64,11 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
         if sender.identifier == "firebaseLogin" {
             var successfulLogin:Bool = firebaseUtility.attemptNormalUserLogin(usernameField.text, password: passwordField.text)
             if successfulLogin {
-                self.performSegueWithIdentifier("loginComplete", sender: firebaseUtility.loggedInUserData!)
+                self.performSegueWithIdentifier("loginComplete", sender: self)
             }
         }
         if sender.identifier == "bypassFirebaseLogin" {
-            self.performSegueWithIdentifier("noFirebaseLogin", sender: sender)
+            self.performSegueWithIdentifier("noFirebaseLogin", sender: self)
         }
     }
     
@@ -78,14 +78,13 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
-        if (segue.identifier == "firebaseLogin") {
-            let viewController:PerformanceControlViewController = segue.destinationViewController as! PerformanceControlViewController
-                    viewController.authData = sender as? FAuthData
-        }
-        
-        
         // pass data to next view
         if (segue.identifier != "backFromArtistLogin") {
+            if (segue.identifier == "firebaseLogin") {
+                let viewController:PerformanceControlViewController = segue.destinationViewController as! PerformanceControlViewController
+                viewController.authData = sender as? FAuthData
+            }
+            
             UIView.animateWithDuration(0.2, delay: 0,
                 options: UIViewAnimationOptions.CurveEaseInOut,
                 animations: { self.tipyaLogoImageView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.609375, 1.609375), CGAffineTransformMakeTranslation(0.0, -13.0))},
@@ -100,6 +99,10 @@ class PerformerLoginViewController: UIViewController, UITextFieldDelegate {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
 
 }

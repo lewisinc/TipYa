@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E410CD31B02507600400308 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E410CD11B02507600400308 /* TableViewCell.swift */; };
+		8E410CD41B02507600400308 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E410CD21B02507600400308 /* TableViewCell.xib */; };
 		8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40171AD011AA0034415C /* WelcomeViewController.swift */; };
 		8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E40191AD011CE0034415C /* SpectatorViewController.swift */; };
 		8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E410CD11B02507600400308 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8E410CD21B02507600400308 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		8E5E40171AD011AA0034415C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8E5E40191AD011CE0034415C /* SpectatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectatorViewController.swift; sourceTree = "<group>"; };
 		8E5E401B1AD012A10034415C /* SpectateOnPerformerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectateOnPerformerViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,9 @@
 				8EBBCC761ACFECF300DD76AC /* Firebase */,
 				8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */,
 				8E5E40211AD01ADB0034415C /* UserIdentities */,
+				8EED97021B01F11F009A3836 /* ColorPalette.swift */,
+				8E410CD11B02507600400308 /* TableViewCell.swift */,
+				8E410CD21B02507600400308 /* TableViewCell.xib */,
 				8EBBCC311ACFC99900DD76AC /* Images.xcassets */,
 				8EBBCC331ACFC99900DD76AC /* LaunchScreen.xib */,
 				8EBBCC281ACFC99900DD76AC /* Supporting Files */,
@@ -212,7 +219,6 @@
 		8EBBCC7B1ACFED1A00DD76AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8EED97021B01F11F009A3836 /* ColorPalette.swift */,
 				8E5E40171AD011AA0034415C /* WelcomeViewController.swift */,
 				8E7ED4291AFAF48100C1F01F /* PerformerViews */,
 				D01FD9FD1AD06C6000C999C6 /* PerformerInfoViewController.swift */,
@@ -329,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBBCC351ACFC99900DD76AC /* LaunchScreen.xib in Resources */,
+				8E410CD41B02507600400308 /* TableViewCell.xib in Resources */,
 				8ED210741ADF54ED0017A2D2 /* Main_iPhone_6.storyboard in Resources */,
 				8EBBCC321ACFC99900DD76AC /* Images.xcassets in Resources */,
 			);
@@ -353,6 +360,7 @@
 				8E5E401C1AD012A10034415C /* SpectateOnPerformerViewController.swift in Sources */,
 				D05DE26F1AD0E80C00632353 /* SwiftyJSON.swift in Sources */,
 				D01FD9FE1AD06C6000C999C6 /* PerformerInfoViewController.swift in Sources */,
+				8E410CD31B02507600400308 /* TableViewCell.swift in Sources */,
 				8E5E401A1AD011CE0034415C /* SpectatorViewController.swift in Sources */,
 				8E5E40181AD011AA0034415C /* WelcomeViewController.swift in Sources */,
 				D01FD9FA1AD0343A00C999C6 /* PerformanceControlViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  PerformanceViewController
+//  PerformanceControlViewController
 //  TipYa
 //
 //  Created by Justin Oroz on 4/4/15.
@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class PerformanceControlViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
@@ -29,15 +30,17 @@ class PerformanceControlViewController: UIViewController, UIImagePickerControlle
     let bluetoothUtility:PerformerUtility = PerformerUtility()
     @IBOutlet weak var toggleBluetoothButton: UIButton!
     @IBAction func toggleBluetooth(sender: UIButton) {
-        if sender.restorationIdentifier == "toggleBluetoothButton" {
-            if bluetoothUtility.peripheralManager?.isAdvertising == true {
-                bluetoothUtility.peripheralManager?.stopAdvertising()
-                
-            } else {
-                bluetoothUtility.configureUtilityForIdentity(PerformerIdentity(name: artistNameTextView.text, image: imageView.image, text: biographyTextView.text, facebook: facebookLinkTextView.text, youtube: youtubeLinkTextView.text, otherWebsite: otherWebLinkTextView.text, idKey: nil))
-                
-                
-            }
+        if bluetoothUtility.peripheralManager?.isAdvertising == true {
+            toggleBluetoothButton.backgroundColor = colorRed
+            toggleBluetoothButton.titleLabel!.text = "Inactive"
+            bluetoothUtility.stopAdvertising()
+            println("Stopped Advertising")
+            
+        } else {
+            bluetoothUtility.configureUtilityForIdentity(PerformerIdentity(name: artistNameTextView.text, image: imageView.image, text: biographyTextView.text, facebook: facebookLinkTextView.text, youtube: youtubeLinkTextView.text, otherWebsite: otherWebLinkTextView.text, idKey: nil))
+            toggleBluetoothButton.backgroundColor = colorBlue
+            toggleBluetoothButton.titleLabel!.text = "Active"
+            bluetoothUtility.startAdvertising()
         }
     }
 
@@ -259,6 +262,10 @@ class PerformanceControlViewController: UIViewController, UIImagePickerControlle
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
     
 }

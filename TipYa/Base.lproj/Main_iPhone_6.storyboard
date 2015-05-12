@@ -171,7 +171,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="01M-jC-DKD" kind="modal" identifier="backFromArtistLogin" modalTransitionStyle="flipHorizontal" id="gRG-z6-fbE"/>
+                                    <segue destination="01M-jC-DKD" kind="modal" identifier="bypassFirebaseLogin" modalTransitionStyle="flipHorizontal" id="gRG-z6-fbE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="emailTextfield" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLZ-jL-RBh">
@@ -287,10 +287,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="toggleBluetoothButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-hX-2Pi" userLabel="Toggle Broadcast Button">
                                 <rect key="frame" x="160" y="0.0" width="160" height="48"/>
-                                <color key="backgroundColor" red="0.45773307185620737" green="0.59148161736517291" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.73214115629999998" green="0.53449965269999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="Inactive">
+                                <state key="normal" title="Broadcast!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -417,8 +417,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gRG-z6-fbE"/>
-        <segue reference="Fvk-qj-Hxp"/>
         <segue reference="Vib-iP-LgD"/>
+        <segue reference="D4W-bc-x7n"/>
+        <segue reference="4eZ-VT-0Ty"/>
     </inferredMetricsTieBreakers>
 </document>

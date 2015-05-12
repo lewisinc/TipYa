@@ -52,4 +52,8 @@ class WelcomeViewController: UIViewController {
         return true
     }
     
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
 }

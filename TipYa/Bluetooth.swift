@@ -50,13 +50,13 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
     var miscWebsiteCharacteristic:CBMutableCharacteristic?  // Other Miscellaneous Website
     var identityKeyCharacteristic:CBMutableCharacteristic?  // Identity key for Firebase (user specific!)
     
-    var subscribedCentrals:[CBCentral]?
+    var shouldBeAdvertising:Bool = false
+    
     // Start up a peripheral manager object
     // also builds our broadcastable services
     override init() {
         super.init()
-        peripheralManager = CBPeripheralManager(delegate:self, queue:nil)
-        bluetoothServices = CBMutableService(type: appUUIDKey, primary: true)
+
     }
     
     func cleanup() {
@@ -150,29 +150,75 @@ class PerformerUtility: NSObject, CBPeripheralManagerDelegate {
         
         // Add all the existing characteristics to our CBMutableService object
         bluetoothServices?.characteristics = characteristicsArray as [CBCharacteristic]?
-        
-        publishServices(bluetoothServices)
+        println(bluetoothServices?.description)
     }
     
-    // Publish your services and characteristics to your device’s local database, advertise your services
-    func publishServices(newService:CBMutableService!) {
-        self.peripheralManager?.addService(newService)
+    // Start Advertising
+    func startAdvertising() {
+        shouldBeAdvertising = true
+        
+        if (peripheralManager == nil) {
+            println("Tried to force nil peripheralManager to startAdvertising.")
+        }
+
     }
+    
+    // Start Advertising
+    func stopAdvertising() {
+        shouldBeAdvertising = false
+        
+        if (peripheralManager != nil) {
+            self.peripheralManager?.stopAdvertising()
+        } else {
+            println("Tried to force nil peripheralManager to stopAdvertising.")
+        }
+        
+        cleanup()
+    }
+
+    
+//    // Publish your services and characteristics to your device’s local database, advertise your services
+//    func publishServices(newService:CBMutableService!) {
+//        self.peripheralManager?.addService(newService)
+//    }
     
     // Mark: - CBPeripheralManagerDelegate Methods
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
-        println(peripheral.state)
+        switch (peripheral.state) {
+        case .PoweredOn:
+            if shouldBeAdvertising {
+                self.peripheralManager?.addService(bluetoothServices!)
+            }
+            println("Current Bluetooth State:   PoweredOn")
+            break;
+        case .PoweredOff:
+            println("Current Bluetooth State:   PoweredOff")
+            break;
+        case .Resetting:
+            println("Current Bluetooth State:   Resetting")
+            break;
+        case .Unauthorized:
+            println("Current Bluetooth State:   Unauthorized")
+        case .Unknown:
+            println("Current Bluetooth State:   Unknown")
+            break;
+        case .Unsupported:
+            println("Current Bluetooth State:   Unsupported")
+            break;
+        }
+
     }
     
     func peripheralManager(peripheral: CBPeripheralManager!, didAddService service: CBService!, error: NSError!) {
+        println("didAddService called")
+        
         if (error != nil) {
             println("PerformerUtility.publishServices() returned error: \(error.localizedDescription)")
             println("Providing the reason for failure: \(error.localizedFailureReason)")
         }
-        else {
-            peripheralManager?.startAdvertising([CBAdvertisementDataServiceUUIDsKey : service.UUID])
-        }
+        
+        self.peripheralManager?.startAdvertising([CBAdvertisementDataServiceUUIDsKey as String : [bluetoothServices!.UUID]])
     }
     
     func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager!,

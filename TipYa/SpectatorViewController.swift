@@ -91,4 +91,8 @@ class SpectatorViewController: UIViewController, SpectatorUtilityDelegate {
         return true
     }
     
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
 }
